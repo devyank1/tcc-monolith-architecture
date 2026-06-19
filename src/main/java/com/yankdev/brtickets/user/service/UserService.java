@@ -1,5 +1,9 @@
 package com.yankdev.brtickets.user.service;
 
+import com.yankdev.brtickets.shared.exception.CpfAlreadyExistsException;
+import com.yankdev.brtickets.shared.exception.EmailAlreadyExistsException;
+import com.yankdev.brtickets.shared.exception.InvalidCredentialsException;
+import com.yankdev.brtickets.shared.exception.UserNotFoundException;
 import com.yankdev.brtickets.user.dto.UserRequestDTO;
 import com.yankdev.brtickets.user.dto.UserResponseDTO;
 import com.yankdev.brtickets.user.model.UserModel;
@@ -24,24 +28,80 @@ public class UserService {
 
     public UserResponseDTO register(UserRequestDTO userRequest) {
 
-        if (!userRepository.existsByEmail(userRequest.getEmail()) || !userRepository.existsByCpf(userRequest.getCpf())) {
-            UserModel newUser = new UserModel();
-            newUser.setFirstName(userRequest.getFirstName());
-            newUser.setLastName(userRequest.getLastName());
-            newUser.setEmail(userRequest.getEmail());
-            newUser.setPasswordHash(pwdEncoder.encode(userRequest.getPassword()));
-            newUser.setCpf(userRequest.getCpf());
-            newUser.setPhone(userRequest.getPhone());
-            newUser.setBirthday(userRequest.getBirthday());
-            newUser.setActive(true);
-            newUser.setRole(UserRole.FANS);
-
-            UserModel savedUser = userRepository.save(newUser);
-
-            return UserResponseDTO.from(savedUser);
-
-        } else {
-            throw new IllegalArgumentException("Email ja cadastrado por favor, recupere a senha ou tente de novo.");
+        if (userRepository.existsByEmail(userRequest.getEmail())){
+            throw new EmailAlreadyExistsException("Email already exists.");
         }
+
+        if (userRepository.existsByCpf(userRequest.getCpf())) {
+            throw new CpfAlreadyExistsException("CPF already exists.");
+        }
+
+        UserModel newUser = new UserModel();
+        newUser.setFirstName(userRequest.getFirstName());
+        newUser.setLastName(userRequest.getLastName());
+        newUser.setEmail(userRequest.getEmail());
+        newUser.setPasswordHash(pwdEncoder.encode(userRequest.getPassword()));
+        newUser.setCpf(userRequest.getCpf());
+        newUser.setPhone(userRequest.getPhone());
+        newUser.setBirthday(userRequest.getBirthday());
+        newUser.setActive(true);
+        newUser.setRole(UserRole.USER);
+
+        UserModel savedUser = userRepository.save(newUser);
+
+        return UserResponseDTO.from(savedUser);
+
+    }
+
+    // TODO: trocar para LoginResponseDTO com token JWT quando JwtTokenProvider estiver pronto
+    public UserResponseDTO login(UserRequestDTO request) {
+
+        UserModel user = userRepository.findByEmail(request.getEmail())
+                .orElseThrow(() -> new InvalidCredentialsException("Invalid credentials."));
+
+        if (!pwdEncoder.matches(request.getPassword(), user.getPasswordHash())) {
+            throw new InvalidCredentialsException("Invalid credentials.");
+        }
+
+        return UserResponseDTO.from(user);
+    }
+
+    public UserResponseDTO findUser(UUID userId) {
+
+        UserModel user = userRepository.findById(userId)
+                .orElseThrow(() -> new UserNotFoundException("User not found."));
+
+        return UserResponseDTO.from(user);
+    }
+
+    public UserResponseDTO updateUser(UUID userId, UserRequestDTO request) {
+        UserModel user = userRepository.findById(userId)
+                .orElseThrow(() -> new UserNotFoundException("User not found."));
+
+        user.setFirstName(request.getFirstName());
+        user.setLastName(request.getLastName());
+        user.setEmail(request.getEmail());
+        user.setPhone(request.getPhone());
+        user.setBirthday(request.getBirthday());
+
+        UserModel updatedUser = userRepository.save(user);
+
+        return UserResponseDTO.from(updatedUser);
+    }
+
+    public void updatePwd(UUID userId, String password) {
+
+        UserModel user = userRepository.findById(userId)
+                .orElseThrow(() -> new UserNotFoundException("User not found."));
+
+        user.setPasswordHash(pwdEncoder.encode(password));
+        userRepository.save(user);
+    }
+
+    public void deactivateUser(UUID userId) {
+        UserModel user = userRepository.findById(userId)
+                .orElseThrow(() -> new UserNotFoundException("User not found."));
+        user.setActive(false);
+        userRepository.save(user);
     }
 }
