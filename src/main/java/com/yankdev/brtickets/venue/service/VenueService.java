@@ -36,7 +36,7 @@ public class VenueService {
         venue.setState(request.getState());
         venue.setZipCode(request.getZipCode());
         venue.setCountry(request.getCountry());
-        venue.setActive(true);
+        venue.setActive(request.isActive());
         venue.setSeatMap(request.getSeatMap());
         venue.setCapacity(request.getCapacity());
 

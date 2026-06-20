@@ -1,31 +1,18 @@
-package com.yankdev.brtickets.event.model;
+package com.yankdev.brtickets.event.dto;
 
+import com.yankdev.brtickets.event.model.EventModel;
 import com.yankdev.brtickets.event.model.enums.EventStatusEnum;
 import com.yankdev.brtickets.event.model.enums.EventTypeEnum;
 import com.yankdev.brtickets.user.model.UserModel;
 import com.yankdev.brtickets.venue.model.VenueModel;
-import jakarta.persistence.*;
-import org.hibernate.annotations.UuidGenerator;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-@Entity
-@Table(name = "events")
-public class EventModel {
-
-    @Id
-    @UuidGenerator
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(nullable = false, updatable = false)
+public class EventResponseDTO {
     private UUID eventId;
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "venueId", nullable = false)
     private VenueModel venue;
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "createdBy", nullable = false)
-    private UserModel createdBy;
-    @Column(nullable = false)
+    private UserModel user;
     private String name;
     private String description;
     private LocalDateTime date;
@@ -33,12 +20,9 @@ public class EventModel {
     private EventTypeEnum type;
     private String artist;
     private EventStatusEnum status;
-    @Column(nullable = false)
     private Integer ageRate;
-    private String imageUrl;
     private LocalDateTime salesStartAt;
     private LocalDateTime salesEndAt;
-    private LocalDateTime createdAt;
 
     public UUID getEventId() {
         return eventId;
@@ -48,12 +32,20 @@ public class EventModel {
         this.eventId = eventId;
     }
 
-    public VenueModel getVenueId() {
+    public VenueModel getVenue() {
         return venue;
     }
 
-    public void setVenueId(VenueModel venue) {
+    public void setVenue(VenueModel venue) {
         this.venue = venue;
+    }
+
+    public UserModel getUser() {
+        return user;
+    }
+
+    public void setUser(UserModel user) {
+        this.user = user;
     }
 
     public String getName() {
@@ -120,14 +112,6 @@ public class EventModel {
         this.ageRate = ageRate;
     }
 
-    public String getImageUrl() {
-        return imageUrl;
-    }
-
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
-    }
-
     public LocalDateTime getSalesStartAt() {
         return salesStartAt;
     }
@@ -144,27 +128,24 @@ public class EventModel {
         this.salesEndAt = salesEndAt;
     }
 
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
+    public static EventResponseDTO from(EventModel event) {
 
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
-    }
+        EventResponseDTO dto = new EventResponseDTO();
 
-    public VenueModel getVenue() {
-        return venue;
-    }
+        dto.setEventId(event.getEventId());
+        dto.setVenue(event.getVenue());
+        dto.setUser(event.getUser());
+        dto.setName(event.getName());
+        dto.setDescription(event.getDescription());
+        dto.setDate(event.getDate());
+        dto.setEndDate(event.getEndDate());
+        dto.setType(event.getType());
+        dto.setArtist(event.getArtist());
+        dto.setStatus(event.getStatus());
+        dto.setAgeRate(event.getAgeRate());
+        dto.setSalesStartAt(event.getSalesStartAt());
+        dto.setSalesEndAt(event.getSalesEndAt());
 
-    public void setVenue(VenueModel venue) {
-        this.venue = venue;
-    }
-
-    public UserModel getCreatedBy() {
-        return createdBy;
-    }
-
-    public void setCreatedBy(UserModel createdBy) {
-        this.createdBy = createdBy;
+        return dto;
     }
 }
