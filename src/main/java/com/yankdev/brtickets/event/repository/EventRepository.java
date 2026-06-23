@@ -14,5 +14,4 @@ import java.util.UUID;
 public interface EventRepository extends JpaRepository<EventModel, UUID> {
     List<EventModel> findAllByName(String name);
     List<EventModel> findAllByType(EventTypeEnum type);
-    boolean isDrafted(EventStatusEnum status);
 }

@@ -31,7 +31,6 @@ public class EventService {
         this.eventRepository = eventRepository;
     }
 
-    //publish
     public EventResponseDTO createEvent(EventRequestDTO request, UserModel adminLogged) {
 
         VenueModel venue = venueRepository.findById(request.getVenue().getVenueId())
@@ -93,7 +92,14 @@ public class EventService {
         EventModel event = eventRepository.findById(eventId)
                 .orElseThrow(() -> new EventNotFoundException("Event not found."));
 
-        event.setVenue(request.getVenue());
+        VenueModel venue = venueRepository.findById(request.getVenue().getVenueId())
+                        .orElseThrow(() -> new VenueNotFoundException("Venue not found"));
+
+        if (!venue.isActive()) {
+            throw new VenueIsNotActiveException("You cannot update event in an inactive venue.");
+        }
+
+        event.setVenue(venue);
         event.setName(request.getName());
         event.setDescription(request.getDescription());
         event.setDate(request.getDate());
@@ -130,8 +136,12 @@ public class EventService {
         EventModel deactivateEvent = eventRepository.findById(eventId)
                 .orElseThrow(() -> new EventNotFoundException("Event not found."));
 
+        if (deactivateEvent.getStatus() == EventStatusEnum.FINISHED) {
+            throw new IllegalEventStateException("You cannot cancel a FINISHED event.");
+        }
+
         if (deactivateEvent.getStatus() == EventStatusEnum.CANCELLED) {
-            throw new IllegalEventStateException("You cannot cancel a CANCELLED event.");
+            throw new IllegalEventStateException("This event is already cancelled.");
         }
 
         deactivateEvent.setStatus(EventStatusEnum.CANCELLED);
