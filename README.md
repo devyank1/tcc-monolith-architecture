@@ -2,7 +2,7 @@
 
 > Trabalho de Conclusão de Curso - Engenharia de Software
 > Fase 1 de 2: Arquitetura Monolítica em Camadas
-> Próxima fase: migração para microsserviços ([EventGlobal](#))
+> Próxima fase: migração para microsserviços ([BRTickets II](#))
 
 ## Sobre o projeto
 
