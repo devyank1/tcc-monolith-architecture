@@ -134,7 +134,7 @@ public class EventResponseDTO {
 
         dto.setEventId(event.getEventId());
         dto.setVenue(event.getVenue());
-        dto.setUser(event.getUser());
+        dto.setUser(event.getCreatedBy());
         dto.setName(event.getName());
         dto.setDescription(event.getDescription());
         dto.setDate(event.getDate());
