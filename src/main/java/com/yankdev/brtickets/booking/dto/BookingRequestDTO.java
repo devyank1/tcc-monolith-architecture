@@ -1,45 +1,20 @@
-package com.yankdev.brtickets.booking.model;
+package com.yankdev.brtickets.booking.dto;
 
 import com.yankdev.brtickets.booking.model.enums.BookingStatusEnum;
 import com.yankdev.brtickets.payment.model.enums.PaymentMethodEnum;
 import com.yankdev.brtickets.user.model.UserModel;
-import jakarta.persistence.*;
-import org.hibernate.annotations.UuidGenerator;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-import java.util.UUID;
 
-@Entity
-@Table(name = "bookings")
-public class BookingModel {
-
-    @Id
-    @UuidGenerator
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "bookingId")
-    private UUID bookingId;
-    @JoinColumn(name = "userId")
-    @ManyToOne(fetch = FetchType.LAZY)
+public class BookingRequestDTO {
     private UserModel user;
-    @Enumerated(EnumType.STRING)
     private BookingStatusEnum status;
     private BigDecimal totalAmount;
-    @Enumerated(EnumType.STRING)
     private PaymentMethodEnum paymentMethod;
-    // transaction ID
-    // receipt code
     private LocalDateTime createdAt;
     private LocalDateTime confirmedAt;
     private LocalDateTime cancelledAt;
-
-    public UUID getBookingId() {
-        return bookingId;
-    }
-
-    public void setBookingId(UUID bookingId) {
-        this.bookingId = bookingId;
-    }
 
     public UserModel getUser() {
         return user;

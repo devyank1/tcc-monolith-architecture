@@ -6,7 +6,6 @@ import com.yankdev.brtickets.ticket.dto.TicketResponseDTO;
 import com.yankdev.brtickets.ticket.model.TicketModel;
 import com.yankdev.brtickets.ticket.model.enums.TicketStatusEnum;
 import com.yankdev.brtickets.ticket.repository.TicketRepository;
-import com.yankdev.brtickets.user.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -18,7 +17,7 @@ public class TicketService {
 
     private final TicketRepository ticketRepository;
 
-    public TicketService(TicketRepository ticketRepository, UserRepository userRepository) {
+    public TicketService(TicketRepository ticketRepository) {
         this.ticketRepository = ticketRepository;
     }
 
@@ -52,7 +51,7 @@ public class TicketService {
 
     public List<TicketResponseDTO> findAllTicketsByEvent(UUID eventId) {
 
-        List<TicketModel> allTickets = ticketRepository.allTicketsByEvent(eventId);
+        List<TicketModel> allTickets = ticketRepository.findAllByEvent_EventId(eventId);
 
         return allTickets.stream()
                 .map(TicketResponseDTO::from)
@@ -67,12 +66,10 @@ public class TicketService {
         ticket.setSector(request.getSector());
         ticket.setRow(request.getRow());
         ticket.setSeat(request.getSeat());
-        ticket.setStatus(request.getStatus());
-        ticket.setCreatedAt(request.getCreatedAt());
         ticket.setUpdatedAt(LocalDateTime.now());
 
-        TicketModel newTicket = ticketRepository.save(ticket);
-        return TicketResponseDTO.from(newTicket);
+        TicketModel updatedTicket = ticketRepository.save(ticket);
+        return TicketResponseDTO.from(updatedTicket);
 
     }
 

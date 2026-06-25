@@ -1,34 +1,21 @@
-package com.yankdev.brtickets.booking.model;
+package com.yankdev.brtickets.booking.dto;
 
+import com.yankdev.brtickets.booking.model.BookingModel;
 import com.yankdev.brtickets.booking.model.enums.BookingStatusEnum;
 import com.yankdev.brtickets.payment.model.enums.PaymentMethodEnum;
 import com.yankdev.brtickets.user.model.UserModel;
-import jakarta.persistence.*;
-import org.hibernate.annotations.UuidGenerator;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-@Entity
-@Table(name = "bookings")
-public class BookingModel {
+public class BookingResponseDTO {
 
-    @Id
-    @UuidGenerator
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "bookingId")
     private UUID bookingId;
-    @JoinColumn(name = "userId")
-    @ManyToOne(fetch = FetchType.LAZY)
     private UserModel user;
-    @Enumerated(EnumType.STRING)
     private BookingStatusEnum status;
     private BigDecimal totalAmount;
-    @Enumerated(EnumType.STRING)
     private PaymentMethodEnum paymentMethod;
-    // transaction ID
-    // receipt code
     private LocalDateTime createdAt;
     private LocalDateTime confirmedAt;
     private LocalDateTime cancelledAt;
@@ -95,5 +82,20 @@ public class BookingModel {
 
     public void setCancelledAt(LocalDateTime cancelledAt) {
         this.cancelledAt = cancelledAt;
+    }
+
+    public static BookingResponseDTO from(BookingModel booking) {
+        BookingResponseDTO dto = new BookingResponseDTO();
+
+        booking.setBookingId(dto.getBookingId());
+        booking.setUser(dto.getUser());
+        booking.setStatus(dto.getStatus());
+        booking.setTotalAmount(dto.getTotalAmount());
+        booking.setPaymentMethod(dto.getPaymentMethod());
+        booking.setCreatedAt(dto.getCreatedAt());
+        booking.setConfirmedAt(dto.getConfirmedAt());
+        booking.setCancelledAt(dto.getCancelledAt());
+
+        return dto;
     }
 }

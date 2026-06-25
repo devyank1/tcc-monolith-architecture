@@ -1,7 +1,5 @@
 package com.yankdev.brtickets.venue.dto;
 
-import com.yankdev.brtickets.user.dto.UserResponseDTO;
-import com.yankdev.brtickets.user.model.UserModel;
 import com.yankdev.brtickets.venue.model.SeatMapVenue;
 import com.yankdev.brtickets.venue.model.VenueModel;
 import com.yankdev.brtickets.venue.model.enums.VenueEnum;

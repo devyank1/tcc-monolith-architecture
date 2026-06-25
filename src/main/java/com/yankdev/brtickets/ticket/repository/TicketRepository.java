@@ -9,5 +9,5 @@ import java.util.UUID;
 
 @Repository
 public interface TicketRepository extends JpaRepository<TicketModel, UUID> {
-    List<TicketModel> allTicketsByEvent(UUID eventId);
+    List<TicketModel> findAllByEvent_EventId(UUID eventId);
 }
