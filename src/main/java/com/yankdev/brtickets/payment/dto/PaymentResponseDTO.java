@@ -1,61 +1,28 @@
-package com.yankdev.brtickets.payment.model;
+package com.yankdev.brtickets.payment.dto;
 
 import com.yankdev.brtickets.booking.model.BookingModel;
+import com.yankdev.brtickets.payment.model.PaymentModel;
 import com.yankdev.brtickets.payment.model.enums.PaymentMethodEnum;
 import com.yankdev.brtickets.payment.model.enums.PaymentStatusEnum;
-import jakarta.persistence.*;
-import org.hibernate.annotations.UuidGenerator;
 
 import java.math.BigDecimal;
-import java.time.Clock;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-@Entity
-@Table(name = "payments")
-public class PaymentModel {
-
-    @Id
-    @GeneratedValue
-    @UuidGenerator
+public class PaymentResponseDTO {
     private UUID id;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "booking_id", nullable = false)
     private BookingModel booking;
-
-    @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
     private PaymentMethodEnum method;
-
-    @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
     private PaymentStatusEnum status;
-
-    @Column(nullable = false, precision = 10, scale = 2)
     private BigDecimal amount;
-
     private String cardLastFourDigits;
-    private String cardBrand;
     private Integer installments;
-
-    private String pixKey;
-    private String pixQrCode;
     private LocalDateTime pixExpiresAt;
-
     private String gatewayTransactionId;
     private String gatewayResponse;
-
-    @Column(nullable = false, updatable = false)
     private LocalDateTime createdAt;
-
     private LocalDateTime paidAt;
     private LocalDateTime refundedAt;
-
-    @PrePersist
-    protected void onCreate() {
-        createdAt = LocalDateTime.now(Clock.systemDefaultZone());
-    }
 
     public UUID getId() {
         return id;
@@ -105,36 +72,12 @@ public class PaymentModel {
         this.cardLastFourDigits = cardLastFourDigits;
     }
 
-    public String getCardBrand() {
-        return cardBrand;
-    }
-
-    public void setCardBrand(String cardBrand) {
-        this.cardBrand = cardBrand;
-    }
-
     public Integer getInstallments() {
         return installments;
     }
 
     public void setInstallments(Integer installments) {
         this.installments = installments;
-    }
-
-    public String getPixKey() {
-        return pixKey;
-    }
-
-    public void setPixKey(String pixKey) {
-        this.pixKey = pixKey;
-    }
-
-    public String getPixQrCode() {
-        return pixQrCode;
-    }
-
-    public void setPixQrCode(String pixQrCode) {
-        this.pixQrCode = pixQrCode;
     }
 
     public LocalDateTime getPixExpiresAt() {
@@ -184,5 +127,25 @@ public class PaymentModel {
     public void setRefundedAt(LocalDateTime refundedAt) {
         this.refundedAt = refundedAt;
     }
-}
 
+    public static PaymentResponseDTO from(PaymentModel model) {
+
+        PaymentResponseDTO dto = new PaymentResponseDTO();
+
+        dto.setId(model.getId());
+        dto.setBooking(model.getBooking());
+        dto.setMethod(model.getMethod());
+        dto.setStatus(model.getStatus());
+        dto.setAmount(model.getAmount());
+        dto.setCardLastFourDigits(model.getCardLastFourDigits());
+        dto.setInstallments(model.getInstallments());
+        dto.setPixExpiresAt(model.getPixExpiresAt());
+        dto.setGatewayResponse(model.getGatewayResponse());
+        dto.setGatewayTransactionId(model.getGatewayTransactionId());
+        dto.setCreatedAt(model.getCreatedAt());
+        dto.setPaidAt(model.getPaidAt());
+        dto.setRefundedAt(model.getRefundedAt());
+
+        return dto;
+    }
+}
