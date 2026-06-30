@@ -20,7 +20,6 @@ public class VenueController {
         this.venueService = venueService;
     }
 
-    //find all active venues, update, deactivate
     @PostMapping()
     public ResponseEntity<VenueResponseDTO> createVenue(@RequestBody VenueRequestDTO request) {
 
