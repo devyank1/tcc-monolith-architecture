@@ -6,12 +6,10 @@ import com.yankdev.brtickets.event.model.EventModel;
 import com.yankdev.brtickets.event.model.enums.EventStatusEnum;
 import com.yankdev.brtickets.event.model.enums.EventTypeEnum;
 import com.yankdev.brtickets.event.repository.EventRepository;
-import com.yankdev.brtickets.shared.exception.EventNotFoundException;
-import com.yankdev.brtickets.shared.exception.IllegalEventStateException;
-import com.yankdev.brtickets.shared.exception.VenueIsNotActiveException;
-import com.yankdev.brtickets.shared.exception.VenueNotFoundException;
+import com.yankdev.brtickets.shared.exception.*;
 import com.yankdev.brtickets.user.model.UserModel;
 
+import com.yankdev.brtickets.user.repository.UserRepository;
 import com.yankdev.brtickets.venue.model.VenueModel;
 import com.yankdev.brtickets.venue.repository.VenueRepository;
 import org.springframework.stereotype.Service;
@@ -25,13 +23,15 @@ public class EventService {
 
     private final VenueRepository venueRepository;
     private final EventRepository eventRepository;
+    private final UserRepository userRepository;
 
-    public EventService(VenueRepository venueRepository, EventRepository eventRepository) {
+    public EventService(VenueRepository venueRepository, EventRepository eventRepository, UserRepository userRepository) {
         this.venueRepository = venueRepository;
         this.eventRepository = eventRepository;
+        this.userRepository = userRepository;
     }
 
-    public EventResponseDTO createEvent(EventRequestDTO request, UserModel adminLogged) {
+    public EventResponseDTO createEvent(EventRequestDTO request, UUID adminId) {
 
         VenueModel venue = venueRepository.findById(request.getVenue().getVenueId())
                 .orElseThrow(() -> new VenueNotFoundException("Venue not found."));
@@ -40,9 +40,12 @@ public class EventService {
             throw new VenueIsNotActiveException("You cannot create event in an inactive venue.");
         }
 
+        UserModel user = userRepository.findById(adminId)
+                .orElseThrow(() -> new UserNotFoundException("User not found"));
+
         EventModel event = new EventModel();
         event.setVenue(venue);
-        event.setCreatedBy(adminLogged);
+        event.setCreatedBy(user);
         event.setName(request.getName());
         event.setDescription(request.getDescription());
         event.setDate(request.getDate());
