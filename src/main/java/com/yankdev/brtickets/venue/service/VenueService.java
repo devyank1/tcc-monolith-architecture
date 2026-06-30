@@ -46,7 +46,7 @@ public class VenueService {
 
     }
 
-    public VenueResponseDTO findVenuesById(UUID venueId) {
+    public VenueResponseDTO findVenueById(UUID venueId) {
 
         VenueModel venue = venueRepository.findById(venueId)
                 .orElseThrow(() -> new VenueNotFoundException("Venue not found."));
