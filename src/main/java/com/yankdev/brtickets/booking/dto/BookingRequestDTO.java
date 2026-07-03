@@ -6,6 +6,8 @@ import com.yankdev.brtickets.user.model.UserModel;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.List;
+import java.util.UUID;
 
 public class BookingRequestDTO {
     private UserModel user;
@@ -15,6 +17,7 @@ public class BookingRequestDTO {
     private LocalDateTime createdAt;
     private LocalDateTime confirmedAt;
     private LocalDateTime cancelledAt;
+    List<UUID> ticketsId;
 
     public UserModel getUser() {
         return user;
@@ -70,5 +73,13 @@ public class BookingRequestDTO {
 
     public void setCancelledAt(LocalDateTime cancelledAt) {
         this.cancelledAt = cancelledAt;
+    }
+
+    public List<UUID> getTicketsId() {
+        return ticketsId;
+    }
+
+    public void setTicketsId(List<UUID> ticketsId) {
+        this.ticketsId = ticketsId;
     }
 }

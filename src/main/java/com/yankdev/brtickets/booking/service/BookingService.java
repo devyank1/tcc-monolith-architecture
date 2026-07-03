@@ -40,15 +40,15 @@ public class BookingService {
         this.bookingItemRepository = bookingItemRepository;
     }
 
-    public BookingResponseDTO createBooking(UUID userId, List<UUID> ticketIds, BookingRequestDTO request) {
+    public BookingResponseDTO createBooking(UUID userId, BookingRequestDTO request) {
 
         UserModel user  = userRepository.findById(userId)
                 .orElseThrow(() -> new UserNotFoundException("User not found on this booking."));
 
-        List<TicketModel> tickets = ticketRepository.findAllById(ticketIds);
+        List<TicketModel> tickets = ticketRepository.findAllById(request.getTicketsId());
 
-        if (tickets.size() != ticketIds.size()) {
-            throw new IllegalTicketOnBookingException("One or more tickets not found.");
+        if (tickets.size() != request.getTicketsId().size()) {
+            throw new IllegalTicketOnBookingException("One or more tickets are wrong");
         }
 
         boolean hasUnavailable = tickets.stream()
