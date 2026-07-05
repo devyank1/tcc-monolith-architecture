@@ -4,8 +4,6 @@ import com.yankdev.brtickets.event.dto.EventRequestDTO;
 import com.yankdev.brtickets.event.dto.EventResponseDTO;
 import com.yankdev.brtickets.event.model.enums.EventTypeEnum;
 import com.yankdev.brtickets.event.service.EventService;
-import com.yankdev.brtickets.user.model.UserModel;
-import com.yankdev.brtickets.user.service.UserService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

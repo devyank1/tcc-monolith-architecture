@@ -10,5 +10,4 @@ import java.util.UUID;
 @Repository
 public interface VenueRepository extends JpaRepository<VenueModel, UUID> {
     List<VenueModel> findAllByCityAndIsActiveTrue(String city);
-    boolean venueIsActive(boolean active);
 }

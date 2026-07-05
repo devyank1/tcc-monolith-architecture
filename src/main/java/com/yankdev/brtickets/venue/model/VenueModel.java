@@ -1,6 +1,5 @@
 package com.yankdev.brtickets.venue.model;
 
-import com.yankdev.brtickets.venue.model.converter.SeatMapConverter;
 import com.yankdev.brtickets.venue.model.enums.VenueEnum;
 import jakarta.persistence.*;
 import org.hibernate.annotations.UuidGenerator;
@@ -34,9 +33,6 @@ public class VenueModel {
     @Column(nullable = false)
     private Integer capacity;
     private boolean isActive;
-    @Convert(converter = SeatMapConverter.class)
-    @Column(columnDefinition = "TEXT")
-    private SeatMapVenue seatMap;
 
     public UUID getVenueId() {
         return venueId;
@@ -140,13 +136,5 @@ public class VenueModel {
 
     public void setActive(boolean active) {
         isActive = active;
-    }
-
-    public SeatMapVenue getSeatMap() {
-        return seatMap;
-    }
-
-    public void setSeatMap(SeatMapVenue seatMap) {
-        this.seatMap = seatMap;
     }
 }

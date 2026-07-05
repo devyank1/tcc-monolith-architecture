@@ -1,6 +1,5 @@
 package com.yankdev.brtickets.venue.dto;
 
-import com.yankdev.brtickets.venue.model.SeatMapVenue;
 import com.yankdev.brtickets.venue.model.enums.VenueEnum;
 
 public class VenueRequestDTO {
@@ -13,7 +12,6 @@ public class VenueRequestDTO {
     private String zipCode;
     private String country;
     private boolean isActive;
-    private SeatMapVenue seatMap;
     private Integer capacity;
 
     public String getName() {
@@ -86,14 +84,6 @@ public class VenueRequestDTO {
 
     public void setActive(boolean active) {
         isActive = active;
-    }
-
-    public SeatMapVenue getSeatMap() {
-        return seatMap;
-    }
-
-    public void setSeatMap(SeatMapVenue seatMap) {
-        this.seatMap = seatMap;
     }
 
     public Integer getCapacity() {

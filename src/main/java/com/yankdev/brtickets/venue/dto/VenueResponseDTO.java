@@ -1,6 +1,5 @@
 package com.yankdev.brtickets.venue.dto;
 
-import com.yankdev.brtickets.venue.model.SeatMapVenue;
 import com.yankdev.brtickets.venue.model.VenueModel;
 import com.yankdev.brtickets.venue.model.enums.VenueEnum;
 
@@ -18,7 +17,6 @@ public class VenueResponseDTO {
     private String country;
     private Integer capacity;
     private boolean isActive;
-    private SeatMapVenue seatMap;
 
     public UUID getVenueId() {
         return venueId;
@@ -108,14 +106,6 @@ public class VenueResponseDTO {
         isActive = active;
     }
 
-    public SeatMapVenue getSeatMap() {
-        return seatMap;
-    }
-
-    public void setSeatMap(SeatMapVenue seatMap) {
-        this.seatMap = seatMap;
-    }
-
     public static VenueResponseDTO from(VenueModel model) {
         VenueResponseDTO dto = new VenueResponseDTO();
 
@@ -130,7 +120,6 @@ public class VenueResponseDTO {
         dto.setCountry(model.getCountry());
         dto.setCapacity(model.getCapacity());
         dto.setActive(model.isActive());
-        dto.setSeatMap(model.getSeatMap());
 
         return dto;
     }

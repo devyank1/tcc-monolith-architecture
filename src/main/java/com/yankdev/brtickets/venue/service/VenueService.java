@@ -37,7 +37,6 @@ public class VenueService {
         venue.setZipCode(request.getZipCode());
         venue.setCountry(request.getCountry());
         venue.setActive(request.isActive());
-        venue.setSeatMap(request.getSeatMap());
         venue.setCapacity(request.getCapacity());
 
         VenueModel newVenue = venueRepository.save(venue);
@@ -77,7 +76,6 @@ public class VenueService {
         venue.setZipCode(request.getZipCode());
         venue.setCountry(request.getCountry());
         venue.setActive(request.isActive());
-        venue.setSeatMap(request.getSeatMap());
         venue.setCapacity(request.getCapacity());
 
         VenueModel updatedVenue = venueRepository.save(venue);

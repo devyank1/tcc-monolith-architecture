@@ -9,9 +9,11 @@ import com.yankdev.brtickets.user.dto.UserResponseDTO;
 import com.yankdev.brtickets.user.model.UserModel;
 import com.yankdev.brtickets.user.model.enums.UserRole;
 import com.yankdev.brtickets.user.repository.UserRepository;
+import org.springframework.data.util.TypeCollector;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -53,7 +55,6 @@ public class UserService {
 
     }
 
-    // TODO: trocar para LoginResponseDTO com token JWT quando JwtTokenProvider estiver pronto
     public UserResponseDTO login(UserRequestDTO request) {
 
         UserModel user = userRepository.findByEmail(request.getEmail())
@@ -72,6 +73,14 @@ public class UserService {
                 .orElseThrow(() -> new UserNotFoundException("User not found."));
 
         return UserResponseDTO.from(user);
+    }
+
+    public List<UserResponseDTO> findAllUsers() {
+
+        List<UserModel> user = userRepository.findAll();
+        return user.stream()
+                .map(UserResponseDTO::from)
+                .toList();
     }
 
     public UserResponseDTO updateUser(UUID userId, UserRequestDTO request) {
