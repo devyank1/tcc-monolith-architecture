@@ -1,6 +1,7 @@
 package com.yankdev.brtickets.venue.service;
 
 import com.yankdev.brtickets.shared.exception.IllegalVenueCapacityException;
+import com.yankdev.brtickets.shared.exception.IllegalVenueInactiveException;
 import com.yankdev.brtickets.shared.exception.VenueNotFoundException;
 import com.yankdev.brtickets.venue.dto.VenueRequestDTO;
 import com.yankdev.brtickets.venue.dto.VenueResponseDTO;
@@ -36,7 +37,7 @@ public class VenueService {
         venue.setState(request.getState());
         venue.setZipCode(request.getZipCode());
         venue.setCountry(request.getCountry());
-        venue.setActive(request.isActive());
+        venue.setActive(true);
         venue.setCapacity(request.getCapacity());
 
         VenueModel newVenue = venueRepository.save(venue);
@@ -55,7 +56,7 @@ public class VenueService {
 
     public List<VenueResponseDTO> findAllActiveVenues(String city) {
 
-        List<VenueModel> venues = venueRepository.findAllByCityAndIsActiveTrue(city);
+        List<VenueModel> venues = venueRepository.findAllByCityIgnoreCaseAndIsActiveTrue(city);
 
         return venues.stream()
                 .map(VenueResponseDTO::from)
@@ -67,16 +68,20 @@ public class VenueService {
         VenueModel venue = venueRepository.findById(venueId)
                 .orElseThrow(() -> new VenueNotFoundException("Venue not found."));
 
-        venue.setName(request.getName());
-        venue.setDescription(request.getDescription());
-        venue.setType(request.getType());
-        venue.setStreet(request.getStreet());
-        venue.setCity(request.getCity());
-        venue.setState(request.getState());
-        venue.setZipCode(request.getZipCode());
-        venue.setCountry(request.getCountry());
-        venue.setActive(request.isActive());
-        venue.setCapacity(request.getCapacity());
+        if (venue.isActive() != true) {
+            throw new IllegalVenueInactiveException("You cannot update an UNACTIVE venue");
+        }
+
+        if (request.getName() != null) venue.setName(request.getName());
+        if (request.getDescription() != null) venue.setDescription(request.getDescription());
+        if (request.getType() != null) venue.setType(request.getType());
+        if (request.getStreet() != null) venue.setStreet(request.getStreet());
+        if (request.getCity() != null) venue.setCity(request.getCity());
+        if (request.getState() != null) venue.setState(request.getState());
+        if (request.getZipCode() != null) venue.setZipCode(request.getZipCode());
+        if (request.getCountry() != null) venue.setCountry(request.getCountry());
+        if (request.getCapacity() != null) venue.setCapacity(request.getCapacity());
+        venue.setActive(true);
 
         VenueModel updatedVenue = venueRepository.save(venue);
 

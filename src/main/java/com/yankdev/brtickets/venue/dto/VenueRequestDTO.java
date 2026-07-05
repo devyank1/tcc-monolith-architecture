@@ -11,7 +11,7 @@ public class VenueRequestDTO {
     private String state;
     private String zipCode;
     private String country;
-    private boolean isActive;
+    private Boolean isActive;
     private Integer capacity;
 
     public String getName() {
@@ -78,11 +78,11 @@ public class VenueRequestDTO {
         this.country = country;
     }
 
-    public boolean isActive() {
+    public Boolean isActive() {
         return isActive;
     }
 
-    public void setActive(boolean active) {
+    public void setActive(Boolean active) {
         isActive = active;
     }
 

@@ -16,7 +16,7 @@ public class VenueResponseDTO {
     private String zipCode;
     private String country;
     private Integer capacity;
-    private boolean isActive;
+    private Boolean isActive;
 
     public UUID getVenueId() {
         return venueId;
@@ -98,11 +98,11 @@ public class VenueResponseDTO {
         this.capacity = capacity;
     }
 
-    public boolean isActive() {
+    public Boolean isActive() {
         return isActive;
     }
 
-    public void setActive(boolean active) {
+    public void setActive(Boolean active) {
         isActive = active;
     }
 

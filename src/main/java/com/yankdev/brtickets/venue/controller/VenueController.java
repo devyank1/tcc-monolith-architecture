@@ -41,7 +41,7 @@ public class VenueController {
         return ResponseEntity.ok(venues);
     }
 
-    @PutMapping("/{venueId}")
+    @PatchMapping("/{venueId}")
     public ResponseEntity<VenueResponseDTO> updateVenue(@PathVariable UUID venueId, @RequestBody VenueRequestDTO request) {
 
         VenueResponseDTO venue = venueService.updateVenue(venueId, request);
