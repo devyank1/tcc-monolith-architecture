@@ -1,14 +1,14 @@
 package com.yankdev.brtickets.payment.dto;
 
-import com.yankdev.brtickets.booking.model.BookingModel;
 import com.yankdev.brtickets.payment.model.enums.PaymentMethodEnum;
 import com.yankdev.brtickets.payment.model.enums.PaymentStatusEnum;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 public class PaymentRequestDTO {
-    private BookingModel booking;
+    private UUID bookingId;
     private PaymentMethodEnum method;
     private PaymentStatusEnum status;
     private BigDecimal amount;
@@ -17,13 +17,17 @@ public class PaymentRequestDTO {
     private LocalDateTime createdAt;
     private LocalDateTime paidAt;
     private LocalDateTime refundedAt;
+    private String cardBrand;
+    private Integer installments;
+    private String cardLastFourDigits;
 
-    public BookingModel getBooking() {
-        return booking;
+
+    public UUID getBookingId() {
+        return bookingId;
     }
 
-    public void setBooking(BookingModel booking) {
-        this.booking = booking;
+    public void setBookingId(UUID bookingId) {
+        this.bookingId = bookingId;
     }
 
     public PaymentMethodEnum getMethod() {
@@ -88,5 +92,29 @@ public class PaymentRequestDTO {
 
     public void setRefundedAt(LocalDateTime refundedAt) {
         this.refundedAt = refundedAt;
+    }
+
+    public String getCardBrand() {
+        return cardBrand;
+    }
+
+    public void setCardBrand(String cardBrand) {
+        this.cardBrand = cardBrand;
+    }
+
+    public Integer getInstallments() {
+        return installments;
+    }
+
+    public void setInstallments(Integer installments) {
+        this.installments = installments;
+    }
+
+    public String getCardLastFourDigits() {
+        return cardLastFourDigits;
+    }
+
+    public void setCardLastFourDigits(String cardLastFourDigits) {
+        this.cardLastFourDigits = cardLastFourDigits;
     }
 }

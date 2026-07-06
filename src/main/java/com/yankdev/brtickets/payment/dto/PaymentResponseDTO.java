@@ -11,7 +11,7 @@ import java.util.UUID;
 
 public class PaymentResponseDTO {
     private UUID id;
-    private BookingModel booking;
+    private UUID bookingId;
     private PaymentMethodEnum method;
     private PaymentStatusEnum status;
     private BigDecimal amount;
@@ -32,12 +32,12 @@ public class PaymentResponseDTO {
         this.id = id;
     }
 
-    public BookingModel getBooking() {
-        return booking;
+    public UUID getBookingId() {
+        return bookingId;
     }
 
-    public void setBooking(BookingModel booking) {
-        this.booking = booking;
+    public void setBookingId(UUID bookingId) {
+        this.bookingId = bookingId;
     }
 
     public PaymentMethodEnum getMethod() {
@@ -133,7 +133,7 @@ public class PaymentResponseDTO {
         PaymentResponseDTO dto = new PaymentResponseDTO();
 
         dto.setId(model.getId());
-        dto.setBooking(model.getBooking());
+        dto.setBookingId(model.getBooking().getBookingId());
         dto.setMethod(model.getMethod());
         dto.setStatus(model.getStatus());
         dto.setAmount(model.getAmount());

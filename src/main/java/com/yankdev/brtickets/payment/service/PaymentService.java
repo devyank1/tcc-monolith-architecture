@@ -5,6 +5,7 @@ import com.yankdev.brtickets.booking.repository.BookingRepository;
 import com.yankdev.brtickets.payment.dto.PaymentRequestDTO;
 import com.yankdev.brtickets.payment.dto.PaymentResponseDTO;
 import com.yankdev.brtickets.payment.model.PaymentModel;
+import com.yankdev.brtickets.payment.model.enums.PaymentMethodEnum;
 import com.yankdev.brtickets.payment.model.enums.PaymentStatusEnum;
 import com.yankdev.brtickets.payment.repository.PaymentRepository;
 import com.yankdev.brtickets.shared.exception.BookingNotFoundException;
@@ -36,9 +37,26 @@ public class PaymentService {
         payment.setBooking(booking);
         payment.setMethod(request.getMethod());
         payment.setStatus(PaymentStatusEnum.PENDING);
-        payment.setAmount(booking.getTotalAmount());
         payment.setGatewayTransactionId(request.getGatewayTransactionId());
         payment.setGatewayResponse(request.getGatewayResponse());
+        payment.setPaidAt(LocalDateTime.now());
+
+        if (PaymentMethodEnum.PIX == request.getMethod()) {
+            payment.setPixExpiresAt(LocalDateTime.now().plusMinutes(10));
+            payment.setPixQrCode(UUID.randomUUID().toString());
+            payment.setPixKey("brtickets@business.com");
+        }
+
+        if (PaymentMethodEnum.CREDIT_CARD == request.getMethod()) {
+            payment.setCardBrand(request.getCardBrand());
+            payment.setInstallments(request.getInstallments());
+            payment.setCardLastFourDigits(request.getCardLastFourDigits());
+        }
+
+        if (PaymentMethodEnum.DEBIT_CARD == request.getMethod()) {
+            payment.setCardBrand(request.getCardBrand());
+            payment.setCardLastFourDigits(request.getCardLastFourDigits());
+        }
 
         PaymentModel newPayment = paymentRepository.save(payment);
 
