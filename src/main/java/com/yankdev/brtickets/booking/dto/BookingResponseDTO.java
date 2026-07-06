@@ -3,7 +3,6 @@ package com.yankdev.brtickets.booking.dto;
 import com.yankdev.brtickets.booking.model.BookingModel;
 import com.yankdev.brtickets.booking.model.enums.BookingStatusEnum;
 import com.yankdev.brtickets.payment.model.enums.PaymentMethodEnum;
-import com.yankdev.brtickets.user.model.UserModel;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -12,7 +11,7 @@ import java.util.UUID;
 public class BookingResponseDTO {
 
     private UUID bookingId;
-    private UserModel user;
+    private UUID userId;
     private BookingStatusEnum status;
     private BigDecimal totalAmount;
     private PaymentMethodEnum paymentMethod;
@@ -28,12 +27,12 @@ public class BookingResponseDTO {
         this.bookingId = bookingId;
     }
 
-    public UserModel getUser() {
-        return user;
+    public UUID getUserId() {
+        return userId;
     }
 
-    public void setUser(UserModel user) {
-        this.user = user;
+    public void setUserId(UUID userId) {
+        this.userId = userId;
     }
 
     public BookingStatusEnum getStatus() {
@@ -87,14 +86,14 @@ public class BookingResponseDTO {
     public static BookingResponseDTO from(BookingModel booking) {
         BookingResponseDTO dto = new BookingResponseDTO();
 
-        booking.setBookingId(dto.getBookingId());
-        booking.setUser(dto.getUser());
-        booking.setStatus(dto.getStatus());
-        booking.setTotalAmount(dto.getTotalAmount());
-        booking.setPaymentMethod(dto.getPaymentMethod());
-        booking.setCreatedAt(dto.getCreatedAt());
-        booking.setConfirmedAt(dto.getConfirmedAt());
-        booking.setCancelledAt(dto.getCancelledAt());
+        dto.setBookingId(booking.getBookingId());
+        dto.setUserId(booking.getUserId());
+        dto.setStatus(booking.getStatus());
+        dto.setTotalAmount(booking.getTotalAmount());
+        dto.setPaymentMethod(booking.getPaymentMethod());
+        dto.setCreatedAt(booking.getCreatedAt());
+        dto.setConfirmedAt(booking.getConfirmedAt());
+        dto.setCancelledAt(booking.getCancelledAt());
 
         return dto;
     }

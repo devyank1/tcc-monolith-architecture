@@ -2,7 +2,6 @@ package com.yankdev.brtickets.booking.model;
 
 import com.yankdev.brtickets.booking.model.enums.BookingStatusEnum;
 import com.yankdev.brtickets.payment.model.enums.PaymentMethodEnum;
-import com.yankdev.brtickets.user.model.UserModel;
 import jakarta.persistence.*;
 import org.hibernate.annotations.UuidGenerator;
 
@@ -19,9 +18,8 @@ public class BookingModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "bookingId")
     private UUID bookingId;
-    @JoinColumn(name = "userId")
-    @ManyToOne(fetch = FetchType.LAZY)
-    private UserModel user;
+    @Column(name = "userId")
+    private UUID userId;
     @Enumerated(EnumType.STRING)
     private BookingStatusEnum status;
     private BigDecimal totalAmount;
@@ -41,12 +39,12 @@ public class BookingModel {
         this.bookingId = bookingId;
     }
 
-    public UserModel getUser() {
-        return user;
+    public UUID getUserId() {
+        return userId;
     }
 
-    public void setUser(UserModel user) {
-        this.user = user;
+    public void setUserId(UUID userId) {
+        this.userId = userId;
     }
 
     public BookingStatusEnum getStatus() {

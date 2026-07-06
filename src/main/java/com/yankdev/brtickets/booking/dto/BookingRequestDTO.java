@@ -10,7 +10,6 @@ import java.util.List;
 import java.util.UUID;
 
 public class BookingRequestDTO {
-    private UserModel user;
     private BookingStatusEnum status;
     private BigDecimal totalAmount;
     private PaymentMethodEnum paymentMethod;
@@ -18,14 +17,6 @@ public class BookingRequestDTO {
     private LocalDateTime confirmedAt;
     private LocalDateTime cancelledAt;
     List<UUID> ticketsId;
-
-    public UserModel getUser() {
-        return user;
-    }
-
-    public void setUser(UserModel user) {
-        this.user = user;
-    }
 
     public BookingStatusEnum getStatus() {
         return status;

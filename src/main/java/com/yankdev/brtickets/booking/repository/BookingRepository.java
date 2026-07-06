@@ -9,5 +9,5 @@ import java.util.UUID;
 
 @Repository
 public interface BookingRepository extends JpaRepository<BookingModel, UUID> {
-    List<BookingModel> findAllByUser_UserId(UUID userId);
+    List<BookingModel> findAllByUserId(UUID userId);
 }

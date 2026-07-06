@@ -42,8 +42,9 @@ public class BookingService {
 
     public BookingResponseDTO createBooking(UUID userId, BookingRequestDTO request) {
 
-        UserModel user  = userRepository.findById(userId)
-                .orElseThrow(() -> new UserNotFoundException("User not found on this booking."));
+        if (!userRepository.existsById(userId)) {
+            throw new UserNotFoundException("User not found on this booking");
+        }
 
         List<TicketModel> tickets = ticketRepository.findAllById(request.getTicketsId());
 
@@ -63,7 +64,7 @@ public class BookingService {
                 .reduce(BigDecimal.ZERO, BigDecimal::add);
 
         BookingModel booking = new BookingModel();
-        booking.setUser(user);
+        booking.setUserId(userId);
         booking.setStatus(BookingStatusEnum.CONFIRMED);
         booking.setTotalAmount(total);
         booking.setPaymentMethod(request.getPaymentMethod());
@@ -102,7 +103,7 @@ public class BookingService {
 
     public List<BookingResponseDTO> findAllByUser(UUID userId) {
 
-        List<BookingModel> bookings = bookingRepository.findAllByUser_UserId(userId);
+        List<BookingModel> bookings = bookingRepository.findAllByUserId(userId);
 
         return bookings.stream()
                 .map(BookingResponseDTO::from)
