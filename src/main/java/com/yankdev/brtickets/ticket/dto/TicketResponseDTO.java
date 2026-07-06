@@ -115,17 +115,17 @@ public class TicketResponseDTO {
 
         TicketResponseDTO dto = new TicketResponseDTO();
 
-        ticket.setTicketId(dto.getTicketId());
-        ticket.setEvent(dto.getEvent());
-        ticket.setSector(dto.getSector());
-        ticket.setRow(dto.getRow());
-        ticket.setSeat(dto.getSeat());
-        ticket.setPrice(dto.getPrice());
-        ticket.setStatus(dto.getStatus());
-        ticket.setType(dto.getType());
-        ticket.setQrCode(dto.getQrCode());
-        ticket.setCreatedAt(dto.getCreatedAt());
-        ticket.setUpdatedAt(dto.getUpdatedAt());
+        dto.setTicketId(ticket.getTicketId());
+        dto.setEvent(ticket.getEvent());
+        dto.setSector(ticket.getSector());
+        dto.setRow(ticket.getRow());
+        dto.setSeat(ticket.getSeat());
+        dto.setPrice(ticket.getPrice());
+        dto.setStatus(ticket.getStatus());
+        dto.setType(ticket.getType());
+        dto.setQrCode(ticket.getQrCode());
+        dto.setCreatedAt(ticket.getCreatedAt());
+        dto.setUpdatedAt(ticket.getUpdatedAt());
 
         return dto;
     }

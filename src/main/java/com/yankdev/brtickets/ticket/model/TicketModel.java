@@ -20,7 +20,7 @@ public class TicketModel {
     @Column(updatable = false, nullable = false)
     private UUID ticketId;
     @JoinColumn(name = "eventId")
-    @OneToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     private EventModel event;
     @Column(nullable = false)
     private String sector;

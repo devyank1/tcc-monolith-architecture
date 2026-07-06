@@ -41,7 +41,7 @@ public class TicketController {
         return ResponseEntity.ok(tickets);
     }
 
-    @PutMapping("/{ticketId}")
+    @PatchMapping("/{ticketId}")
     public ResponseEntity<TicketResponseDTO> updateTicket(@PathVariable UUID ticketId, @RequestBody TicketRequestDTO request) {
 
         TicketResponseDTO ticket = ticketService.updateTicket(request, ticketId);
@@ -54,5 +54,4 @@ public class TicketController {
         ticketService.deactivateTicket(ticketId);
         return ResponseEntity.noContent().build();
     }
-
 }

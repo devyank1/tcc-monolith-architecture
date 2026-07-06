@@ -1,5 +1,8 @@
 package com.yankdev.brtickets.ticket.service;
 
+import com.yankdev.brtickets.event.model.EventModel;
+import com.yankdev.brtickets.event.repository.EventRepository;
+import com.yankdev.brtickets.shared.exception.EventNotFoundException;
 import com.yankdev.brtickets.shared.exception.TicketNotFoundException;
 import com.yankdev.brtickets.ticket.dto.TicketRequestDTO;
 import com.yankdev.brtickets.ticket.dto.TicketResponseDTO;
@@ -16,16 +19,21 @@ import java.util.UUID;
 public class TicketService {
 
     private final TicketRepository ticketRepository;
+    private final EventRepository eventRepository;
 
-    public TicketService(TicketRepository ticketRepository) {
+    public TicketService(TicketRepository ticketRepository, EventRepository eventRepository) {
         this.ticketRepository = ticketRepository;
+        this.eventRepository = eventRepository;
     }
 
     public TicketResponseDTO createTicket(TicketRequestDTO request) {
 
         TicketModel ticket = new TicketModel();
 
-        ticket.setEvent(request.getEvent());
+        EventModel event = eventRepository.findById(request.getEventId())
+                .orElseThrow(() -> new EventNotFoundException("Event not found."));
+        ticket.setEvent(event);
+
         ticket.setSector(request.getSector());
         ticket.setRow(request.getRow());
         ticket.setSeat(request.getSeat());
@@ -63,10 +71,10 @@ public class TicketService {
         TicketModel ticket  = ticketRepository.findById(ticketId)
                 .orElseThrow(() -> new TicketNotFoundException("Ticket not found."));
 
-        ticket.setSector(request.getSector());
-        ticket.setRow(request.getRow());
-        ticket.setSeat(request.getSeat());
-        ticket.setUpdatedAt(LocalDateTime.now());
+        if (request.getSector() != null) ticket.setSector(request.getSector());
+        if (request.getRow() != null) ticket.setRow(request.getRow());
+        if (request.getSeat() != null) ticket.setSeat(request.getSeat());
+        if (request.getUpdatedAt() != null) ticket.setUpdatedAt(LocalDateTime.now());
 
         TicketModel updatedTicket = ticketRepository.save(ticket);
         return TicketResponseDTO.from(updatedTicket);

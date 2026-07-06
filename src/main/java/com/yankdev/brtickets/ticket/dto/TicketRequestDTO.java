@@ -1,14 +1,14 @@
 package com.yankdev.brtickets.ticket.dto;
 
-import com.yankdev.brtickets.event.model.EventModel;
 import com.yankdev.brtickets.ticket.model.enums.TicketStatusEnum;
 import com.yankdev.brtickets.ticket.model.enums.TicketTypeEnum;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 public class TicketRequestDTO {
-    private EventModel event;
+    private UUID eventId;
     private String sector;
     private String row;
     private String seat;
@@ -19,12 +19,12 @@ public class TicketRequestDTO {
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
-    public EventModel getEvent() {
-        return event;
+    public UUID getEventId() {
+        return eventId;
     }
 
-    public void setEvent(EventModel event) {
-        this.event = event;
+    public void setEventId(UUID eventId) {
+        this.eventId = eventId;
     }
 
     public String getSector() {
