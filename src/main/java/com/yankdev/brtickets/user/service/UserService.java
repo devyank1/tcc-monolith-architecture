@@ -1,9 +1,6 @@
 package com.yankdev.brtickets.user.service;
 
-import com.yankdev.brtickets.shared.exception.CpfAlreadyExistsException;
-import com.yankdev.brtickets.shared.exception.EmailAlreadyExistsException;
-import com.yankdev.brtickets.shared.exception.InvalidCredentialsException;
-import com.yankdev.brtickets.shared.exception.UserNotFoundException;
+import com.yankdev.brtickets.shared.exception.*;
 import com.yankdev.brtickets.user.dto.UserRequestDTO;
 import com.yankdev.brtickets.user.dto.UserResponseDTO;
 import com.yankdev.brtickets.user.model.UserModel;
@@ -87,11 +84,16 @@ public class UserService {
         UserModel user = userRepository.findById(userId)
                 .orElseThrow(() -> new UserNotFoundException("User not found."));
 
-        user.setFirstName(request.getFirstName());
-        user.setLastName(request.getLastName());
-        user.setEmail(request.getEmail());
-        user.setPhone(request.getPhone());
-        user.setBirthday(request.getBirthday());
+        if (!user.isActive()) {
+            throw new UserIsNotActiveException("You cannot update an inactive user");
+        }
+
+        if (request.getFirstName() != null) user.setFirstName(request.getFirstName());
+        if (request.getLastName() != null) user.setFirstName(request.getFirstName());
+        if (request.getEmail() != null) user.setEmail(request.getEmail());
+        if (request.getPhone() != null) user.setPhone(request.getPhone());
+        if (request.getBirthday() != null) user.setBirthday(request.getBirthday());
+        if (request.getPassword() != null) user.setPasswordHash(request.getPassword());
 
         UserModel updatedUser = userRepository.save(user);
 

@@ -2,14 +2,12 @@ package com.yankdev.brtickets.event.dto;
 
 import com.yankdev.brtickets.event.model.enums.EventStatusEnum;
 import com.yankdev.brtickets.event.model.enums.EventTypeEnum;
-import com.yankdev.brtickets.user.model.UserModel;
-import com.yankdev.brtickets.venue.model.VenueModel;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 public class EventRequestDTO {
-    private VenueModel venue;
-    private UserModel user;
+    private UUID venueId;
     private String name;
     private String description;
     private LocalDateTime date;
@@ -21,20 +19,12 @@ public class EventRequestDTO {
     private LocalDateTime salesStartAt;
     private LocalDateTime salesEndAt;
 
-    public VenueModel getVenue() {
-        return venue;
+    public UUID getVenueId() {
+        return venueId;
     }
 
-    public void setVenue(VenueModel venue) {
-        this.venue = venue;
-    }
-
-    public UserModel getUser() {
-        return user;
-    }
-
-    public void setUser(UserModel user) {
-        this.user = user;
+    public void setVenueId(UUID venueId) {
+        this.venueId = venueId;
     }
 
     public String getName() {

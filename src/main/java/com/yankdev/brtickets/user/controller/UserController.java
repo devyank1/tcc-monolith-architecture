@@ -49,7 +49,7 @@ public class UserController {
         return ResponseEntity.ok(user);
     }
 
-    @PutMapping("/{userId}")
+    @PatchMapping("/{userId}")
     public ResponseEntity<UserResponseDTO> updateUser(@PathVariable UUID userId, @RequestBody UserRequestDTO request) {
 
         UserResponseDTO user = userService.updateUser(userId, request);

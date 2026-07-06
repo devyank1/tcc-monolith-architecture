@@ -33,15 +33,21 @@ public class EventService {
 
     public EventResponseDTO createEvent(EventRequestDTO request, UUID adminId) {
 
-        VenueModel venue = venueRepository.findById(request.getVenue().getVenueId())
+        VenueModel venue = venueRepository.findById(request.getVenueId())
                 .orElseThrow(() -> new VenueNotFoundException("Venue not found."));
 
         if (!venue.isActive()) {
-            throw new VenueIsNotActiveException("You cannot create event in an inactive venue.");
+            throw new VenueIsNotActiveException("You cannot create an event in an inactive venue.");
         }
 
         UserModel user = userRepository.findById(adminId)
                 .orElseThrow(() -> new UserNotFoundException("User not found"));
+
+        if (!user.isActive()) {
+            throw new UserIsNotActiveException("You cannot create an event with an inactive user.");
+        }
+
+        user.setActive(true);
 
         EventModel event = new EventModel();
         event.setVenue(venue);
@@ -95,23 +101,24 @@ public class EventService {
         EventModel event = eventRepository.findById(eventId)
                 .orElseThrow(() -> new EventNotFoundException("Event not found."));
 
-        VenueModel venue = venueRepository.findById(request.getVenue().getVenueId())
-                        .orElseThrow(() -> new VenueNotFoundException("Venue not found"));
-
-        if (!venue.isActive()) {
-            throw new VenueIsNotActiveException("You cannot update event in an inactive venue.");
+        if (request.getVenueId() != null) {
+            VenueModel venue = venueRepository.findById(request.getVenueId())
+                    .orElseThrow(() -> new VenueNotFoundException("Venue not found"));
+            if (!venue.isActive()) {
+                throw new VenueIsNotActiveException("You cannot update event in an inactive venue.");
+            }
+            event.setVenue(venue);
         }
 
-        event.setVenue(venue);
-        event.setName(request.getName());
-        event.setDescription(request.getDescription());
-        event.setDate(request.getDate());
-        event.setEndDate(request.getEndDate());
-        event.setType(request.getType());
-        event.setArtist(request.getArtist());
-        event.setAgeRate(request.getAgeRate());
-        event.setSalesStartAt(request.getSalesStartAt());
-        event.setSalesEndAt(request.getSalesEndAt());
+        if (request.getName() != null) event.setName(request.getName());
+        if (request.getDescription() != null ) event.setDescription(request.getDescription());
+        if (request.getDate() != null) event.setDate(request.getDate());
+        if (request.getEndDate() != null) event.setEndDate(request.getEndDate());
+        if (request.getType() != null) event.setType(request.getType());
+        if (request.getArtist() != null) event.setArtist(request.getArtist());
+        if (request.getAgeRate() != null) event.setAgeRate(request.getAgeRate());
+        if (request.getSalesStartAt() != null) event.setSalesStartAt(request.getSalesStartAt());
+        if (request.getSalesEndAt() != null) event.setSalesEndAt(request.getSalesEndAt());
 
         EventModel eventUpdated = eventRepository.save(event);
 
