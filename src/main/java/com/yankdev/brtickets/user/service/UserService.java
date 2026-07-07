@@ -89,11 +89,11 @@ public class UserService {
         }
 
         if (request.getFirstName() != null) user.setFirstName(request.getFirstName());
-        if (request.getLastName() != null) user.setFirstName(request.getFirstName());
+        if (request.getLastName() != null) user.setLastName(request.getLastName());
         if (request.getEmail() != null) user.setEmail(request.getEmail());
         if (request.getPhone() != null) user.setPhone(request.getPhone());
         if (request.getBirthday() != null) user.setBirthday(request.getBirthday());
-        if (request.getPassword() != null) user.setPasswordHash(request.getPassword());
+        if (request.getPassword() != null) user.setPasswordHash(pwdEncoder.encode(request.getPassword()));
 
         UserModel updatedUser = userRepository.save(user);
 

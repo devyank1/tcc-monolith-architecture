@@ -12,7 +12,7 @@ import java.util.UUID;
 public class TicketResponseDTO {
 
     private UUID ticketId;
-    private EventModel event;
+    private UUID eventId;
     private String sector;
     private String row;
     private String seat;
@@ -31,12 +31,12 @@ public class TicketResponseDTO {
         this.ticketId = ticketId;
     }
 
-    public EventModel getEvent() {
-        return event;
+    public UUID getEventId() {
+        return eventId;
     }
 
-    public void setEvent(EventModel event) {
-        this.event = event;
+    public void setEventId(UUID eventId) {
+        this.eventId = eventId;
     }
 
     public String getSector() {
@@ -116,7 +116,7 @@ public class TicketResponseDTO {
         TicketResponseDTO dto = new TicketResponseDTO();
 
         dto.setTicketId(ticket.getTicketId());
-        dto.setEvent(ticket.getEvent());
+        dto.setEventId(ticket.getEvent().getEventId());
         dto.setSector(ticket.getSector());
         dto.setRow(ticket.getRow());
         dto.setSeat(ticket.getSeat());
