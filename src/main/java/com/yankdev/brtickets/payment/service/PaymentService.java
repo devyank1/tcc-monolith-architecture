@@ -1,6 +1,7 @@
 package com.yankdev.brtickets.payment.service;
 
 import com.yankdev.brtickets.booking.model.BookingModel;
+import com.yankdev.brtickets.booking.model.enums.BookingStatusEnum;
 import com.yankdev.brtickets.booking.repository.BookingRepository;
 import com.yankdev.brtickets.payment.dto.PaymentRequestDTO;
 import com.yankdev.brtickets.payment.dto.PaymentResponseDTO;
@@ -9,6 +10,7 @@ import com.yankdev.brtickets.payment.model.enums.PaymentMethodEnum;
 import com.yankdev.brtickets.payment.model.enums.PaymentStatusEnum;
 import com.yankdev.brtickets.payment.repository.PaymentRepository;
 import com.yankdev.brtickets.shared.exception.BookingNotFoundException;
+import com.yankdev.brtickets.shared.exception.IllegalPaymentStatusException;
 import com.yankdev.brtickets.shared.exception.IllegalPaymentStatusRefundException;
 import com.yankdev.brtickets.shared.exception.PaymentNotFoundException;
 import org.springframework.stereotype.Service;
@@ -61,6 +63,24 @@ public class PaymentService {
         PaymentModel newPayment = paymentRepository.save(payment);
 
         return PaymentResponseDTO.from(newPayment);
+    }
+
+    public PaymentResponseDTO confirmPayment(UUID paymentId) {
+
+        PaymentModel payment = paymentRepository.findById(paymentId)
+                .orElseThrow(() -> new PaymentNotFoundException("We could not find your payment"));
+
+        if (payment.getStatus() != PaymentStatusEnum.PENDING) {
+            throw new IllegalPaymentStatusException("Your payment must be PENDING, because you didn't pay yet.");
+        }
+
+        payment.setStatus(PaymentStatusEnum.APPROVED);
+        payment.getBooking().setStatus(BookingStatusEnum.CONFIRMED);
+
+        bookingRepository.save(payment.getBooking());
+        PaymentModel paid = paymentRepository.save(payment);
+
+        return PaymentResponseDTO.from(paid);
     }
 
     public void refundPayment(UUID paymentId) {

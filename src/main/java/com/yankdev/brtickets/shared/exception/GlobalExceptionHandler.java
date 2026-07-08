@@ -40,12 +40,12 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(IllegalPaymentStatusRefundException.class)
     public ResponseEntity<String> handleIllegalPayment(IllegalPaymentStatusRefundException ex) {
-        return ResponseEntity.status(HttpStatus.CONFLICT).body(ex.getMessage());
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ex.getMessage());
     }
 
     @ExceptionHandler(IllegalTicketOnBookingException.class)
     public ResponseEntity<String> handleIllegalTicket(IllegalTicketOnBookingException ex) {
-        return ResponseEntity.status(HttpStatus.CONFLICT).body(ex.getMessage());
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ex.getMessage());
     }
 
     @ExceptionHandler(IllegalVenueCapacityException.class)
@@ -55,7 +55,7 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(IllegalVenueInactiveException.class)
     public ResponseEntity<String> handleIllegalVenueInactive(IllegalVenueInactiveException ex) {
-        return ResponseEntity.status(HttpStatus.CONFLICT).body(ex.getMessage());
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ex.getMessage());
     }
 
     @ExceptionHandler(InvalidCredentialsException.class)
@@ -91,5 +91,10 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(VenueNotFoundException.class)
     public ResponseEntity<String> handleVenueNotFound(VenueNotFoundException ex) {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage());
+    }
+
+    @ExceptionHandler(IllegalPaymentStatusException.class)
+    public ResponseEntity<String> handleIllegalPaymentStatus(IllegalPaymentStatusException ex) {
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ex.getMessage());
     }
 }

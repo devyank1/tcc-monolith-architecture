@@ -26,6 +26,13 @@ public class PaymentController {
         return ResponseEntity.status(HttpStatus.CREATED).body(payment);
     }
 
+    @PostMapping("/{paymentId}/confirm")
+    public ResponseEntity<PaymentResponseDTO> confirmPayment(@PathVariable UUID paymentId) {
+
+        PaymentResponseDTO payment = paymentService.confirmPayment(paymentId);
+        return ResponseEntity.ok(payment);
+    }
+
     @PostMapping("/{paymentId}/refund")
     public ResponseEntity<Void> refundPayment(@PathVariable UUID paymentId) {
 
