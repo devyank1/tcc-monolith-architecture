@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
 
@@ -48,6 +49,20 @@ public class EventController {
     public ResponseEntity<List<EventResponseDTO>> findEventByType(@RequestParam EventTypeEnum type) {
 
         List<EventResponseDTO> events = eventService.findEventByType(type);
+        return ResponseEntity.ok(events);
+    }
+
+    @GetMapping(params = "city")
+    public ResponseEntity<List<EventResponseDTO>> findEventByCity(@RequestParam String city) {
+
+        List<EventResponseDTO> events = eventService.findEventByCity(city);
+        return ResponseEntity.ok(events);
+    }
+
+    @GetMapping(params = "date")
+    public ResponseEntity<List<EventResponseDTO>> findEventByDate(@RequestParam LocalDateTime start, @RequestParam LocalDateTime end) {
+
+        List<EventResponseDTO> events = eventService.findEventByDate(start, end);
         return ResponseEntity.ok(events);
     }
 

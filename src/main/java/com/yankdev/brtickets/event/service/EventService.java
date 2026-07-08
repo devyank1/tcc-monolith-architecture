@@ -49,8 +49,6 @@ public class EventService {
             throw new UserIsNotActiveException("You cannot create an event with an inactive user.");
         }
 
-        user.setActive(true);
-
         EventModel event = new EventModel();
         event.setVenue(venue);
         event.setCreatedBy(user);
@@ -94,6 +92,22 @@ public class EventService {
         List<EventModel> model = eventRepository.findAllByType(type);
 
         return model.stream()
+                .map(EventResponseDTO::from)
+                .toList();
+    }
+
+    public List<EventResponseDTO> findEventByCity(String city) {
+
+        List<EventModel> event = eventRepository.findAllByVenue_City(city);
+        return event.stream()
+                .map(EventResponseDTO::from)
+                .toList();
+    }
+
+    public List<EventResponseDTO> findEventByDate(LocalDateTime start, LocalDateTime end) {
+
+        List<EventModel> events = eventRepository.findAllByDateBetween(start, end);
+        return events.stream()
                 .map(EventResponseDTO::from)
                 .toList();
     }

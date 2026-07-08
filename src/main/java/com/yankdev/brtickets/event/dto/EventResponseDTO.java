@@ -3,8 +3,6 @@ package com.yankdev.brtickets.event.dto;
 import com.yankdev.brtickets.event.model.EventModel;
 import com.yankdev.brtickets.event.model.enums.EventStatusEnum;
 import com.yankdev.brtickets.event.model.enums.EventTypeEnum;
-import com.yankdev.brtickets.user.model.UserModel;
-import com.yankdev.brtickets.venue.model.VenueModel;
 
 import java.time.LocalDateTime;
 import java.util.UUID;

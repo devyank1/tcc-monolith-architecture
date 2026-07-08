@@ -14,4 +14,6 @@ import java.util.UUID;
 public interface EventRepository extends JpaRepository<EventModel, UUID> {
     List<EventModel> findAllByName(String name);
     List<EventModel> findAllByType(EventTypeEnum type);
+    List<EventModel> findAllByVenue_City(String city);
+    List<EventModel> findAllByDateBetween(LocalDateTime start, LocalDateTime end);
 }
