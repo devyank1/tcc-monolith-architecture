@@ -18,6 +18,7 @@ public class UserResponseDTO {
     private UserRole role;
     private boolean active;
     private LocalDateTime createdAt;
+    private String token;
 
     public UUID getUserId() {
         return userId;
@@ -97,6 +98,14 @@ public class UserResponseDTO {
 
     public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
     }
 
     public static UserResponseDTO from(UserModel model) {

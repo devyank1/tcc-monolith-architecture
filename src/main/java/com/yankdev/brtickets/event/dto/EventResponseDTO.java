@@ -11,8 +11,8 @@ import java.util.UUID;
 
 public class EventResponseDTO {
     private UUID eventId;
-    private VenueModel venue;
-    private UserModel user;
+    private UUID venueId;
+    private UUID userId;
     private String name;
     private String description;
     private LocalDateTime date;
@@ -32,20 +32,20 @@ public class EventResponseDTO {
         this.eventId = eventId;
     }
 
-    public VenueModel getVenue() {
-        return venue;
+    public UUID getVenueId() {
+        return venueId;
     }
 
-    public void setVenue(VenueModel venue) {
-        this.venue = venue;
+    public void setVenueId(UUID venueId) {
+        this.venueId = venueId;
     }
 
-    public UserModel getUser() {
-        return user;
+    public UUID getUserId() {
+        return userId;
     }
 
-    public void setUser(UserModel user) {
-        this.user = user;
+    public void setUserId(UUID userId) {
+        this.userId = userId;
     }
 
     public String getName() {
@@ -133,8 +133,8 @@ public class EventResponseDTO {
         EventResponseDTO dto = new EventResponseDTO();
 
         dto.setEventId(event.getEventId());
-        dto.setVenue(event.getVenue());
-        dto.setUser(event.getCreatedBy());
+        dto.setVenueId(event.getVenue().getVenueId());
+        dto.setUserId(event.getCreatedBy().getUserId());
         dto.setName(event.getName());
         dto.setDescription(event.getDescription());
         dto.setDate(event.getDate());

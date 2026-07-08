@@ -5,6 +5,7 @@ import com.yankdev.brtickets.venue.dto.VenueResponseDTO;
 import com.yankdev.brtickets.venue.service.VenueService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -21,6 +22,7 @@ public class VenueController {
     }
 
     @PostMapping()
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<VenueResponseDTO> createVenue(@RequestBody VenueRequestDTO request) {
 
         VenueResponseDTO venue = venueService.createVenue(request);
@@ -42,6 +44,7 @@ public class VenueController {
     }
 
     @PatchMapping("/{venueId}")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<VenueResponseDTO> updateVenue(@PathVariable UUID venueId, @RequestBody VenueRequestDTO request) {
 
         VenueResponseDTO venue = venueService.updateVenue(venueId, request);
@@ -49,6 +52,7 @@ public class VenueController {
     }
 
     @DeleteMapping("/{venueId}")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<Void> deleteVenue(@PathVariable UUID venueId) {
 
         venueService.deactivateVenue(venueId);

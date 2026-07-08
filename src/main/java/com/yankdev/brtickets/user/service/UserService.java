@@ -1,15 +1,16 @@
 package com.yankdev.brtickets.user.service;
 
 import com.yankdev.brtickets.shared.exception.*;
+import com.yankdev.brtickets.shared.security.JwtUtils;
 import com.yankdev.brtickets.user.dto.UserRequestDTO;
 import com.yankdev.brtickets.user.dto.UserResponseDTO;
 import com.yankdev.brtickets.user.model.UserModel;
 import com.yankdev.brtickets.user.model.enums.UserRole;
 import com.yankdev.brtickets.user.repository.UserRepository;
-import org.springframework.data.util.TypeCollector;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
 
@@ -18,11 +19,13 @@ public class UserService {
 
     private final UserRepository userRepository;
     private final PasswordEncoder pwdEncoder;
+    private final JwtUtils jwtUtils;
 
     public UserService(UserRepository userRepository,
-                       PasswordEncoder pwdEncoder) {
+                       PasswordEncoder pwdEncoder, JwtUtils jwtUtils) {
         this.userRepository = userRepository;
         this.pwdEncoder = pwdEncoder;
+        this.jwtUtils = jwtUtils;
     }
 
     public UserResponseDTO register(UserRequestDTO userRequest) {
@@ -45,6 +48,7 @@ public class UserService {
         newUser.setBirthday(userRequest.getBirthday());
         newUser.setActive(true);
         newUser.setRole(UserRole.USER);
+        newUser.setCreatedAt(LocalDateTime.now());
 
         UserModel savedUser = userRepository.save(newUser);
 
@@ -61,13 +65,17 @@ public class UserService {
             throw new InvalidCredentialsException("Invalid credentials.");
         }
 
-        return UserResponseDTO.from(user);
+        String token = jwtUtils.generateToken(user);
+        UserResponseDTO response = UserResponseDTO.from(user);
+        response.setToken(token);
+
+        return response;
     }
 
     public UserResponseDTO findUser(UUID userId) {
 
         UserModel user = userRepository.findById(userId)
-                .orElseThrow(() -> new UserNotFoundException("User not found."));
+                .orElseThrow(() -> new UserNotFoundException("User not found by USER ID."));
 
         return UserResponseDTO.from(user);
     }
@@ -82,7 +90,7 @@ public class UserService {
 
     public UserResponseDTO updateUser(UUID userId, UserRequestDTO request) {
         UserModel user = userRepository.findById(userId)
-                .orElseThrow(() -> new UserNotFoundException("User not found."));
+                .orElseThrow(() -> new UserNotFoundException("User not found, we cannot update this user"));
 
         if (!user.isActive()) {
             throw new UserIsNotActiveException("You cannot update an inactive user");
@@ -103,7 +111,7 @@ public class UserService {
     public void updatePwd(UUID userId, String password) {
 
         UserModel user = userRepository.findById(userId)
-                .orElseThrow(() -> new UserNotFoundException("User not found."));
+                .orElseThrow(() -> new UserNotFoundException("User not found, we cannot update your password"));
 
         user.setPasswordHash(pwdEncoder.encode(password));
         userRepository.save(user);
@@ -111,7 +119,7 @@ public class UserService {
 
     public void deactivateUser(UUID userId) {
         UserModel user = userRepository.findById(userId)
-                .orElseThrow(() -> new UserNotFoundException("User not found."));
+                .orElseThrow(() -> new UserNotFoundException("User not found, we cannot deactivate this user"));
         user.setActive(false);
         userRepository.save(user);
     }

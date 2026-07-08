@@ -12,6 +12,7 @@ import com.yankdev.brtickets.user.model.UserModel;
 import com.yankdev.brtickets.user.repository.UserRepository;
 import com.yankdev.brtickets.venue.model.VenueModel;
 import com.yankdev.brtickets.venue.repository.VenueRepository;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -31,7 +32,11 @@ public class EventService {
         this.userRepository = userRepository;
     }
 
-    public EventResponseDTO createEvent(EventRequestDTO request, UUID adminId) {
+    public EventResponseDTO createEvent(EventRequestDTO request) {
+
+        String email = SecurityContextHolder.getContext().getAuthentication().getName();
+        UserModel user = userRepository.findByEmail(email)
+                .orElseThrow(() -> new UserNotFoundException("User not found by email"));
 
         VenueModel venue = venueRepository.findById(request.getVenueId())
                 .orElseThrow(() -> new VenueNotFoundException("Venue not found."));
@@ -39,9 +44,6 @@ public class EventService {
         if (!venue.isActive()) {
             throw new VenueIsNotActiveException("You cannot create an event in an inactive venue.");
         }
-
-        UserModel user = userRepository.findById(adminId)
-                .orElseThrow(() -> new UserNotFoundException("User not found"));
 
         if (!user.isActive()) {
             throw new UserIsNotActiveException("You cannot create an event with an inactive user.");

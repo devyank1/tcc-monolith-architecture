@@ -5,6 +5,7 @@ import com.yankdev.brtickets.ticket.dto.TicketResponseDTO;
 import com.yankdev.brtickets.ticket.service.TicketService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -21,6 +22,7 @@ public class TicketController {
     }
 
     @PostMapping
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<TicketResponseDTO> createTicket(@RequestBody TicketRequestDTO request) {
 
         TicketResponseDTO ticket = ticketService.createTicket(request);
@@ -42,6 +44,7 @@ public class TicketController {
     }
 
     @PatchMapping("/{ticketId}")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<TicketResponseDTO> updateTicket(@PathVariable UUID ticketId, @RequestBody TicketRequestDTO request) {
 
         TicketResponseDTO ticket = ticketService.updateTicket(request, ticketId);
@@ -49,6 +52,7 @@ public class TicketController {
     }
 
     @DeleteMapping("/{ticketId}")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<Void> deleteTicket(@PathVariable UUID ticketId) {
 
         ticketService.deactivateTicket(ticketId);

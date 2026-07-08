@@ -6,6 +6,7 @@ import com.yankdev.brtickets.event.model.enums.EventTypeEnum;
 import com.yankdev.brtickets.event.service.EventService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -22,9 +23,10 @@ public class EventController {
     }
 
     @PostMapping
-    public ResponseEntity<EventResponseDTO> createEvent(@RequestBody EventRequestDTO request, @RequestParam UUID adminId) {
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseEntity<EventResponseDTO> createEvent(@RequestBody EventRequestDTO request) {
 
-        EventResponseDTO event = eventService.createEvent(request, adminId);
+        EventResponseDTO event = eventService.createEvent(request);
         return ResponseEntity.status(HttpStatus.CREATED).body(event);
     }
 
@@ -50,6 +52,7 @@ public class EventController {
     }
 
     @PatchMapping("/{eventId}")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<EventResponseDTO> updateEvent(@PathVariable UUID eventId, @RequestBody EventRequestDTO request) {
 
         EventResponseDTO event = eventService.updateEvent(eventId,request);
@@ -57,6 +60,7 @@ public class EventController {
     }
 
     @PostMapping("/{eventId}/publish")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<EventResponseDTO> publishEvent(@PathVariable UUID eventId) {
 
         EventResponseDTO event = eventService.publishEvent(eventId);
@@ -64,6 +68,7 @@ public class EventController {
     }
 
     @DeleteMapping("/{eventId}")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<Void> deleteEvent(@PathVariable UUID eventId) {
 
         eventService.cancelEvent(eventId);
