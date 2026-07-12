@@ -3,6 +3,8 @@ package com.yankdev.brtickets.venue.controller;
 import com.yankdev.brtickets.venue.dto.VenueRequestDTO;
 import com.yankdev.brtickets.venue.dto.VenueResponseDTO;
 import com.yankdev.brtickets.venue.service.VenueService;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -22,6 +24,8 @@ public class VenueController {
     }
 
     @PostMapping()
+    @Tag(name = "Create Venue", description = "Creation of a new venue")
+    @SecurityRequirement(name = "bearerAuth")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<VenueResponseDTO> createVenue(@RequestBody VenueRequestDTO request) {
 
@@ -30,6 +34,8 @@ public class VenueController {
     }
 
     @GetMapping("/{venueId}")
+    @Tag(name = "Find Venues By ID", description = "Retrieve details of a specific venue")
+    @SecurityRequirement(name = "bearerAuth")
     public ResponseEntity<VenueResponseDTO> findVenueById(@PathVariable UUID venueId) {
 
         VenueResponseDTO venue = venueService.findVenueById(venueId);
@@ -37,6 +43,8 @@ public class VenueController {
     }
 
     @GetMapping
+    @Tag(name = "Find All Venues", description = "Retrieve a list of all active venues in a specific city")
+    @SecurityRequirement(name = "bearerAuth")
     public ResponseEntity<List<VenueResponseDTO>> findAllVenues(@RequestParam String city) {
 
         List<VenueResponseDTO> venues = venueService.findAllActiveVenues(city);
@@ -44,6 +52,8 @@ public class VenueController {
     }
 
     @PatchMapping("/{venueId}")
+    @Tag(name = "Update Venue", description = "Update details of a specific venue")
+    @SecurityRequirement(name = "bearerAuth")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<VenueResponseDTO> updateVenue(@PathVariable UUID venueId, @RequestBody VenueRequestDTO request) {
 
@@ -52,6 +62,8 @@ public class VenueController {
     }
 
     @DeleteMapping("/{venueId}")
+    @Tag(name = "Delete Venue", description = "Deactivate a specific venue")
+    @SecurityRequirement(name = "bearerAuth")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<Void> deleteVenue(@PathVariable UUID venueId) {
 
