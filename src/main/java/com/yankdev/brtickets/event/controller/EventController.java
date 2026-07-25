@@ -73,6 +73,15 @@ public class EventController {
         return ResponseEntity.ok(events);
     }
 
+    @GetMapping("/{eventId}")
+    @Tag(name = "Get Event", description = "Retrieve details of a specific event")
+    public ResponseEntity<EventResponseDTO> findEventById(@PathVariable UUID eventId) {
+
+        EventResponseDTO event = eventService.findEventById(eventId);
+
+        return ResponseEntity.ok(event);
+    }
+
     @PatchMapping("/{eventId}")
     @Tag(name = "Update Event", description = "Update details of a specific event")
     @PreAuthorize("hasRole('ADMIN')")

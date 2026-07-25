@@ -141,6 +141,14 @@ public class EventService {
         return EventResponseDTO.from(eventUpdated);
     }
 
+    public EventResponseDTO findEventById(UUID eventId) {
+
+        EventModel event = eventRepository.findById(eventId)
+                .orElseThrow(() -> new EventNotFoundException("Event not found."));
+
+        return EventResponseDTO.from(event);
+    }
+
     public EventResponseDTO publishEvent(UUID eventId) {
 
         EventModel event = eventRepository.findById(eventId)
