@@ -12,6 +12,7 @@ import com.yankdev.brtickets.user.model.UserModel;
 import com.yankdev.brtickets.user.repository.UserRepository;
 import com.yankdev.brtickets.venue.model.VenueModel;
 import com.yankdev.brtickets.venue.repository.VenueRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
@@ -112,6 +113,7 @@ public class EventService {
                 .toList();
     }
 
+    @Transactional
     public EventResponseDTO updateEvent(UUID eventId, EventRequestDTO request) {
 
         EventModel event = eventRepository.findById(eventId)
@@ -149,6 +151,7 @@ public class EventService {
         return EventResponseDTO.from(event);
     }
 
+    @Transactional
     public EventResponseDTO publishEvent(UUID eventId) {
 
         EventModel event = eventRepository.findById(eventId)
@@ -165,6 +168,7 @@ public class EventService {
         return EventResponseDTO.from(newPublishedEvent);
     }
 
+    @Transactional
     public void cancelEvent(UUID eventId) {
 
         EventModel deactivateEvent = eventRepository.findById(eventId)

@@ -9,6 +9,7 @@ import com.yankdev.brtickets.ticket.dto.TicketResponseDTO;
 import com.yankdev.brtickets.ticket.model.TicketModel;
 import com.yankdev.brtickets.ticket.model.enums.TicketStatusEnum;
 import com.yankdev.brtickets.ticket.repository.TicketRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -66,6 +67,7 @@ public class TicketService {
                 .toList();
     }
 
+    @Transactional
     public TicketResponseDTO updateTicket(TicketRequestDTO request, UUID ticketId) {
 
         TicketModel ticket  = ticketRepository.findById(ticketId)
@@ -81,6 +83,7 @@ public class TicketService {
 
     }
 
+    @Transactional
     public void deactivateTicket(UUID ticketId) {
 
         TicketModel ticket = ticketRepository.findById(ticketId)

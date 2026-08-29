@@ -11,6 +11,7 @@ import com.yankdev.brtickets.payment.model.enums.PaymentStatusEnum;
 import com.yankdev.brtickets.payment.repository.PaymentRepository;
 import com.yankdev.brtickets.shared.exception.*;
 import com.yankdev.brtickets.shared.security.AuthenticatedUserProvider;
+import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -70,6 +71,7 @@ public class PaymentService {
         return PaymentResponseDTO.from(newPayment);
     }
 
+    @Transactional
     public PaymentResponseDTO confirmPayment(UUID paymentId) {
 
         PaymentModel payment = paymentRepository.findById(paymentId)
@@ -92,6 +94,7 @@ public class PaymentService {
         return PaymentResponseDTO.from(paid);
     }
 
+    @Transactional
     public void refundPayment(UUID paymentId) {
 
         PaymentModel payment = paymentRepository.findById(paymentId)

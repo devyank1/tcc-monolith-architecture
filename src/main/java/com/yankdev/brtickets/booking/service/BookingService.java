@@ -13,6 +13,7 @@ import com.yankdev.brtickets.ticket.model.TicketModel;
 import com.yankdev.brtickets.ticket.model.enums.TicketStatusEnum;
 import com.yankdev.brtickets.ticket.repository.TicketRepository;
 import com.yankdev.brtickets.user.repository.UserRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -39,6 +40,7 @@ public class BookingService {
         this.userProvider = userProvider;
     }
 
+    @Transactional
     public BookingResponseDTO createBooking(UUID userId, BookingRequestDTO request) {
 
         if (!userRepository.existsById(userId)) {
@@ -113,6 +115,7 @@ public class BookingService {
                 .toList();
     }
 
+    @Transactional
     public void cancelBooking(UUID bookingId) {
 
         BookingModel booking = bookingRepository.findById(bookingId)
