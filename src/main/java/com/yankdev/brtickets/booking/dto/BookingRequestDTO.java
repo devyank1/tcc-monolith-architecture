@@ -3,6 +3,8 @@ package com.yankdev.brtickets.booking.dto;
 import com.yankdev.brtickets.booking.model.enums.BookingStatusEnum;
 import com.yankdev.brtickets.payment.model.enums.PaymentMethodEnum;
 import com.yankdev.brtickets.user.model.UserModel;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -12,10 +14,15 @@ import java.util.UUID;
 public class BookingRequestDTO {
     private BookingStatusEnum status;
     private BigDecimal totalAmount;
+
+    @NotNull(message = "paymentMethod is required")
     private PaymentMethodEnum paymentMethod;
+
     private LocalDateTime createdAt;
     private LocalDateTime confirmedAt;
     private LocalDateTime cancelledAt;
+
+    @NotEmpty(message = "ticketsId must contain at least one ticket")
     List<UUID> ticketsId;
 
     public BookingStatusEnum getStatus() {

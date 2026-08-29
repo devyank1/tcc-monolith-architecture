@@ -166,7 +166,6 @@ public class EventService {
         return EventResponseDTO.from(newPublishedEvent);
     }
 
-    @Transactional
     public void cancelEvent(UUID eventId) {
 
         EventModel deactivateEvent = eventRepository.findById(eventId)

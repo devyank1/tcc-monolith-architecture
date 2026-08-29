@@ -5,6 +5,7 @@ import com.yankdev.brtickets.booking.dto.BookingResponseDTO;
 import com.yankdev.brtickets.booking.service.BookingService;
 import com.yankdev.brtickets.shared.security.AuthenticatedUserProvider;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -26,7 +27,7 @@ public class BookingController {
 
     @PostMapping
     @Tag(name = "Create Booking", description = "Create a new booking")
-    public ResponseEntity<BookingResponseDTO> createBooking(@RequestBody BookingRequestDTO request) {
+    public ResponseEntity<BookingResponseDTO> createBooking(@Valid @RequestBody BookingRequestDTO request) {
 
         UUID userId = authenticatedUserProvider.getCurrentUserId();
         BookingResponseDTO booking = bookingService.createBooking(userId, request);

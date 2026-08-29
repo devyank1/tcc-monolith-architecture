@@ -3,8 +3,8 @@ services:
     image: 'postgres:latest'
     environment:
       - 'POSTGRES_DB=brticketsmono'
-      - 'POSTGRES_PASSWORD=tccpresentation'
-      - 'POSTGRES_USER=yankdev'
+      - 'POSTGRES_PASSWORD=${DB_PASSWORD}'
+      - 'POSTGRES_USER=${DB_USERNAME}'
     ports:
       - '5432:5432'
   prometheus:

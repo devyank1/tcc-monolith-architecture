@@ -47,7 +47,7 @@ public class BookingService {
             throw new UserNotFoundException("User not found on this booking");
         }
 
-        List<TicketModel> tickets = ticketRepository.findAllById(request.getTicketsId());
+        List<TicketModel> tickets = ticketRepository.findAllByTicketIdIn(request.getTicketsId());
 
         if (tickets.size() != request.getTicketsId().size()) {
             throw new IllegalTicketOnBookingException("One or more tickets are wrong");
