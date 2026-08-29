@@ -33,6 +33,7 @@ public class EventService {
         this.userRepository = userRepository;
     }
 
+    @Transactional
     public EventResponseDTO createEvent(EventRequestDTO request) {
 
         String email = SecurityContextHolder.getContext().getAuthentication().getName();

@@ -27,6 +27,7 @@ public class TicketService {
         this.eventRepository = eventRepository;
     }
 
+    @Transactional
     public TicketResponseDTO createTicket(TicketRequestDTO request) {
 
         TicketModel ticket = new TicketModel();

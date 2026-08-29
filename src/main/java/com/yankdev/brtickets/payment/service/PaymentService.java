@@ -31,6 +31,7 @@ public class PaymentService {
         this.userProvider = userProvider;
     }
 
+    @Transactional
     public PaymentResponseDTO processPayment(UUID bookingId, PaymentRequestDTO request) {
 
         BookingModel booking = bookingRepository.findById(bookingId)
