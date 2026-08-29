@@ -7,14 +7,11 @@ import com.yankdev.brtickets.booking.item.repository.BookingItemRepository;
 import com.yankdev.brtickets.booking.model.BookingModel;
 import com.yankdev.brtickets.booking.model.enums.BookingStatusEnum;
 import com.yankdev.brtickets.booking.repository.BookingRepository;
-import com.yankdev.brtickets.shared.exception.BookingNotFoundException;
-import com.yankdev.brtickets.shared.exception.IllegalBookingCancellingException;
-import com.yankdev.brtickets.shared.exception.IllegalTicketOnBookingException;
-import com.yankdev.brtickets.shared.exception.UserNotFoundException;
+import com.yankdev.brtickets.shared.exception.*;
+import com.yankdev.brtickets.shared.security.AuthenticatedUserProvider;
 import com.yankdev.brtickets.ticket.model.TicketModel;
 import com.yankdev.brtickets.ticket.model.enums.TicketStatusEnum;
 import com.yankdev.brtickets.ticket.repository.TicketRepository;
-import com.yankdev.brtickets.user.model.UserModel;
 import com.yankdev.brtickets.user.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
@@ -32,12 +29,14 @@ public class BookingService {
     private final TicketRepository ticketRepository;
     private final UserRepository userRepository;
     private final BookingItemRepository bookingItemRepository;
+    private final AuthenticatedUserProvider userProvider;
 
-    public BookingService(BookingRepository bookingRepository, TicketRepository ticketRepository, UserRepository userRepository, BookingItemRepository bookingItemRepository) {
+    public BookingService(BookingRepository bookingRepository, TicketRepository ticketRepository, UserRepository userRepository, BookingItemRepository bookingItemRepository, AuthenticatedUserProvider userProvider) {
         this.bookingRepository = bookingRepository;
         this.ticketRepository = ticketRepository;
         this.userRepository = userRepository;
         this.bookingItemRepository = bookingItemRepository;
+        this.userProvider = userProvider;
     }
 
     public BookingResponseDTO createBooking(UUID userId, BookingRequestDTO request) {
@@ -98,6 +97,10 @@ public class BookingService {
         BookingModel booking = bookingRepository.findById(bookingId)
                 .orElseThrow(() -> new BookingNotFoundException("Booking not found"));
 
+        if (!booking.getUserId().equals(userProvider.getCurrentUserId())) {
+            throw new AccessDeniedException("You have not permission to find bookings");
+        }
+
         return BookingResponseDTO.from(booking);
     }
 
@@ -114,6 +117,10 @@ public class BookingService {
 
         BookingModel booking = bookingRepository.findById(bookingId)
                 .orElseThrow(() -> new BookingNotFoundException("Booking not found."));
+
+        if (!booking.getUserId().equals(userProvider.getCurrentUserId())) {
+            throw new AccessDeniedException("You have not access to cancel this booking");
+        }
 
         if (booking.getStatus() == BookingStatusEnum.CANCELLED) {
             throw new IllegalBookingCancellingException("You cannot cancel a CANCELLED booking");

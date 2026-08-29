@@ -4,7 +4,6 @@ import com.yankdev.brtickets.payment.dto.PaymentRequestDTO;
 import com.yankdev.brtickets.payment.dto.PaymentResponseDTO;
 import com.yankdev.brtickets.payment.service.PaymentService;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import io.swagger.v3.oas.annotations.tags.Tags;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

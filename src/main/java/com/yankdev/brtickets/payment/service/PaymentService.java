@@ -9,10 +9,8 @@ import com.yankdev.brtickets.payment.model.PaymentModel;
 import com.yankdev.brtickets.payment.model.enums.PaymentMethodEnum;
 import com.yankdev.brtickets.payment.model.enums.PaymentStatusEnum;
 import com.yankdev.brtickets.payment.repository.PaymentRepository;
-import com.yankdev.brtickets.shared.exception.BookingNotFoundException;
-import com.yankdev.brtickets.shared.exception.IllegalPaymentStatusException;
-import com.yankdev.brtickets.shared.exception.IllegalPaymentStatusRefundException;
-import com.yankdev.brtickets.shared.exception.PaymentNotFoundException;
+import com.yankdev.brtickets.shared.exception.*;
+import com.yankdev.brtickets.shared.security.AuthenticatedUserProvider;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -23,16 +21,23 @@ public class PaymentService {
 
     private final PaymentRepository paymentRepository;
     private final BookingRepository bookingRepository;
+    private final AuthenticatedUserProvider userProvider;
 
-    public PaymentService(PaymentRepository paymentRepository, BookingRepository bookingRepository) {
+
+    public PaymentService(PaymentRepository paymentRepository, BookingRepository bookingRepository, AuthenticatedUserProvider userProvider) {
         this.paymentRepository = paymentRepository;
         this.bookingRepository = bookingRepository;
+        this.userProvider = userProvider;
     }
 
     public PaymentResponseDTO processPayment(UUID bookingId, PaymentRequestDTO request) {
 
         BookingModel booking = bookingRepository.findById(bookingId)
                 .orElseThrow(() -> new BookingNotFoundException("We cannot found your booking."));
+
+        if (!booking.getUserId().equals(userProvider.getCurrentUserId())) {
+            throw new AccessDeniedException("You have not permission to process this payment");
+        }
 
         PaymentModel payment = new PaymentModel();
 
@@ -70,6 +75,10 @@ public class PaymentService {
         PaymentModel payment = paymentRepository.findById(paymentId)
                 .orElseThrow(() -> new PaymentNotFoundException("We could not find your payment"));
 
+        if (!payment.getBooking().getUserId().equals(userProvider.getCurrentUserId())) {
+            throw new AccessDeniedException("You have not permission to confirm this payment");
+        }
+
         if (payment.getStatus() != PaymentStatusEnum.PENDING) {
             throw new IllegalPaymentStatusException("Your payment must be PENDING, because you didn't pay yet.");
         }
@@ -87,6 +96,10 @@ public class PaymentService {
 
         PaymentModel payment = paymentRepository.findById(paymentId)
                 .orElseThrow(() -> new PaymentNotFoundException("Payment not found"));
+
+        if (!payment.getBooking().getUserId().equals(userProvider.getCurrentUserId())) {
+            throw new AccessDeniedException("You have not permission to refund this payment");
+        }
 
         if (PaymentStatusEnum.REFUNDED == payment.getStatus()) {
             throw new IllegalPaymentStatusRefundException("Your payment has already refunded.");

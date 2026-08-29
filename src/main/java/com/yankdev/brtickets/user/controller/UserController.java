@@ -1,5 +1,6 @@
 package com.yankdev.brtickets.user.controller;
 
+import com.yankdev.brtickets.shared.security.AuthenticatedUserProvider;
 import com.yankdev.brtickets.user.dto.UserRequestDTO;
 import com.yankdev.brtickets.user.dto.UserResponseDTO;
 import com.yankdev.brtickets.user.service.UserService;
@@ -18,9 +19,11 @@ import java.util.UUID;
 public class UserController {
 
     private final UserService userService;
+    private final AuthenticatedUserProvider userProvider;
 
-    public UserController(UserService userService) {
+    public UserController(UserService userService, AuthenticatedUserProvider userProvider) {
         this.userService = userService;
+        this.userProvider = userProvider;
     }
 
 
@@ -53,8 +56,9 @@ public class UserController {
     @GetMapping("/{userId}")
     @Tag(name = "Get User", description = "Retrieve details of a specific user")
     @SecurityRequirement(name = "bearerAuth")
-    public ResponseEntity<UserResponseDTO> findUser(@PathVariable UUID userId) {
+    public ResponseEntity<UserResponseDTO> findUser() {
 
+        UUID userId = userProvider.getCurrentUserId();
         UserResponseDTO user = userService.findUser(userId);
         return ResponseEntity.ok(user);
     }
@@ -62,8 +66,9 @@ public class UserController {
     @PatchMapping("/{userId}")
     @Tag(name = "Update User", description = "Update details of a specific user")
     @SecurityRequirement(name = "bearerAuth")
-    public ResponseEntity<UserResponseDTO> updateUser(@PathVariable UUID userId, @RequestBody UserRequestDTO request) {
+    public ResponseEntity<UserResponseDTO> updateUser(@RequestBody UserRequestDTO request) {
 
+        UUID userId = userProvider.getCurrentUserId();
         UserResponseDTO user = userService.updateUser(userId, request);
         return ResponseEntity.ok(user);
     }
@@ -71,8 +76,9 @@ public class UserController {
     @PutMapping("/{userId}/newPassword")
     @Tag(name = "Update Password", description = "Update the password of a specific user")
     @SecurityRequirement(name = "bearerAuth")
-    public ResponseEntity<Void> updatePassword(@PathVariable UUID userId, @RequestBody UserRequestDTO request) {
+    public ResponseEntity<Void> updatePassword(@RequestBody UserRequestDTO request) {
 
+        UUID userId = userProvider.getCurrentUserId();
         userService.updatePwd(userId, request.getPassword());
         return ResponseEntity.noContent().build();
     }
