@@ -33,7 +33,6 @@ public class EventService {
         this.userRepository = userRepository;
     }
 
-    @Transactional
     public EventResponseDTO createEvent(EventRequestDTO request) {
 
         String email = SecurityContextHolder.getContext().getAuthentication().getName();
@@ -114,7 +113,6 @@ public class EventService {
                 .toList();
     }
 
-    @Transactional
     public EventResponseDTO updateEvent(UUID eventId, EventRequestDTO request) {
 
         EventModel event = eventRepository.findById(eventId)
@@ -152,7 +150,6 @@ public class EventService {
         return EventResponseDTO.from(event);
     }
 
-    @Transactional
     public EventResponseDTO publishEvent(UUID eventId) {
 
         EventModel event = eventRepository.findById(eventId)
