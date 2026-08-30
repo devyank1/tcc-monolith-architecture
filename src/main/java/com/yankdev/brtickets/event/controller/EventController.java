@@ -5,6 +5,7 @@ import com.yankdev.brtickets.event.dto.EventResponseDTO;
 import com.yankdev.brtickets.event.model.enums.EventTypeEnum;
 import com.yankdev.brtickets.event.service.EventService;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -27,7 +28,7 @@ public class EventController {
     @PostMapping
     @Tag(name = "Create Event", description = "Create a new event")
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<EventResponseDTO> createEvent(@RequestBody EventRequestDTO request) {
+    public ResponseEntity<EventResponseDTO> createEvent(@Valid @RequestBody EventRequestDTO request) {
 
         EventResponseDTO event = eventService.createEvent(request);
         return ResponseEntity.status(HttpStatus.CREATED).body(event);
@@ -85,7 +86,7 @@ public class EventController {
     @PatchMapping("/{eventId}")
     @Tag(name = "Update Event", description = "Update details of a specific event")
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<EventResponseDTO> updateEvent(@PathVariable UUID eventId, @RequestBody EventRequestDTO request) {
+    public ResponseEntity<EventResponseDTO> updateEvent(@PathVariable UUID eventId, @Valid @RequestBody EventRequestDTO request) {
 
         EventResponseDTO event = eventService.updateEvent(eventId,request);
         return ResponseEntity.ok(event);

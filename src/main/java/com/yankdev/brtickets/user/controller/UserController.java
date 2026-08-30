@@ -6,6 +6,7 @@ import com.yankdev.brtickets.user.dto.UserResponseDTO;
 import com.yankdev.brtickets.user.service.UserService;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -29,7 +30,7 @@ public class UserController {
 
     @PostMapping
     @Tag(name = "User Registration", description = "Register a new user")
-    public ResponseEntity<UserResponseDTO> register(@RequestBody UserRequestDTO request) {
+    public ResponseEntity<UserResponseDTO> register(@Valid @RequestBody UserRequestDTO request) {
 
         UserResponseDTO user = userService.register(request);
         return ResponseEntity.status(HttpStatus.CREATED).body(user);
@@ -37,7 +38,7 @@ public class UserController {
 
     @PostMapping("/login")
     @Tag(name = "User Login", description = "Authenticate a user and return user details")
-    public ResponseEntity<UserResponseDTO> login(@RequestBody UserRequestDTO request) {
+    public ResponseEntity<UserResponseDTO> login(@Valid @RequestBody UserRequestDTO request) {
 
     UserResponseDTO user = userService.login(request);
     return ResponseEntity.ok(user);
@@ -66,7 +67,7 @@ public class UserController {
     @PatchMapping("/{userId}")
     @Tag(name = "Update User", description = "Update details of a specific user")
     @SecurityRequirement(name = "bearerAuth")
-    public ResponseEntity<UserResponseDTO> updateUser(@RequestBody UserRequestDTO request) {
+    public ResponseEntity<UserResponseDTO> updateUser(@Valid @RequestBody UserRequestDTO request) {
 
         UUID userId = userProvider.getCurrentUserId();
         UserResponseDTO user = userService.updateUser(userId, request);
@@ -76,7 +77,7 @@ public class UserController {
     @PutMapping("/{userId}/newPassword")
     @Tag(name = "Update Password", description = "Update the password of a specific user")
     @SecurityRequirement(name = "bearerAuth")
-    public ResponseEntity<Void> updatePassword(@RequestBody UserRequestDTO request) {
+    public ResponseEntity<Void> updatePassword(@Valid @RequestBody UserRequestDTO request) {
 
         UUID userId = userProvider.getCurrentUserId();
         userService.updatePwd(userId, request.getPassword());

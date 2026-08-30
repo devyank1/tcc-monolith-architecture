@@ -1,17 +1,27 @@
 package com.yankdev.brtickets.venue.dto;
 
 import com.yankdev.brtickets.venue.model.enums.VenueEnum;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 public class VenueRequestDTO {
+    @NotBlank
     private String name;
     private String description;
     private VenueEnum type;
+    @NotBlank
     private String street;
+    @NotBlank
     private String city;
+    @NotBlank
     private String state;
+    @NotBlank
     private String zipCode;
+    @NotBlank
     private String country;
     private Boolean isActive;
+    @NotNull
+    @NotBlank
     private Integer capacity;
 
     public String getName() {

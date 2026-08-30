@@ -5,6 +5,7 @@ import com.yankdev.brtickets.ticket.dto.TicketResponseDTO;
 import com.yankdev.brtickets.ticket.service.TicketService;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -27,7 +28,7 @@ public class TicketController {
     @Tag(name = "Create Ticket", description = "Create a new ticket")
     @SecurityRequirement(name = "bearerAuth")
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<TicketResponseDTO> createTicket(@RequestBody TicketRequestDTO request) {
+    public ResponseEntity<TicketResponseDTO> createTicket(@Valid @RequestBody TicketRequestDTO request) {
 
         TicketResponseDTO ticket = ticketService.createTicket(request);
         return ResponseEntity.status(HttpStatus.CREATED).body(ticket);
@@ -55,7 +56,7 @@ public class TicketController {
     @Tag(name = "Update Ticket", description = "Update details of a specific ticket")
     @SecurityRequirement(name = "bearerAuth")
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<TicketResponseDTO> updateTicket(@PathVariable UUID ticketId, @RequestBody TicketRequestDTO request) {
+    public ResponseEntity<TicketResponseDTO> updateTicket(@PathVariable UUID ticketId, @Valid @RequestBody TicketRequestDTO request) {
 
         TicketResponseDTO ticket = ticketService.updateTicket(request, ticketId);
         return ResponseEntity.ok(ticket);

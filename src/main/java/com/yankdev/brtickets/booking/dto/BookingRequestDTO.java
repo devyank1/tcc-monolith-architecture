@@ -2,7 +2,6 @@ package com.yankdev.brtickets.booking.dto;
 
 import com.yankdev.brtickets.booking.model.enums.BookingStatusEnum;
 import com.yankdev.brtickets.payment.model.enums.PaymentMethodEnum;
-import com.yankdev.brtickets.user.model.UserModel;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 

@@ -1,14 +1,25 @@
 package com.yankdev.brtickets.user.dto;
 
 import com.yankdev.brtickets.user.model.enums.UserRole;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 import java.time.LocalDate;
 
 public class UserRequestDTO {
+    @NotBlank
+    @NotNull
     private String firstName;
+    @NotBlank
     private String lastName;
+    @NotBlank
+    @Email
     private String email;
+    @NotBlank
     private String password;
+    @NotBlank
+    @NotNull
     private String cpf;
     private String phone;
     private LocalDate birthday;

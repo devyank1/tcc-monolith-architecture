@@ -2,17 +2,23 @@ package com.yankdev.brtickets.ticket.dto;
 
 import com.yankdev.brtickets.ticket.model.enums.TicketStatusEnum;
 import com.yankdev.brtickets.ticket.model.enums.TicketTypeEnum;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
 public class TicketRequestDTO {
+    @NotNull
     private UUID eventId;
+    @NotNull
     private String sector;
     private String row;
     private String seat;
+    @NotNull
     private BigDecimal price;
+    @NotNull
     private TicketStatusEnum status;
     private TicketTypeEnum type;
     private String qrCode;

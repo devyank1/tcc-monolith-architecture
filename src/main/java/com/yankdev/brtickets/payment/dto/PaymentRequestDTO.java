@@ -2,15 +2,19 @@ package com.yankdev.brtickets.payment.dto;
 
 import com.yankdev.brtickets.payment.model.enums.PaymentMethodEnum;
 import com.yankdev.brtickets.payment.model.enums.PaymentStatusEnum;
+import jakarta.validation.constraints.NotNull;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
 public class PaymentRequestDTO {
+    @NotNull
     private UUID bookingId;
+    @NotNull
     private PaymentMethodEnum method;
     private PaymentStatusEnum status;
+    @NotNull
     private BigDecimal amount;
     private String gatewayTransactionId;
     private String gatewayResponse;

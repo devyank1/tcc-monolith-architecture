@@ -4,6 +4,7 @@ import com.yankdev.brtickets.payment.dto.PaymentRequestDTO;
 import com.yankdev.brtickets.payment.dto.PaymentResponseDTO;
 import com.yankdev.brtickets.payment.service.PaymentService;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -22,7 +23,7 @@ public class PaymentController {
 
     @PostMapping
     @Tag(name = "Process Payment", description = "Initiate a payment for a booking")
-    public ResponseEntity<PaymentResponseDTO> processPayment(@RequestParam UUID bookingId, @RequestBody PaymentRequestDTO request) {
+    public ResponseEntity<PaymentResponseDTO> processPayment(@RequestParam UUID bookingId, @Valid @RequestBody PaymentRequestDTO request) {
 
         PaymentResponseDTO payment = paymentService.processPayment(bookingId, request);
         return ResponseEntity.status(HttpStatus.CREATED).body(payment);

@@ -5,6 +5,7 @@ import com.yankdev.brtickets.venue.dto.VenueResponseDTO;
 import com.yankdev.brtickets.venue.service.VenueService;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -27,7 +28,7 @@ public class VenueController {
     @Tag(name = "Create Venue", description = "Creation of a new venue")
     @SecurityRequirement(name = "bearerAuth")
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<VenueResponseDTO> createVenue(@RequestBody VenueRequestDTO request) {
+    public ResponseEntity<VenueResponseDTO> createVenue(@Valid @RequestBody VenueRequestDTO request) {
 
         VenueResponseDTO venue = venueService.createVenue(request);
         return ResponseEntity.status(HttpStatus.CREATED).body(venue);
@@ -55,7 +56,7 @@ public class VenueController {
     @Tag(name = "Update Venue", description = "Update details of a specific venue")
     @SecurityRequirement(name = "bearerAuth")
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<VenueResponseDTO> updateVenue(@PathVariable UUID venueId, @RequestBody VenueRequestDTO request) {
+    public ResponseEntity<VenueResponseDTO> updateVenue(@PathVariable UUID venueId, @Valid @RequestBody VenueRequestDTO request) {
 
         VenueResponseDTO venue = venueService.updateVenue(venueId, request);
         return ResponseEntity.ok(venue);
