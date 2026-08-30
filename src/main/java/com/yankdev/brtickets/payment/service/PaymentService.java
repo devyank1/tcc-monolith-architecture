@@ -94,7 +94,6 @@ public class PaymentService {
         return PaymentResponseDTO.from(paid);
     }
 
-    @Transactional
     public void refundPayment(UUID paymentId) {
 
         PaymentModel payment = paymentRepository.findById(paymentId)

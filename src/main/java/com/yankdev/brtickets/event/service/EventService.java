@@ -113,7 +113,6 @@ public class EventService {
                 .toList();
     }
 
-    @Transactional
     public EventResponseDTO updateEvent(UUID eventId, EventRequestDTO request) {
 
         EventModel event = eventRepository.findById(eventId)
@@ -151,7 +150,6 @@ public class EventService {
         return EventResponseDTO.from(event);
     }
 
-    @Transactional
     public EventResponseDTO publishEvent(UUID eventId) {
 
         EventModel event = eventRepository.findById(eventId)
@@ -168,7 +166,6 @@ public class EventService {
         return EventResponseDTO.from(newPublishedEvent);
     }
 
-    @Transactional
     public void cancelEvent(UUID eventId) {
 
         EventModel deactivateEvent = eventRepository.findById(eventId)

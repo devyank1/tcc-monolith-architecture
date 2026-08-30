@@ -67,7 +67,6 @@ public class TicketService {
                 .toList();
     }
 
-    @Transactional
     public TicketResponseDTO updateTicket(TicketRequestDTO request, UUID ticketId) {
 
         TicketModel ticket  = ticketRepository.findById(ticketId)
@@ -83,7 +82,6 @@ public class TicketService {
 
     }
 
-    @Transactional
     public void deactivateTicket(UUID ticketId) {
 
         TicketModel ticket = ticketRepository.findById(ticketId)
