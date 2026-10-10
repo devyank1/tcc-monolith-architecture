@@ -1,0 +1,788 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------------< com.yankdev:brtickets >------------------------
+[INFO] Building brtickets 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- jacoco:0.8.15:prepare-agent (prepare-agent) @ brtickets ---
+[INFO] argLine set to -javaagent:C:\\Users\\Cliente\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.15\\org.jacoco.agent-0.8.15-runtime.jar=destfile=C:\\Users\\Cliente\\Desktop\\monolith-brtickets\\brtickets\\target\\jacoco.exec,excludes=**/BrticketsApplication.class:**/dto/**:**/model/**:**/config/**
+[INFO] 
+[INFO] --- resources:3.5.0:resources (default-resources) @ brtickets ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.15.0:compile (default-compile) @ brtickets ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.5.0:testResources (default-testResources) @ brtickets ---
+[INFO] skip non existing resourceDirectory C:\Users\Cliente\Desktop\monolith-brtickets\brtickets\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.15.0:testCompile (default-testCompile) @ brtickets ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- surefire:3.5.6:test (default-test) @ brtickets ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.yankdev.brtickets.booking.controller.BookingControllerTest
+15:08:45.341 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.yankdev.brtickets.booking.controller.BookingControllerTest]: BookingControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+15:08:45.728 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.yankdev.brtickets.BrticketsApplication for test class com.yankdev.brtickets.booking.controller.BookingControllerTest
+15:08:45.732 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.yankdev.brtickets.booking.controller.BookingControllerTest]: BookingControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+15:08:45.746 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.yankdev.brtickets.BrticketsApplication for test class com.yankdev.brtickets.booking.controller.BookingControllerTest
+15:08:45.961 [main] INFO org.springframework.boot.devtools.restart.RestartApplicationListener -- Restart disabled due to context in which it is running
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.1.0)
+
+2026-10-10T15:08:47.417-03:00  INFO 21988 --- [brtickets] [           main] c.y.b.b.c.BookingControllerTest          : Starting BookingControllerTest using Java 17.0.19 with PID 21988 (started by Cliente in C:\Users\Cliente\Desktop\monolith-brtickets\brtickets)
+2026-10-10T15:08:47.420-03:00  INFO 21988 --- [brtickets] [           main] c.y.b.b.c.BookingControllerTest          : No active profile set, falling back to 1 default profile: "default"
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+2026-10-10T15:08:52.263-03:00  INFO 21988 --- [brtickets] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-10-10T15:08:53.424-03:00  INFO 21988 --- [brtickets] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-10T15:08:53.424-03:00  INFO 21988 --- [brtickets] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-10T15:08:53.427-03:00  INFO 21988 --- [brtickets] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 3 ms
+2026-10-10T15:08:53.476-03:00  INFO 21988 --- [brtickets] [           main] c.y.b.b.c.BookingControllerTest          : Started BookingControllerTest in 7.548 seconds (process running for 10.269)
+[INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 10.12 s -- in com.yankdev.brtickets.booking.controller.BookingControllerTest
+[INFO] Running com.yankdev.brtickets.booking.item.repository.BookingItemRepositoryTest
+2026-10-10T15:08:55.072-03:00  INFO 21988 --- [brtickets] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.yankdev.brtickets.booking.item.repository.BookingItemRepositoryTest]: BookingItemRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-10T15:08:55.143-03:00  INFO 21988 --- [brtickets] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.yankdev.brtickets.BrticketsApplication for test class com.yankdev.brtickets.booking.item.repository.BookingItemRepositoryTest
+2026-10-10T15:08:55.144-03:00  INFO 21988 --- [brtickets] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.yankdev.brtickets.booking.item.repository.BookingItemRepositoryTest]: BookingItemRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-10T15:08:55.160-03:00  INFO 21988 --- [brtickets] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.yankdev.brtickets.BrticketsApplication for test class com.yankdev.brtickets.booking.item.repository.BookingItemRepositoryTest
+2026-10-10T15:08:55.168-03:00  INFO 21988 --- [brtickets] [           main] o.s.b.d.r.RestartApplicationListener     : Restart disabled due to context in which it is running
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.1.0)
+
+2026-10-10T15:08:55.207-03:00  INFO 21988 --- [brtickets] [           main] c.y.b.b.i.r.BookingItemRepositoryTest    : Starting BookingItemRepositoryTest using Java 17.0.19 with PID 21988 (started by Cliente in C:\Users\Cliente\Desktop\monolith-brtickets\brtickets)
+2026-10-10T15:08:55.207-03:00  INFO 21988 --- [brtickets] [           main] c.y.b.b.i.r.BookingItemRepositoryTest    : No active profile set, falling back to 1 default profile: "default"
+2026-10-10T15:08:55.759-03:00  INFO 21988 --- [brtickets] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-10T15:08:55.924-03:00  INFO 21988 --- [brtickets] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 120 ms. Found 7 JPA repository interfaces.
+2026-10-10T15:08:56.343-03:00  INFO 21988 --- [brtickets] [           main] org.testcontainers.images.PullPolicy     : Image pull policy will be performed by: DefaultPullPolicy()
+2026-10-10T15:08:56.357-03:00  INFO 21988 --- [brtickets] [           main] o.t.utility.ImageNameSubstitutor         : Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+2026-10-10T15:08:56.452-03:00  INFO 21988 --- [brtickets] [           main] org.testcontainers.DockerClientFactory   : Testcontainers version: 2.0.5
+2026-10-10T15:08:57.472-03:00  INFO 21988 --- [brtickets] [           main] o.t.d.DockerClientProviderStrategy       : Loaded org.testcontainers.dockerclient.NpipeSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+2026-10-10T15:08:58.840-03:00  INFO 21988 --- [brtickets] [           main] o.t.d.DockerClientProviderStrategy       : Found Docker environment with local Npipe socket (npipe:////./pipe/docker_engine)
+2026-10-10T15:08:58.842-03:00  INFO 21988 --- [brtickets] [           main] org.testcontainers.DockerClientFactory   : Docker host IP address is localhost
+2026-10-10T15:08:58.872-03:00  INFO 21988 --- [brtickets] [           main] org.testcontainers.DockerClientFactory   : Connected to docker: 
+  Server Version: 29.6.1
+  API Version: 1.55
+  Operating System: Docker Desktop
+  Total Memory: 7893 MB
+  Labels: 
+    com.docker.desktop.address=npipe://\\.\pipe\docker_cli
+2026-10-10T15:08:59.038-03:00  INFO 21988 --- [brtickets] [           main] tc.testcontainers/ryuk:0.14.0            : Creating container for image: testcontainers/ryuk:0.14.0
+2026-10-10T15:08:59.671-03:00  INFO 21988 --- [brtickets] [           main] tc.testcontainers/ryuk:0.14.0            : Container testcontainers/ryuk:0.14.0 is starting: 1c6fdc3ba4efbeb98cf57f9da0c15b694bac12ce43982e903145589834bc1716
+2026-10-10T15:09:00.880-03:00  INFO 21988 --- [brtickets] [           main] tc.testcontainers/ryuk:0.14.0            : Container testcontainers/ryuk:0.14.0 started in PT1.8428437S
+2026-10-10T15:09:00.887-03:00  INFO 21988 --- [brtickets] [           main] o.t.utility.RyukResourceReaper           : Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+2026-10-10T15:09:00.887-03:00  INFO 21988 --- [brtickets] [           main] org.testcontainers.DockerClientFactory   : Checking the system...
+2026-10-10T15:09:00.888-03:00  INFO 21988 --- [brtickets] [           main] org.testcontainers.DockerClientFactory   : ?? Docker server version should be at least 1.6.0
+2026-10-10T15:09:00.890-03:00  INFO 21988 --- [brtickets] [           main] tc.postgres:17-alpine                    : Creating container for image: postgres:17-alpine
+2026-10-10T15:09:01.121-03:00  INFO 21988 --- [brtickets] [           main] tc.postgres:17-alpine                    : Container postgres:17-alpine is starting: af8d2b6eed380f17275840bef8b4f15bb54f4b7e53e8c92faf138bd123554079
+2026-10-10T15:09:06.987-03:00  INFO 21988 --- [brtickets] [           main] tc.postgres:17-alpine                    : Container postgres:17-alpine started in PT6.0975161S
+2026-10-10T15:09:06.988-03:00  INFO 21988 --- [brtickets] [           main] tc.postgres:17-alpine                    : Container is started (JDBC URL: jdbc:postgresql://localhost:60837/test?loggerLevel=OFF)
+2026-10-10T15:09:07.443-03:00  INFO 21988 --- [brtickets] [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-10-10T15:09:07.900-03:00  INFO 21988 --- [brtickets] [           main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.1.Final
+2026-10-10T15:09:09.244-03:00  INFO 21988 --- [brtickets] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-10T15:09:09.357-03:00  INFO 21988 --- [brtickets] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-10-10T15:09:09.739-03:00  INFO 21988 --- [brtickets] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@22c0c84b
+2026-10-10T15:09:09.741-03:00  INFO 21988 --- [brtickets] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-10-10T15:09:09.969-03:00  INFO 21988 --- [brtickets] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:60837/test?loggerLevel=OFF]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.11
+	Default catalog/schema: test/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-10T15:09:12.487-03:00  INFO 21988 --- [brtickets] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: create table booking_item (booking_item_id uuid not null, unit_price numeric(38,2), booking_booking_id uuid, ticket_ticket_id uuid, primary key (booking_item_id))
+Hibernate: create table bookings (booking_id uuid not null, cancelled_at timestamp(6), confirmed_at timestamp(6), created_at timestamp(6), payment_method varchar(255) check ((payment_method in ('MONEY','CREDIT_CARD','DEBIT_CARD','PIX'))), status varchar(255) check ((status in ('PENDING','CONFIRMED','CANCELLED','REFUNDED'))), total_amount numeric(38,2), user_id uuid, primary key (booking_id))
+Hibernate: create table events (event_id uuid not null, age_rate integer not null, artist varchar(255), created_at timestamp(6), date timestamp(6), description varchar(255), end_date timestamp(6), image_url varchar(255), name varchar(255) not null, sales_end_at timestamp(6), sales_start_at timestamp(6), status smallint check ((status between 0 and 4)), type smallint check ((type between 0 and 6)), created_by uuid not null, venue_id uuid not null, primary key (event_id))
+Hibernate: create table payments (id uuid not null, amount numeric(10,2) not null, card_brand varchar(255), card_last_four_digits varchar(255), created_at timestamp(6) not null, gateway_response varchar(255), gateway_transaction_id varchar(255), installments integer, method varchar(255) not null check ((method in ('MONEY','CREDIT_CARD','DEBIT_CARD','PIX'))), paid_at timestamp(6), pix_expires_at timestamp(6), pix_key varchar(255), pix_qr_code varchar(255), refunded_at timestamp(6), status varchar(255) not null check ((status in ('PENDING','APPROVED','REJECTED','REFUNDED'))), booking_id uuid not null, primary key (id))
+Hibernate: create table tickets (ticket_id uuid not null, created_at timestamp(6), price numeric(38,2) not null, qr_code varchar(255), row varchar(255), seat varchar(255) not null, sector varchar(255) not null, status varchar(255) check ((status in ('AVAILABLE','BOOKED','SOLD','CANCELLED'))), type varchar(255) check ((type in ('FULL_TICKET','HALF_TICKET','VIP','COURTESY'))), updated_at timestamp(6), event_id uuid, primary key (ticket_id))
+Hibernate: create table users (user_id uuid not null, active boolean not null, birthday date, cpf varchar(255), created_at timestamp(6), email varchar(255), first_name varchar(255) not null, last_name varchar(255) not null, password_hash varchar(255) not null, phone varchar(255), role smallint check ((role between 0 and 1)), updated_at timestamp(6), primary key (user_id))
+Hibernate: create table venues (venue_id uuid not null, capacity integer not null, city varchar(255) not null, country varchar(255), description varchar(255), is_active boolean not null, latitude float(53), longitude float(53), name varchar(255) not null, state varchar(255) not null, street varchar(255) not null, type varchar(255) check ((type in ('ARENA','STADIUM','AMPHITHEATER','THEATER','CLUB','FESTIVAL_GROUND'))), zip_code varchar(255), primary key (venue_id))
+Hibernate: alter table if exists tickets drop constraint if exists UK136k8tqvcn833mi3tjgqktnx2
+2026-10-10T15:09:12.739-03:00  WARN 21988 --- [brtickets] [           main] org.hibernate.orm.jdbc.warn              : HHH000247: ErrorCode: 0, SQLState: 00000
+2026-10-10T15:09:12.740-03:00  WARN 21988 --- [brtickets] [           main] org.hibernate.orm.jdbc.warn              : constraint "uk136k8tqvcn833mi3tjgqktnx2" of relation "tickets" does not exist, skipping
+Hibernate: alter table if exists tickets add constraint UK136k8tqvcn833mi3tjgqktnx2 unique (qr_code)
+Hibernate: alter table if exists users drop constraint if exists UK7kqluf7wl0oxs7n90fpya03ss
+2026-10-10T15:09:12.749-03:00  WARN 21988 --- [brtickets] [           main] org.hibernate.orm.jdbc.warn              : HHH000247: ErrorCode: 0, SQLState: 00000
+2026-10-10T15:09:12.749-03:00  WARN 21988 --- [brtickets] [           main] org.hibernate.orm.jdbc.warn              : constraint "uk7kqluf7wl0oxs7n90fpya03ss" of relation "users" does not exist, skipping
+Hibernate: alter table if exists users add constraint UK7kqluf7wl0oxs7n90fpya03ss unique (cpf)
+Hibernate: alter table if exists users drop constraint if exists UK6dotkott2kjsp8vw4d0m25fb7
+2026-10-10T15:09:12.754-03:00  WARN 21988 --- [brtickets] [           main] org.hibernate.orm.jdbc.warn              : HHH000247: ErrorCode: 0, SQLState: 00000
+2026-10-10T15:09:12.754-03:00  WARN 21988 --- [brtickets] [           main] org.hibernate.orm.jdbc.warn              : constraint "uk6dotkott2kjsp8vw4d0m25fb7" of relation "users" does not exist, skipping
+Hibernate: alter table if exists users add constraint UK6dotkott2kjsp8vw4d0m25fb7 unique (email)
+Hibernate: alter table if exists booking_item add constraint FKr9uekm2d51h3262nf1cs6m2tl foreign key (booking_booking_id) references bookings
+Hibernate: alter table if exists booking_item add constraint FKp7lviqmtqyyb20wmnmi0473jj foreign key (ticket_ticket_id) references tickets
+Hibernate: alter table if exists events add constraint FKmpv90a1lsx9lcxsj7xjcvvsxg foreign key (created_by) references users
+Hibernate: alter table if exists events add constraint FKqdxygdernwwt74hdvix9u5nr3 foreign key (venue_id) references venues
+Hibernate: alter table if exists payments add constraint FKc52o2b1jkxttngufqp3t7jr3h foreign key (booking_id) references bookings
+Hibernate: alter table if exists tickets add constraint FK3utafe14rupaypjocldjaj4ol foreign key (event_id) references events
+2026-10-10T15:09:12.787-03:00  INFO 21988 --- [brtickets] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-10T15:09:13.059-03:00  INFO 21988 --- [brtickets] [           main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-10-10T15:09:13.771-03:00  INFO 21988 --- [brtickets] [           main] c.y.b.b.i.r.BookingItemRepositoryTest    : Started BookingItemRepositoryTest in 18.603 seconds (process running for 30.565)
+Hibernate: insert into users (active,birthday,cpf,created_at,email,first_name,last_name,password_hash,phone,role,updated_at,user_id) values (?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into venues (capacity,city,country,description,is_active,latitude,longitude,name,state,street,type,zip_code,venue_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into events (age_rate,artist,created_at,created_by,date,description,end_date,image_url,name,sales_end_at,sales_start_at,status,type,venue_id,event_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into tickets (created_at,event_id,price,qr_code,row,seat,sector,status,type,updated_at,ticket_id) values (?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into tickets (created_at,event_id,price,qr_code,row,seat,sector,status,type,updated_at,ticket_id) values (?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into tickets (created_at,event_id,price,qr_code,row,seat,sector,status,type,updated_at,ticket_id) values (?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into bookings (cancelled_at,confirmed_at,created_at,payment_method,status,total_amount,user_id,booking_id) values (?,?,?,?,?,?,?,?)
+Hibernate: insert into bookings (cancelled_at,confirmed_at,created_at,payment_method,status,total_amount,user_id,booking_id) values (?,?,?,?,?,?,?,?)
+Hibernate: insert into booking_item (booking_booking_id,ticket_ticket_id,unit_price,booking_item_id) values (?,?,?,?)
+Hibernate: insert into booking_item (booking_booking_id,ticket_ticket_id,unit_price,booking_item_id) values (?,?,?,?)
+Hibernate: insert into booking_item (booking_booking_id,ticket_ticket_id,unit_price,booking_item_id) values (?,?,?,?)
+Hibernate: select bim1_0.booking_item_id,bim1_0.booking_booking_id,bim1_0.ticket_ticket_id,bim1_0.unit_price from booking_item bim1_0 where bim1_0.booking_booking_id=?
+Hibernate: insert into users (active,birthday,cpf,created_at,email,first_name,last_name,password_hash,phone,role,updated_at,user_id) values (?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into venues (capacity,city,country,description,is_active,latitude,longitude,name,state,street,type,zip_code,venue_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into events (age_rate,artist,created_at,created_by,date,description,end_date,image_url,name,sales_end_at,sales_start_at,status,type,venue_id,event_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into tickets (created_at,event_id,price,qr_code,row,seat,sector,status,type,updated_at,ticket_id) values (?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into tickets (created_at,event_id,price,qr_code,row,seat,sector,status,type,updated_at,ticket_id) values (?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into tickets (created_at,event_id,price,qr_code,row,seat,sector,status,type,updated_at,ticket_id) values (?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into bookings (cancelled_at,confirmed_at,created_at,payment_method,status,total_amount,user_id,booking_id) values (?,?,?,?,?,?,?,?)
+Hibernate: insert into bookings (cancelled_at,confirmed_at,created_at,payment_method,status,total_amount,user_id,booking_id) values (?,?,?,?,?,?,?,?)
+Hibernate: insert into booking_item (booking_booking_id,ticket_ticket_id,unit_price,booking_item_id) values (?,?,?,?)
+Hibernate: insert into booking_item (booking_booking_id,ticket_ticket_id,unit_price,booking_item_id) values (?,?,?,?)
+Hibernate: insert into booking_item (booking_booking_id,ticket_ticket_id,unit_price,booking_item_id) values (?,?,?,?)
+Hibernate: select bim1_0.booking_item_id,bim1_0.booking_booking_id,bim1_0.ticket_ticket_id,bim1_0.unit_price from booking_item bim1_0 where bim1_0.booking_booking_id=?
+Hibernate: insert into users (active,birthday,cpf,created_at,email,first_name,last_name,password_hash,phone,role,updated_at,user_id) values (?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into venues (capacity,city,country,description,is_active,latitude,longitude,name,state,street,type,zip_code,venue_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into events (age_rate,artist,created_at,created_by,date,description,end_date,image_url,name,sales_end_at,sales_start_at,status,type,venue_id,event_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into tickets (created_at,event_id,price,qr_code,row,seat,sector,status,type,updated_at,ticket_id) values (?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into tickets (created_at,event_id,price,qr_code,row,seat,sector,status,type,updated_at,ticket_id) values (?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into tickets (created_at,event_id,price,qr_code,row,seat,sector,status,type,updated_at,ticket_id) values (?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into bookings (cancelled_at,confirmed_at,created_at,payment_method,status,total_amount,user_id,booking_id) values (?,?,?,?,?,?,?,?)
+Hibernate: insert into bookings (cancelled_at,confirmed_at,created_at,payment_method,status,total_amount,user_id,booking_id) values (?,?,?,?,?,?,?,?)
+Hibernate: insert into booking_item (booking_booking_id,ticket_ticket_id,unit_price,booking_item_id) values (?,?,?,?)
+Hibernate: insert into booking_item (booking_booking_id,ticket_ticket_id,unit_price,booking_item_id) values (?,?,?,?)
+Hibernate: insert into booking_item (booking_booking_id,ticket_ticket_id,unit_price,booking_item_id) values (?,?,?,?)
+Hibernate: select bim1_0.booking_item_id,bim1_0.booking_booking_id,bim1_0.ticket_ticket_id,bim1_0.unit_price from booking_item bim1_0 where bim1_0.booking_booking_id=?
+Hibernate: insert into users (active,birthday,cpf,created_at,email,first_name,last_name,password_hash,phone,role,updated_at,user_id) values (?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into venues (capacity,city,country,description,is_active,latitude,longitude,name,state,street,type,zip_code,venue_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into events (age_rate,artist,created_at,created_by,date,description,end_date,image_url,name,sales_end_at,sales_start_at,status,type,venue_id,event_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into tickets (created_at,event_id,price,qr_code,row,seat,sector,status,type,updated_at,ticket_id) values (?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into tickets (created_at,event_id,price,qr_code,row,seat,sector,status,type,updated_at,ticket_id) values (?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into tickets (created_at,event_id,price,qr_code,row,seat,sector,status,type,updated_at,ticket_id) values (?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into bookings (cancelled_at,confirmed_at,created_at,payment_method,status,total_amount,user_id,booking_id) values (?,?,?,?,?,?,?,?)
+Hibernate: insert into bookings (cancelled_at,confirmed_at,created_at,payment_method,status,total_amount,user_id,booking_id) values (?,?,?,?,?,?,?,?)
+Hibernate: insert into booking_item (booking_booking_id,ticket_ticket_id,unit_price,booking_item_id) values (?,?,?,?)
+Hibernate: insert into booking_item (booking_booking_id,ticket_ticket_id,unit_price,booking_item_id) values (?,?,?,?)
+Hibernate: insert into booking_item (booking_booking_id,ticket_ticket_id,unit_price,booking_item_id) values (?,?,?,?)
+Hibernate: select bim1_0.booking_item_id,bim1_0.booking_booking_id,bim1_0.ticket_ticket_id,bim1_0.unit_price from booking_item bim1_0 where bim1_0.booking_booking_id=?
+Hibernate: insert into users (active,birthday,cpf,created_at,email,first_name,last_name,password_hash,phone,role,updated_at,user_id) values (?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into venues (capacity,city,country,description,is_active,latitude,longitude,name,state,street,type,zip_code,venue_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into events (age_rate,artist,created_at,created_by,date,description,end_date,image_url,name,sales_end_at,sales_start_at,status,type,venue_id,event_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into tickets (created_at,event_id,price,qr_code,row,seat,sector,status,type,updated_at,ticket_id) values (?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into tickets (created_at,event_id,price,qr_code,row,seat,sector,status,type,updated_at,ticket_id) values (?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into tickets (created_at,event_id,price,qr_code,row,seat,sector,status,type,updated_at,ticket_id) values (?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into bookings (cancelled_at,confirmed_at,created_at,payment_method,status,total_amount,user_id,booking_id) values (?,?,?,?,?,?,?,?)
+Hibernate: insert into bookings (cancelled_at,confirmed_at,created_at,payment_method,status,total_amount,user_id,booking_id) values (?,?,?,?,?,?,?,?)
+Hibernate: insert into booking_item (booking_booking_id,ticket_ticket_id,unit_price,booking_item_id) values (?,?,?,?)
+Hibernate: insert into booking_item (booking_booking_id,ticket_ticket_id,unit_price,booking_item_id) values (?,?,?,?)
+Hibernate: insert into booking_item (booking_booking_id,ticket_ticket_id,unit_price,booking_item_id) values (?,?,?,?)
+Hibernate: select bim1_0.booking_item_id,bim1_0.booking_booking_id,bim1_0.ticket_ticket_id,bim1_0.unit_price from booking_item bim1_0 where bim1_0.booking_booking_id=?
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 20.37 s -- in com.yankdev.brtickets.booking.item.repository.BookingItemRepositoryTest
+[INFO] Running com.yankdev.brtickets.booking.repository.BookingRepositoryTest
+2026-10-10T15:09:15.436-03:00  INFO 21988 --- [brtickets] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.yankdev.brtickets.booking.repository.BookingRepositoryTest]: BookingRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-10T15:09:15.483-03:00  INFO 21988 --- [brtickets] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.yankdev.brtickets.BrticketsApplication for test class com.yankdev.brtickets.booking.repository.BookingRepositoryTest
+2026-10-10T15:09:15.483-03:00  INFO 21988 --- [brtickets] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.yankdev.brtickets.booking.repository.BookingRepositoryTest]: BookingRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-10T15:09:15.497-03:00  INFO 21988 --- [brtickets] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.yankdev.brtickets.BrticketsApplication for test class com.yankdev.brtickets.booking.repository.BookingRepositoryTest
+Hibernate: insert into bookings (cancelled_at,confirmed_at,created_at,payment_method,status,total_amount,user_id,booking_id) values (?,?,?,?,?,?,?,?)
+Hibernate: insert into bookings (cancelled_at,confirmed_at,created_at,payment_method,status,total_amount,user_id,booking_id) values (?,?,?,?,?,?,?,?)
+Hibernate: insert into bookings (cancelled_at,confirmed_at,created_at,payment_method,status,total_amount,user_id,booking_id) values (?,?,?,?,?,?,?,?)
+Hibernate: select bm1_0.booking_id,bm1_0.cancelled_at,bm1_0.confirmed_at,bm1_0.created_at,bm1_0.payment_method,bm1_0.status,bm1_0.total_amount,bm1_0.user_id from bookings bm1_0 where bm1_0.user_id=?
+Hibernate: insert into bookings (cancelled_at,confirmed_at,created_at,payment_method,status,total_amount,user_id,booking_id) values (?,?,?,?,?,?,?,?)
+Hibernate: insert into bookings (cancelled_at,confirmed_at,created_at,payment_method,status,total_amount,user_id,booking_id) values (?,?,?,?,?,?,?,?)
+Hibernate: insert into bookings (cancelled_at,confirmed_at,created_at,payment_method,status,total_amount,user_id,booking_id) values (?,?,?,?,?,?,?,?)
+Hibernate: select bm1_0.booking_id,bm1_0.cancelled_at,bm1_0.confirmed_at,bm1_0.created_at,bm1_0.payment_method,bm1_0.status,bm1_0.total_amount,bm1_0.user_id from bookings bm1_0 where bm1_0.user_id=?
+Hibernate: insert into bookings (cancelled_at,confirmed_at,created_at,payment_method,status,total_amount,user_id,booking_id) values (?,?,?,?,?,?,?,?)
+Hibernate: insert into bookings (cancelled_at,confirmed_at,created_at,payment_method,status,total_amount,user_id,booking_id) values (?,?,?,?,?,?,?,?)
+Hibernate: insert into bookings (cancelled_at,confirmed_at,created_at,payment_method,status,total_amount,user_id,booking_id) values (?,?,?,?,?,?,?,?)
+Hibernate: select bm1_0.booking_id,bm1_0.cancelled_at,bm1_0.confirmed_at,bm1_0.created_at,bm1_0.payment_method,bm1_0.status,bm1_0.total_amount,bm1_0.user_id from bookings bm1_0 where bm1_0.user_id=?
+Hibernate: insert into bookings (cancelled_at,confirmed_at,created_at,payment_method,status,total_amount,user_id,booking_id) values (?,?,?,?,?,?,?,?)
+Hibernate: insert into bookings (cancelled_at,confirmed_at,created_at,payment_method,status,total_amount,user_id,booking_id) values (?,?,?,?,?,?,?,?)
+Hibernate: insert into bookings (cancelled_at,confirmed_at,created_at,payment_method,status,total_amount,user_id,booking_id) values (?,?,?,?,?,?,?,?)
+Hibernate: select bm1_0.booking_id,bm1_0.cancelled_at,bm1_0.confirmed_at,bm1_0.created_at,bm1_0.payment_method,bm1_0.status,bm1_0.total_amount,bm1_0.user_id from bookings bm1_0 where bm1_0.user_id=?
+Hibernate: insert into bookings (cancelled_at,confirmed_at,created_at,payment_method,status,total_amount,user_id,booking_id) values (?,?,?,?,?,?,?,?)
+Hibernate: insert into bookings (cancelled_at,confirmed_at,created_at,payment_method,status,total_amount,user_id,booking_id) values (?,?,?,?,?,?,?,?)
+Hibernate: insert into bookings (cancelled_at,confirmed_at,created_at,payment_method,status,total_amount,user_id,booking_id) values (?,?,?,?,?,?,?,?)
+Hibernate: select bm1_0.booking_id,bm1_0.cancelled_at,bm1_0.confirmed_at,bm1_0.created_at,bm1_0.payment_method,bm1_0.status,bm1_0.total_amount,bm1_0.user_id from bookings bm1_0 where bm1_0.user_id=?
+Hibernate: insert into bookings (cancelled_at,confirmed_at,created_at,payment_method,status,total_amount,user_id,booking_id) values (?,?,?,?,?,?,?,?)
+Hibernate: insert into bookings (cancelled_at,confirmed_at,created_at,payment_method,status,total_amount,user_id,booking_id) values (?,?,?,?,?,?,?,?)
+Hibernate: insert into bookings (cancelled_at,confirmed_at,created_at,payment_method,status,total_amount,user_id,booking_id) values (?,?,?,?,?,?,?,?)
+Hibernate: select bm1_0.booking_id,bm1_0.cancelled_at,bm1_0.confirmed_at,bm1_0.created_at,bm1_0.payment_method,bm1_0.status,bm1_0.total_amount,bm1_0.user_id from bookings bm1_0 where bm1_0.user_id=?
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.240 s -- in com.yankdev.brtickets.booking.repository.BookingRepositoryTest
+[INFO] Running com.yankdev.brtickets.booking.service.BookingServiceTest
+[INFO] Running cancelBooking
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.438 s -- in cancelBooking
+[INFO] Running findBookingById / findAllByUser
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 s -- in findBookingById / findAllByUser
+[INFO] Running createBooking
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.035 s -- in createBooking
+[INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.498 s -- in com.yankdev.brtickets.booking.service.BookingServiceTest
+[INFO] Running com.yankdev.brtickets.BrticketsApplicationTests
+2026-10-10T15:09:16.185-03:00  INFO 21988 --- [brtickets] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.yankdev.brtickets.BrticketsApplicationTests]: BrticketsApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-10T15:09:16.212-03:00  INFO 21988 --- [brtickets] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.yankdev.brtickets.BrticketsApplication for test class com.yankdev.brtickets.BrticketsApplicationTests
+2026-10-10T15:09:16.217-03:00  INFO 21988 --- [brtickets] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.yankdev.brtickets.BrticketsApplicationTests]: BrticketsApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-10T15:09:16.219-03:00  INFO 21988 --- [brtickets] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.yankdev.brtickets.BrticketsApplication for test class com.yankdev.brtickets.BrticketsApplicationTests
+2026-10-10T15:09:16.223-03:00  INFO 21988 --- [brtickets] [           main] o.s.b.d.r.RestartApplicationListener     : Restart disabled due to context in which it is running
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.1.0)
+
+2026-10-10T15:09:16.257-03:00  INFO 21988 --- [brtickets] [           main] c.y.brtickets.BrticketsApplicationTests  : Starting BrticketsApplicationTests using Java 17.0.19 with PID 21988 (started by Cliente in C:\Users\Cliente\Desktop\monolith-brtickets\brtickets)
+2026-10-10T15:09:16.257-03:00  INFO 21988 --- [brtickets] [           main] c.y.brtickets.BrticketsApplicationTests  : No active profile set, falling back to 1 default profile: "default"
+2026-10-10T15:09:17.342-03:00  INFO 21988 --- [brtickets] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-10T15:09:17.391-03:00  INFO 21988 --- [brtickets] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 47 ms. Found 7 JPA repository interfaces.
+2026-10-10T15:09:17.820-03:00  INFO 21988 --- [brtickets] [           main] tc.postgres:17-alpine                    : Creating container for image: postgres:17-alpine
+2026-10-10T15:09:18.252-03:00  INFO 21988 --- [brtickets] [           main] tc.postgres:17-alpine                    : Container postgres:17-alpine is starting: 7f594c59a46a7af562c76c2d60996e88d1721ed5c40d3495440500560265c5f0
+2026-10-10T15:09:20.978-03:00  INFO 21988 --- [brtickets] [           main] tc.postgres:17-alpine                    : Container postgres:17-alpine started in PT3.1582712S
+2026-10-10T15:09:20.979-03:00  INFO 21988 --- [brtickets] [           main] tc.postgres:17-alpine                    : Container is started (JDBC URL: jdbc:postgresql://localhost:53204/test?loggerLevel=OFF)
+2026-10-10T15:09:21.107-03:00  INFO 21988 --- [brtickets] [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-10-10T15:09:21.140-03:00  INFO 21988 --- [brtickets] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-10T15:09:21.141-03:00  INFO 21988 --- [brtickets] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2026-10-10T15:09:21.166-03:00  INFO 21988 --- [brtickets] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@4106651f
+2026-10-10T15:09:21.166-03:00  INFO 21988 --- [brtickets] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2026-10-10T15:09:21.177-03:00  INFO 21988 --- [brtickets] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:53204/test?loggerLevel=OFF]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.11
+	Default catalog/schema: test/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-10T15:09:21.291-03:00  INFO 21988 --- [brtickets] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: create table booking_item (booking_item_id uuid not null, unit_price numeric(38,2), booking_booking_id uuid, ticket_ticket_id uuid, primary key (booking_item_id))
+Hibernate: create table bookings (booking_id uuid not null, cancelled_at timestamp(6), confirmed_at timestamp(6), created_at timestamp(6), payment_method varchar(255) check ((payment_method in ('MONEY','CREDIT_CARD','DEBIT_CARD','PIX'))), status varchar(255) check ((status in ('PENDING','CONFIRMED','CANCELLED','REFUNDED'))), total_amount numeric(38,2), user_id uuid, primary key (booking_id))
+Hibernate: create table events (event_id uuid not null, age_rate integer not null, artist varchar(255), created_at timestamp(6), date timestamp(6), description varchar(255), end_date timestamp(6), image_url varchar(255), name varchar(255) not null, sales_end_at timestamp(6), sales_start_at timestamp(6), status smallint check ((status between 0 and 4)), type smallint check ((type between 0 and 6)), created_by uuid not null, venue_id uuid not null, primary key (event_id))
+Hibernate: create table payments (id uuid not null, amount numeric(10,2) not null, card_brand varchar(255), card_last_four_digits varchar(255), created_at timestamp(6) not null, gateway_response varchar(255), gateway_transaction_id varchar(255), installments integer, method varchar(255) not null check ((method in ('MONEY','CREDIT_CARD','DEBIT_CARD','PIX'))), paid_at timestamp(6), pix_expires_at timestamp(6), pix_key varchar(255), pix_qr_code varchar(255), refunded_at timestamp(6), status varchar(255) not null check ((status in ('PENDING','APPROVED','REJECTED','REFUNDED'))), booking_id uuid not null, primary key (id))
+Hibernate: create table tickets (ticket_id uuid not null, created_at timestamp(6), price numeric(38,2) not null, qr_code varchar(255), row varchar(255), seat varchar(255) not null, sector varchar(255) not null, status varchar(255) check ((status in ('AVAILABLE','BOOKED','SOLD','CANCELLED'))), type varchar(255) check ((type in ('FULL_TICKET','HALF_TICKET','VIP','COURTESY'))), updated_at timestamp(6), event_id uuid, primary key (ticket_id))
+Hibernate: create table users (user_id uuid not null, active boolean not null, birthday date, cpf varchar(255), created_at timestamp(6), email varchar(255), first_name varchar(255) not null, last_name varchar(255) not null, password_hash varchar(255) not null, phone varchar(255), role smallint check ((role between 0 and 1)), updated_at timestamp(6), primary key (user_id))
+Hibernate: create table venues (venue_id uuid not null, capacity integer not null, city varchar(255) not null, country varchar(255), description varchar(255), is_active boolean not null, latitude float(53), longitude float(53), name varchar(255) not null, state varchar(255) not null, street varchar(255) not null, type varchar(255) check ((type in ('ARENA','STADIUM','AMPHITHEATER','THEATER','CLUB','FESTIVAL_GROUND'))), zip_code varchar(255), primary key (venue_id))
+Hibernate: alter table if exists tickets drop constraint if exists UK136k8tqvcn833mi3tjgqktnx2
+2026-10-10T15:09:21.362-03:00  WARN 21988 --- [brtickets] [           main] org.hibernate.orm.jdbc.warn              : HHH000247: ErrorCode: 0, SQLState: 00000
+2026-10-10T15:09:21.363-03:00  WARN 21988 --- [brtickets] [           main] org.hibernate.orm.jdbc.warn              : constraint "uk136k8tqvcn833mi3tjgqktnx2" of relation "tickets" does not exist, skipping
+Hibernate: alter table if exists tickets add constraint UK136k8tqvcn833mi3tjgqktnx2 unique (qr_code)
+Hibernate: alter table if exists users drop constraint if exists UK7kqluf7wl0oxs7n90fpya03ss
+2026-10-10T15:09:21.367-03:00  WARN 21988 --- [brtickets] [           main] org.hibernate.orm.jdbc.warn              : HHH000247: ErrorCode: 0, SQLState: 00000
+2026-10-10T15:09:21.368-03:00  WARN 21988 --- [brtickets] [           main] org.hibernate.orm.jdbc.warn              : constraint "uk7kqluf7wl0oxs7n90fpya03ss" of relation "users" does not exist, skipping
+Hibernate: alter table if exists users add constraint UK7kqluf7wl0oxs7n90fpya03ss unique (cpf)
+Hibernate: alter table if exists users drop constraint if exists UK6dotkott2kjsp8vw4d0m25fb7
+2026-10-10T15:09:21.372-03:00  WARN 21988 --- [brtickets] [           main] org.hibernate.orm.jdbc.warn              : HHH000247: ErrorCode: 0, SQLState: 00000
+2026-10-10T15:09:21.373-03:00  WARN 21988 --- [brtickets] [           main] org.hibernate.orm.jdbc.warn              : constraint "uk6dotkott2kjsp8vw4d0m25fb7" of relation "users" does not exist, skipping
+Hibernate: alter table if exists users add constraint UK6dotkott2kjsp8vw4d0m25fb7 unique (email)
+Hibernate: alter table if exists booking_item add constraint FKr9uekm2d51h3262nf1cs6m2tl foreign key (booking_booking_id) references bookings
+Hibernate: alter table if exists booking_item add constraint FKp7lviqmtqyyb20wmnmi0473jj foreign key (ticket_ticket_id) references tickets
+Hibernate: alter table if exists events add constraint FKmpv90a1lsx9lcxsj7xjcvvsxg foreign key (created_by) references users
+Hibernate: alter table if exists events add constraint FKqdxygdernwwt74hdvix9u5nr3 foreign key (venue_id) references venues
+Hibernate: alter table if exists payments add constraint FKc52o2b1jkxttngufqp3t7jr3h foreign key (booking_id) references bookings
+Hibernate: alter table if exists tickets add constraint FK3utafe14rupaypjocldjaj4ol foreign key (event_id) references events
+2026-10-10T15:09:21.398-03:00  INFO 21988 --- [brtickets] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-10T15:09:22.054-03:00  WARN 21988 --- [brtickets] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-10-10T15:09:22.126-03:00  INFO 21988 --- [brtickets] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+2026-10-10T15:09:22.965-03:00  INFO 21988 --- [brtickets] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 3 endpoints beneath base path '/actuator'
+2026-10-10T15:09:23.077-03:00  INFO 21988 --- [brtickets] [           main] c.y.brtickets.BrticketsApplicationTests  : Started BrticketsApplicationTests in 6.854 seconds (process running for 39.87)
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.978 s -- in com.yankdev.brtickets.BrticketsApplicationTests
+[INFO] Running com.yankdev.brtickets.event.controller.EventControllerTest
+2026-10-10T15:09:23.165-03:00  INFO 21988 --- [brtickets] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.yankdev.brtickets.event.controller.EventControllerTest]: EventControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-10T15:09:23.204-03:00  INFO 21988 --- [brtickets] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.yankdev.brtickets.BrticketsApplication for test class com.yankdev.brtickets.event.controller.EventControllerTest
+2026-10-10T15:09:23.205-03:00  INFO 21988 --- [brtickets] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.yankdev.brtickets.event.controller.EventControllerTest]: EventControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-10T15:09:23.212-03:00  INFO 21988 --- [brtickets] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.yankdev.brtickets.BrticketsApplication for test class com.yankdev.brtickets.event.controller.EventControllerTest
+2026-10-10T15:09:23.218-03:00  INFO 21988 --- [brtickets] [           main] o.s.b.d.r.RestartApplicationListener     : Restart disabled due to context in which it is running
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.1.0)
+
+2026-10-10T15:09:23.245-03:00  INFO 21988 --- [brtickets] [           main] c.y.b.e.controller.EventControllerTest   : Starting EventControllerTest using Java 17.0.19 with PID 21988 (started by Cliente in C:\Users\Cliente\Desktop\monolith-brtickets\brtickets)
+2026-10-10T15:09:23.245-03:00  INFO 21988 --- [brtickets] [           main] c.y.b.e.controller.EventControllerTest   : No active profile set, falling back to 1 default profile: "default"
+2026-10-10T15:09:23.546-03:00  INFO 21988 --- [brtickets] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-10-10T15:09:23.632-03:00  INFO 21988 --- [brtickets] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-10T15:09:23.632-03:00  INFO 21988 --- [brtickets] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-10T15:09:23.633-03:00  INFO 21988 --- [brtickets] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2026-10-10T15:09:23.642-03:00  INFO 21988 --- [brtickets] [           main] c.y.b.e.controller.EventControllerTest   : Started EventControllerTest in 0.424 seconds (process running for 40.435)
+2026-10-10T15:09:23.688-03:00  WARN 21988 --- [brtickets] [           main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Method parameter 'type': Failed to convert value of type 'java.lang.String' to required type 'com.yankdev.brtickets.event.model.enums.EventTypeEnum'; Failed to convert from type [java.lang.String] to type [@org.springframework.web.bind.annotation.RequestParam com.yankdev.brtickets.event.model.enums.EventTypeEnum] for value [KARAOKE]]
+[INFO] Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.849 s -- in com.yankdev.brtickets.event.controller.EventControllerTest
+[INFO] Running com.yankdev.brtickets.event.repository.EventRepositoryTest
+2026-10-10T15:09:24.015-03:00  INFO 21988 --- [brtickets] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.yankdev.brtickets.event.repository.EventRepositoryTest]: EventRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-10T15:09:24.054-03:00  INFO 21988 --- [brtickets] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.yankdev.brtickets.BrticketsApplication for test class com.yankdev.brtickets.event.repository.EventRepositoryTest
+2026-10-10T15:09:24.055-03:00  INFO 21988 --- [brtickets] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.yankdev.brtickets.event.repository.EventRepositoryTest]: EventRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-10T15:09:24.066-03:00  INFO 21988 --- [brtickets] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.yankdev.brtickets.BrticketsApplication for test class com.yankdev.brtickets.event.repository.EventRepositoryTest
+Hibernate: insert into users (active,birthday,cpf,created_at,email,first_name,last_name,password_hash,phone,role,updated_at,user_id) values (?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into venues (capacity,city,country,description,is_active,latitude,longitude,name,state,street,type,zip_code,venue_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into venues (capacity,city,country,description,is_active,latitude,longitude,name,state,street,type,zip_code,venue_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into events (age_rate,artist,created_at,created_by,date,description,end_date,image_url,name,sales_end_at,sales_start_at,status,type,venue_id,event_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into events (age_rate,artist,created_at,created_by,date,description,end_date,image_url,name,sales_end_at,sales_start_at,status,type,venue_id,event_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into events (age_rate,artist,created_at,created_by,date,description,end_date,image_url,name,sales_end_at,sales_start_at,status,type,venue_id,event_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into events (age_rate,artist,created_at,created_by,date,description,end_date,image_url,name,sales_end_at,sales_start_at,status,type,venue_id,event_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: select em1_0.event_id,em1_0.age_rate,em1_0.artist,em1_0.created_at,em1_0.created_by,em1_0.date,em1_0.description,em1_0.end_date,em1_0.image_url,em1_0.name,em1_0.sales_end_at,em1_0.sales_start_at,em1_0.status,em1_0.type,em1_0.venue_id from events em1_0 where em1_0.date between ? and ?
+Hibernate: insert into users (active,birthday,cpf,created_at,email,first_name,last_name,password_hash,phone,role,updated_at,user_id) values (?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into venues (capacity,city,country,description,is_active,latitude,longitude,name,state,street,type,zip_code,venue_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into venues (capacity,city,country,description,is_active,latitude,longitude,name,state,street,type,zip_code,venue_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into events (age_rate,artist,created_at,created_by,date,description,end_date,image_url,name,sales_end_at,sales_start_at,status,type,venue_id,event_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into events (age_rate,artist,created_at,created_by,date,description,end_date,image_url,name,sales_end_at,sales_start_at,status,type,venue_id,event_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into events (age_rate,artist,created_at,created_by,date,description,end_date,image_url,name,sales_end_at,sales_start_at,status,type,venue_id,event_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into events (age_rate,artist,created_at,created_by,date,description,end_date,image_url,name,sales_end_at,sales_start_at,status,type,venue_id,event_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: select em1_0.event_id,em1_0.age_rate,em1_0.artist,em1_0.created_at,em1_0.created_by,em1_0.date,em1_0.description,em1_0.end_date,em1_0.image_url,em1_0.name,em1_0.sales_end_at,em1_0.sales_start_at,em1_0.status,em1_0.type,em1_0.venue_id from events em1_0 where em1_0.name=?
+Hibernate: insert into users (active,birthday,cpf,created_at,email,first_name,last_name,password_hash,phone,role,updated_at,user_id) values (?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into venues (capacity,city,country,description,is_active,latitude,longitude,name,state,street,type,zip_code,venue_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into venues (capacity,city,country,description,is_active,latitude,longitude,name,state,street,type,zip_code,venue_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into events (age_rate,artist,created_at,created_by,date,description,end_date,image_url,name,sales_end_at,sales_start_at,status,type,venue_id,event_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into events (age_rate,artist,created_at,created_by,date,description,end_date,image_url,name,sales_end_at,sales_start_at,status,type,venue_id,event_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into events (age_rate,artist,created_at,created_by,date,description,end_date,image_url,name,sales_end_at,sales_start_at,status,type,venue_id,event_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into events (age_rate,artist,created_at,created_by,date,description,end_date,image_url,name,sales_end_at,sales_start_at,status,type,venue_id,event_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: select em1_0.event_id,em1_0.age_rate,em1_0.artist,em1_0.created_at,em1_0.created_by,em1_0.date,em1_0.description,em1_0.end_date,em1_0.image_url,em1_0.name,em1_0.sales_end_at,em1_0.sales_start_at,em1_0.status,em1_0.type,em1_0.venue_id from events em1_0 where em1_0.name=?
+Hibernate: insert into users (active,birthday,cpf,created_at,email,first_name,last_name,password_hash,phone,role,updated_at,user_id) values (?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into venues (capacity,city,country,description,is_active,latitude,longitude,name,state,street,type,zip_code,venue_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into venues (capacity,city,country,description,is_active,latitude,longitude,name,state,street,type,zip_code,venue_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into events (age_rate,artist,created_at,created_by,date,description,end_date,image_url,name,sales_end_at,sales_start_at,status,type,venue_id,event_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into events (age_rate,artist,created_at,created_by,date,description,end_date,image_url,name,sales_end_at,sales_start_at,status,type,venue_id,event_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into events (age_rate,artist,created_at,created_by,date,description,end_date,image_url,name,sales_end_at,sales_start_at,status,type,venue_id,event_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into events (age_rate,artist,created_at,created_by,date,description,end_date,image_url,name,sales_end_at,sales_start_at,status,type,venue_id,event_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: select em1_0.event_id,em1_0.age_rate,em1_0.artist,em1_0.created_at,em1_0.created_by,em1_0.date,em1_0.description,em1_0.end_date,em1_0.image_url,em1_0.name,em1_0.sales_end_at,em1_0.sales_start_at,em1_0.status,em1_0.type,em1_0.venue_id from events em1_0 where em1_0.type=?
+Hibernate: select em1_0.event_id,em1_0.age_rate,em1_0.artist,em1_0.created_at,em1_0.created_by,em1_0.date,em1_0.description,em1_0.end_date,em1_0.image_url,em1_0.name,em1_0.sales_end_at,em1_0.sales_start_at,em1_0.status,em1_0.type,em1_0.venue_id from events em1_0 where em1_0.type=?
+Hibernate: insert into users (active,birthday,cpf,created_at,email,first_name,last_name,password_hash,phone,role,updated_at,user_id) values (?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into venues (capacity,city,country,description,is_active,latitude,longitude,name,state,street,type,zip_code,venue_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into venues (capacity,city,country,description,is_active,latitude,longitude,name,state,street,type,zip_code,venue_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into events (age_rate,artist,created_at,created_by,date,description,end_date,image_url,name,sales_end_at,sales_start_at,status,type,venue_id,event_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into events (age_rate,artist,created_at,created_by,date,description,end_date,image_url,name,sales_end_at,sales_start_at,status,type,venue_id,event_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into events (age_rate,artist,created_at,created_by,date,description,end_date,image_url,name,sales_end_at,sales_start_at,status,type,venue_id,event_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into events (age_rate,artist,created_at,created_by,date,description,end_date,image_url,name,sales_end_at,sales_start_at,status,type,venue_id,event_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: select em1_0.event_id,em1_0.age_rate,em1_0.artist,em1_0.created_at,em1_0.created_by,em1_0.date,em1_0.description,em1_0.end_date,em1_0.image_url,em1_0.name,em1_0.sales_end_at,em1_0.sales_start_at,em1_0.status,em1_0.type,em1_0.venue_id from events em1_0 left join venues v1_0 on v1_0.venue_id=em1_0.venue_id where v1_0.city=?
+Hibernate: insert into users (active,birthday,cpf,created_at,email,first_name,last_name,password_hash,phone,role,updated_at,user_id) values (?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into venues (capacity,city,country,description,is_active,latitude,longitude,name,state,street,type,zip_code,venue_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into venues (capacity,city,country,description,is_active,latitude,longitude,name,state,street,type,zip_code,venue_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into events (age_rate,artist,created_at,created_by,date,description,end_date,image_url,name,sales_end_at,sales_start_at,status,type,venue_id,event_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into events (age_rate,artist,created_at,created_by,date,description,end_date,image_url,name,sales_end_at,sales_start_at,status,type,venue_id,event_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into events (age_rate,artist,created_at,created_by,date,description,end_date,image_url,name,sales_end_at,sales_start_at,status,type,venue_id,event_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into events (age_rate,artist,created_at,created_by,date,description,end_date,image_url,name,sales_end_at,sales_start_at,status,type,venue_id,event_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: select em1_0.event_id,em1_0.age_rate,em1_0.artist,em1_0.created_at,em1_0.created_by,em1_0.date,em1_0.description,em1_0.end_date,em1_0.image_url,em1_0.name,em1_0.sales_end_at,em1_0.sales_start_at,em1_0.status,em1_0.type,em1_0.venue_id from events em1_0 where em1_0.date between ? and ?
+Hibernate: insert into users (active,birthday,cpf,created_at,email,first_name,last_name,password_hash,phone,role,updated_at,user_id) values (?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into venues (capacity,city,country,description,is_active,latitude,longitude,name,state,street,type,zip_code,venue_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into venues (capacity,city,country,description,is_active,latitude,longitude,name,state,street,type,zip_code,venue_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into events (age_rate,artist,created_at,created_by,date,description,end_date,image_url,name,sales_end_at,sales_start_at,status,type,venue_id,event_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into events (age_rate,artist,created_at,created_by,date,description,end_date,image_url,name,sales_end_at,sales_start_at,status,type,venue_id,event_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into events (age_rate,artist,created_at,created_by,date,description,end_date,image_url,name,sales_end_at,sales_start_at,status,type,venue_id,event_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into events (age_rate,artist,created_at,created_by,date,description,end_date,image_url,name,sales_end_at,sales_start_at,status,type,venue_id,event_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: select em1_0.event_id,em1_0.age_rate,em1_0.artist,em1_0.created_at,em1_0.created_by,em1_0.date,em1_0.description,em1_0.end_date,em1_0.image_url,em1_0.name,em1_0.sales_end_at,em1_0.sales_start_at,em1_0.status,em1_0.type,em1_0.venue_id from events em1_0 where em1_0.date between ? and ?
+Hibernate: insert into users (active,birthday,cpf,created_at,email,first_name,last_name,password_hash,phone,role,updated_at,user_id) values (?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into venues (capacity,city,country,description,is_active,latitude,longitude,name,state,street,type,zip_code,venue_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into venues (capacity,city,country,description,is_active,latitude,longitude,name,state,street,type,zip_code,venue_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into events (age_rate,artist,created_at,created_by,date,description,end_date,image_url,name,sales_end_at,sales_start_at,status,type,venue_id,event_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into events (age_rate,artist,created_at,created_by,date,description,end_date,image_url,name,sales_end_at,sales_start_at,status,type,venue_id,event_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into events (age_rate,artist,created_at,created_by,date,description,end_date,image_url,name,sales_end_at,sales_start_at,status,type,venue_id,event_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into events (age_rate,artist,created_at,created_by,date,description,end_date,image_url,name,sales_end_at,sales_start_at,status,type,venue_id,event_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: select em1_0.event_id,em1_0.age_rate,em1_0.artist,em1_0.created_at,em1_0.created_by,em1_0.date,em1_0.description,em1_0.end_date,em1_0.image_url,em1_0.name,em1_0.sales_end_at,em1_0.sales_start_at,em1_0.status,em1_0.type,em1_0.venue_id from events em1_0 left join venues v1_0 on v1_0.venue_id=em1_0.venue_id where v1_0.city=?
+Hibernate: insert into users (active,birthday,cpf,created_at,email,first_name,last_name,password_hash,phone,role,updated_at,user_id) values (?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into venues (capacity,city,country,description,is_active,latitude,longitude,name,state,street,type,zip_code,venue_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into venues (capacity,city,country,description,is_active,latitude,longitude,name,state,street,type,zip_code,venue_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into events (age_rate,artist,created_at,created_by,date,description,end_date,image_url,name,sales_end_at,sales_start_at,status,type,venue_id,event_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into events (age_rate,artist,created_at,created_by,date,description,end_date,image_url,name,sales_end_at,sales_start_at,status,type,venue_id,event_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into events (age_rate,artist,created_at,created_by,date,description,end_date,image_url,name,sales_end_at,sales_start_at,status,type,venue_id,event_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into events (age_rate,artist,created_at,created_by,date,description,end_date,image_url,name,sales_end_at,sales_start_at,status,type,venue_id,event_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: select em1_0.event_id,em1_0.age_rate,em1_0.artist,em1_0.created_at,em1_0.created_by,em1_0.date,em1_0.description,em1_0.end_date,em1_0.image_url,em1_0.name,em1_0.sales_end_at,em1_0.sales_start_at,em1_0.status,em1_0.type,em1_0.venue_id from events em1_0 where em1_0.name=?
+Hibernate: select em1_0.event_id,em1_0.age_rate,em1_0.artist,em1_0.created_at,em1_0.created_by,em1_0.date,em1_0.description,em1_0.end_date,em1_0.image_url,em1_0.name,em1_0.sales_end_at,em1_0.sales_start_at,em1_0.status,em1_0.type,em1_0.venue_id from events em1_0 where em1_0.name=?
+Hibernate: insert into users (active,birthday,cpf,created_at,email,first_name,last_name,password_hash,phone,role,updated_at,user_id) values (?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into venues (capacity,city,country,description,is_active,latitude,longitude,name,state,street,type,zip_code,venue_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into venues (capacity,city,country,description,is_active,latitude,longitude,name,state,street,type,zip_code,venue_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into events (age_rate,artist,created_at,created_by,date,description,end_date,image_url,name,sales_end_at,sales_start_at,status,type,venue_id,event_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into events (age_rate,artist,created_at,created_by,date,description,end_date,image_url,name,sales_end_at,sales_start_at,status,type,venue_id,event_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into events (age_rate,artist,created_at,created_by,date,description,end_date,image_url,name,sales_end_at,sales_start_at,status,type,venue_id,event_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into events (age_rate,artist,created_at,created_by,date,description,end_date,image_url,name,sales_end_at,sales_start_at,status,type,venue_id,event_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: select em1_0.event_id,em1_0.age_rate,em1_0.artist,em1_0.created_at,em1_0.created_by,em1_0.date,em1_0.description,em1_0.end_date,em1_0.image_url,em1_0.name,em1_0.sales_end_at,em1_0.sales_start_at,em1_0.status,em1_0.type,em1_0.venue_id from events em1_0 where em1_0.type=?
+[INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.520 s -- in com.yankdev.brtickets.event.repository.EventRepositoryTest
+[INFO] Running com.yankdev.brtickets.event.service.EventServiceTest
+[INFO] Running cancelEvent
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.149 s -- in cancelEvent
+[INFO] Running publishEvent
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 s -- in publishEvent
+[INFO] Running updateEvent
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.028 s -- in updateEvent
+[INFO] Running createEvent
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.031 s -- in createEvent
+[INFO] Running queries
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.042 s -- in queries
+[INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.271 s -- in com.yankdev.brtickets.event.service.EventServiceTest
+[INFO] Running com.yankdev.brtickets.payment.controller.PaymentControllerTest
+2026-10-10T15:09:24.808-03:00  INFO 21988 --- [brtickets] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.yankdev.brtickets.payment.controller.PaymentControllerTest]: PaymentControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-10T15:09:24.843-03:00  INFO 21988 --- [brtickets] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.yankdev.brtickets.BrticketsApplication for test class com.yankdev.brtickets.payment.controller.PaymentControllerTest
+2026-10-10T15:09:24.844-03:00  INFO 21988 --- [brtickets] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.yankdev.brtickets.payment.controller.PaymentControllerTest]: PaymentControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-10T15:09:24.851-03:00  INFO 21988 --- [brtickets] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.yankdev.brtickets.BrticketsApplication for test class com.yankdev.brtickets.payment.controller.PaymentControllerTest
+2026-10-10T15:09:24.856-03:00  INFO 21988 --- [brtickets] [           main] o.s.b.d.r.RestartApplicationListener     : Restart disabled due to context in which it is running
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.1.0)
+
+2026-10-10T15:09:24.878-03:00  INFO 21988 --- [brtickets] [           main] c.y.b.p.c.PaymentControllerTest          : Starting PaymentControllerTest using Java 17.0.19 with PID 21988 (started by Cliente in C:\Users\Cliente\Desktop\monolith-brtickets\brtickets)
+2026-10-10T15:09:24.878-03:00  INFO 21988 --- [brtickets] [           main] c.y.b.p.c.PaymentControllerTest          : No active profile set, falling back to 1 default profile: "default"
+2026-10-10T15:09:25.158-03:00  INFO 21988 --- [brtickets] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-10-10T15:09:25.249-03:00  INFO 21988 --- [brtickets] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-10T15:09:25.249-03:00  INFO 21988 --- [brtickets] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-10T15:09:25.250-03:00  INFO 21988 --- [brtickets] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2026-10-10T15:09:25.259-03:00  INFO 21988 --- [brtickets] [           main] c.y.b.p.c.PaymentControllerTest          : Started PaymentControllerTest in 0.402 seconds (process running for 42.052)
+2026-10-10T15:09:25.346-03:00  WARN 21988 --- [brtickets] [           main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'bookingId' for method parameter type UUID is not present]
+[INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.607 s -- in com.yankdev.brtickets.payment.controller.PaymentControllerTest
+[INFO] Running com.yankdev.brtickets.payment.repository.PaymentRepositoryTest
+2026-10-10T15:09:25.417-03:00  INFO 21988 --- [brtickets] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.yankdev.brtickets.payment.repository.PaymentRepositoryTest]: PaymentRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-10T15:09:25.450-03:00  INFO 21988 --- [brtickets] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.yankdev.brtickets.BrticketsApplication for test class com.yankdev.brtickets.payment.repository.PaymentRepositoryTest
+2026-10-10T15:09:25.451-03:00  INFO 21988 --- [brtickets] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.yankdev.brtickets.payment.repository.PaymentRepositoryTest]: PaymentRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-10T15:09:25.463-03:00  INFO 21988 --- [brtickets] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.yankdev.brtickets.BrticketsApplication for test class com.yankdev.brtickets.payment.repository.PaymentRepositoryTest
+Hibernate: insert into bookings (cancelled_at,confirmed_at,created_at,payment_method,status,total_amount,user_id,booking_id) values (?,?,?,?,?,?,?,?)
+Hibernate: insert into payments (amount,booking_id,card_brand,card_last_four_digits,created_at,gateway_response,gateway_transaction_id,installments,method,paid_at,pix_expires_at,pix_key,pix_qr_code,refunded_at,status,id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: select pm1_0.id,pm1_0.amount,pm1_0.booking_id,pm1_0.card_brand,pm1_0.card_last_four_digits,pm1_0.created_at,pm1_0.gateway_response,pm1_0.gateway_transaction_id,pm1_0.installments,pm1_0.method,pm1_0.paid_at,pm1_0.pix_expires_at,pm1_0.pix_key,pm1_0.pix_qr_code,pm1_0.refunded_at,pm1_0.status from payments pm1_0 where pm1_0.id=?
+Hibernate: insert into bookings (cancelled_at,confirmed_at,created_at,payment_method,status,total_amount,user_id,booking_id) values (?,?,?,?,?,?,?,?)
+Hibernate: insert into payments (amount,booking_id,card_brand,card_last_four_digits,created_at,gateway_response,gateway_transaction_id,installments,method,paid_at,pix_expires_at,pix_key,pix_qr_code,refunded_at,status,id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: select pm1_0.id,pm1_0.amount,pm1_0.booking_id,pm1_0.card_brand,pm1_0.card_last_four_digits,pm1_0.created_at,pm1_0.gateway_response,pm1_0.gateway_transaction_id,pm1_0.installments,pm1_0.method,pm1_0.paid_at,pm1_0.pix_expires_at,pm1_0.pix_key,pm1_0.pix_qr_code,pm1_0.refunded_at,pm1_0.status from payments pm1_0 where pm1_0.id=?
+Hibernate: insert into bookings (cancelled_at,confirmed_at,created_at,payment_method,status,total_amount,user_id,booking_id) values (?,?,?,?,?,?,?,?)
+Hibernate: insert into payments (amount,booking_id,card_brand,card_last_four_digits,created_at,gateway_response,gateway_transaction_id,installments,method,paid_at,pix_expires_at,pix_key,pix_qr_code,refunded_at,status,id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: select pm1_0.id,pm1_0.amount,pm1_0.booking_id,pm1_0.card_brand,pm1_0.card_last_four_digits,pm1_0.created_at,pm1_0.gateway_response,pm1_0.gateway_transaction_id,pm1_0.installments,pm1_0.method,pm1_0.paid_at,pm1_0.pix_expires_at,pm1_0.pix_key,pm1_0.pix_qr_code,pm1_0.refunded_at,pm1_0.status from payments pm1_0 where pm1_0.id=?
+Hibernate: insert into bookings (cancelled_at,confirmed_at,created_at,payment_method,status,total_amount,user_id,booking_id) values (?,?,?,?,?,?,?,?)
+Hibernate: insert into payments (amount,booking_id,card_brand,card_last_four_digits,created_at,gateway_response,gateway_transaction_id,installments,method,paid_at,pix_expires_at,pix_key,pix_qr_code,refunded_at,status,id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: select pm1_0.id,pm1_0.amount,pm1_0.booking_id,pm1_0.card_brand,pm1_0.card_last_four_digits,pm1_0.created_at,pm1_0.gateway_response,pm1_0.gateway_transaction_id,pm1_0.installments,pm1_0.method,pm1_0.paid_at,pm1_0.pix_expires_at,pm1_0.pix_key,pm1_0.pix_qr_code,pm1_0.refunded_at,pm1_0.status from payments pm1_0 where pm1_0.id=?
+Hibernate: insert into bookings (cancelled_at,confirmed_at,created_at,payment_method,status,total_amount,user_id,booking_id) values (?,?,?,?,?,?,?,?)
+Hibernate: insert into payments (amount,booking_id,card_brand,card_last_four_digits,created_at,gateway_response,gateway_transaction_id,installments,method,paid_at,pix_expires_at,pix_key,pix_qr_code,refunded_at,status,id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+2026-10-10T15:09:25.618-03:00  WARN 21988 --- [brtickets] [           main] org.hibernate.orm.jdbc.error             : HHH000247: ErrorCode: 0, SQLState: 23502
+2026-10-10T15:09:25.618-03:00  WARN 21988 --- [brtickets] [           main] org.hibernate.orm.jdbc.error             : ERROR: null value in column "booking_id" of relation "payments" violates not-null constraint
+  Detail: Failing row contains (8197e9ac-a1ef-4fa4-a187-f036f9f1b4e2, 250.00, null, null, 2026-10-10 15:09:25.61266, null, null, null, PIX, null, null, null, null, null, PENDING, null).
+Hibernate: insert into bookings (cancelled_at,confirmed_at,created_at,payment_method,status,total_amount,user_id,booking_id) values (?,?,?,?,?,?,?,?)
+Hibernate: select pm1_0.id,pm1_0.amount,pm1_0.booking_id,pm1_0.card_brand,pm1_0.card_last_four_digits,pm1_0.created_at,pm1_0.gateway_response,pm1_0.gateway_transaction_id,pm1_0.installments,pm1_0.method,pm1_0.paid_at,pm1_0.pix_expires_at,pm1_0.pix_key,pm1_0.pix_qr_code,pm1_0.refunded_at,pm1_0.status from payments pm1_0 where pm1_0.id=?
+Hibernate: insert into bookings (cancelled_at,confirmed_at,created_at,payment_method,status,total_amount,user_id,booking_id) values (?,?,?,?,?,?,?,?)
+Hibernate: insert into payments (amount,booking_id,card_brand,card_last_four_digits,created_at,gateway_response,gateway_transaction_id,installments,method,paid_at,pix_expires_at,pix_key,pix_qr_code,refunded_at,status,id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: select pm1_0.id,pm1_0.amount,pm1_0.booking_id,pm1_0.card_brand,pm1_0.card_last_four_digits,pm1_0.created_at,pm1_0.gateway_response,pm1_0.gateway_transaction_id,pm1_0.installments,pm1_0.method,pm1_0.paid_at,pm1_0.pix_expires_at,pm1_0.pix_key,pm1_0.pix_qr_code,pm1_0.refunded_at,pm1_0.status from payments pm1_0 where pm1_0.id=?
+Hibernate: insert into bookings (cancelled_at,confirmed_at,created_at,payment_method,status,total_amount,user_id,booking_id) values (?,?,?,?,?,?,?,?)
+Hibernate: insert into payments (amount,booking_id,card_brand,card_last_four_digits,created_at,gateway_response,gateway_transaction_id,installments,method,paid_at,pix_expires_at,pix_key,pix_qr_code,refunded_at,status,id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+2026-10-10T15:09:25.682-03:00  WARN 21988 --- [brtickets] [           main] org.hibernate.orm.jdbc.error             : HHH000247: ErrorCode: 0, SQLState: 23502
+2026-10-10T15:09:25.682-03:00  WARN 21988 --- [brtickets] [           main] org.hibernate.orm.jdbc.error             : ERROR: null value in column "amount" of relation "payments" violates not-null constraint
+  Detail: Failing row contains (7372121d-2b23-4a9c-a163-a9d987f976f2, null, null, null, 2026-10-10 15:09:25.679388, null, null, null, PIX, null, null, null, null, null, PENDING, 8d42d7b0-c9bb-4b7b-b288-0227cbeaba4b).
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.277 s -- in com.yankdev.brtickets.payment.repository.PaymentRepositoryTest
+[INFO] Running com.yankdev.brtickets.payment.service.PaymentServiceTest
+[INFO] Running refundPayment
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.083 s -- in refundPayment
+[INFO] Running processPayment
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 s -- in processPayment
+[INFO] Running confirmPayment
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s -- in confirmPayment
+[INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.123 s -- in com.yankdev.brtickets.payment.service.PaymentServiceTest
+[INFO] Running com.yankdev.brtickets.shared.security.AuthenticatedUserProviderTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.010 s -- in com.yankdev.brtickets.shared.security.AuthenticatedUserProviderTest
+[INFO] Running com.yankdev.brtickets.shared.security.JwtAuthFilterTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 s -- in com.yankdev.brtickets.shared.security.JwtAuthFilterTest
+[INFO] Running com.yankdev.brtickets.shared.security.JwtUtilsTest
+[INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.624 s -- in com.yankdev.brtickets.shared.security.JwtUtilsTest
+[INFO] Running com.yankdev.brtickets.shared.security.UserDetailsServiceImplTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s -- in com.yankdev.brtickets.shared.security.UserDetailsServiceImplTest
+[INFO] Running com.yankdev.brtickets.ticket.controller.TicketControllerTest
+2026-10-10T15:09:26.485-03:00  INFO 21988 --- [brtickets] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.yankdev.brtickets.ticket.controller.TicketControllerTest]: TicketControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-10T15:09:26.515-03:00  INFO 21988 --- [brtickets] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.yankdev.brtickets.BrticketsApplication for test class com.yankdev.brtickets.ticket.controller.TicketControllerTest
+2026-10-10T15:09:26.517-03:00  INFO 21988 --- [brtickets] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.yankdev.brtickets.ticket.controller.TicketControllerTest]: TicketControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-10T15:09:26.523-03:00  INFO 21988 --- [brtickets] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.yankdev.brtickets.BrticketsApplication for test class com.yankdev.brtickets.ticket.controller.TicketControllerTest
+2026-10-10T15:09:26.528-03:00  INFO 21988 --- [brtickets] [           main] o.s.b.d.r.RestartApplicationListener     : Restart disabled due to context in which it is running
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.1.0)
+
+2026-10-10T15:09:26.549-03:00  INFO 21988 --- [brtickets] [           main] c.y.b.t.controller.TicketControllerTest  : Starting TicketControllerTest using Java 17.0.19 with PID 21988 (started by Cliente in C:\Users\Cliente\Desktop\monolith-brtickets\brtickets)
+2026-10-10T15:09:26.549-03:00  INFO 21988 --- [brtickets] [           main] c.y.b.t.controller.TicketControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2026-10-10T15:09:26.814-03:00  INFO 21988 --- [brtickets] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-10-10T15:09:26.896-03:00  INFO 21988 --- [brtickets] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-10T15:09:26.897-03:00  INFO 21988 --- [brtickets] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-10T15:09:26.898-03:00  INFO 21988 --- [brtickets] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2026-10-10T15:09:26.908-03:00  INFO 21988 --- [brtickets] [           main] c.y.b.t.controller.TicketControllerTest  : Started TicketControllerTest in 0.381 seconds (process running for 43.701)
+2026-10-10T15:09:27.052-03:00  WARN 21988 --- [brtickets] [           main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'eventId' for method parameter type UUID is not present]
+[INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.600 s -- in com.yankdev.brtickets.ticket.controller.TicketControllerTest
+[INFO] Running com.yankdev.brtickets.ticket.repository.TicketRepositoryTest
+2026-10-10T15:09:27.087-03:00  INFO 21988 --- [brtickets] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.yankdev.brtickets.ticket.repository.TicketRepositoryTest]: TicketRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-10T15:09:27.121-03:00  INFO 21988 --- [brtickets] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.yankdev.brtickets.BrticketsApplication for test class com.yankdev.brtickets.ticket.repository.TicketRepositoryTest
+2026-10-10T15:09:27.122-03:00  INFO 21988 --- [brtickets] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.yankdev.brtickets.ticket.repository.TicketRepositoryTest]: TicketRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-10T15:09:27.132-03:00  INFO 21988 --- [brtickets] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.yankdev.brtickets.BrticketsApplication for test class com.yankdev.brtickets.ticket.repository.TicketRepositoryTest
+Hibernate: insert into users (active,birthday,cpf,created_at,email,first_name,last_name,password_hash,phone,role,updated_at,user_id) values (?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into venues (capacity,city,country,description,is_active,latitude,longitude,name,state,street,type,zip_code,venue_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into events (age_rate,artist,created_at,created_by,date,description,end_date,image_url,name,sales_end_at,sales_start_at,status,type,venue_id,event_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into events (age_rate,artist,created_at,created_by,date,description,end_date,image_url,name,sales_end_at,sales_start_at,status,type,venue_id,event_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into tickets (created_at,event_id,price,qr_code,row,seat,sector,status,type,updated_at,ticket_id) values (?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into tickets (created_at,event_id,price,qr_code,row,seat,sector,status,type,updated_at,ticket_id) values (?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into tickets (created_at,event_id,price,qr_code,row,seat,sector,status,type,updated_at,ticket_id) values (?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: select tm1_0.ticket_id,tm1_0.created_at,tm1_0.event_id,tm1_0.price,tm1_0.qr_code,tm1_0.row,tm1_0.seat,tm1_0.sector,tm1_0.status,tm1_0.type,tm1_0.updated_at from tickets tm1_0 where tm1_0.event_id=?
+Hibernate: insert into users (active,birthday,cpf,created_at,email,first_name,last_name,password_hash,phone,role,updated_at,user_id) values (?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into venues (capacity,city,country,description,is_active,latitude,longitude,name,state,street,type,zip_code,venue_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into events (age_rate,artist,created_at,created_by,date,description,end_date,image_url,name,sales_end_at,sales_start_at,status,type,venue_id,event_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into events (age_rate,artist,created_at,created_by,date,description,end_date,image_url,name,sales_end_at,sales_start_at,status,type,venue_id,event_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into tickets (created_at,event_id,price,qr_code,row,seat,sector,status,type,updated_at,ticket_id) values (?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into tickets (created_at,event_id,price,qr_code,row,seat,sector,status,type,updated_at,ticket_id) values (?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into tickets (created_at,event_id,price,qr_code,row,seat,sector,status,type,updated_at,ticket_id) values (?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into tickets (created_at,event_id,price,qr_code,row,seat,sector,status,type,updated_at,ticket_id) values (?,?,?,?,?,?,?,?,?,?,?)
+2026-10-10T15:09:27.204-03:00  WARN 21988 --- [brtickets] [           main] org.hibernate.orm.jdbc.error             : HHH000247: ErrorCode: 0, SQLState: 23505
+2026-10-10T15:09:27.205-03:00  WARN 21988 --- [brtickets] [           main] org.hibernate.orm.jdbc.error             : ERROR: duplicate key value violates unique constraint "uk136k8tqvcn833mi3tjgqktnx2"
+  Detail: Key (qr_code)=(6801d9b9-0a1b-41c5-bb0a-a538cd2acaac) already exists.
+Hibernate: insert into users (active,birthday,cpf,created_at,email,first_name,last_name,password_hash,phone,role,updated_at,user_id) values (?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into venues (capacity,city,country,description,is_active,latitude,longitude,name,state,street,type,zip_code,venue_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into events (age_rate,artist,created_at,created_by,date,description,end_date,image_url,name,sales_end_at,sales_start_at,status,type,venue_id,event_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into events (age_rate,artist,created_at,created_by,date,description,end_date,image_url,name,sales_end_at,sales_start_at,status,type,venue_id,event_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into tickets (created_at,event_id,price,qr_code,row,seat,sector,status,type,updated_at,ticket_id) values (?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into tickets (created_at,event_id,price,qr_code,row,seat,sector,status,type,updated_at,ticket_id) values (?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into tickets (created_at,event_id,price,qr_code,row,seat,sector,status,type,updated_at,ticket_id) values (?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: select tm1_0.ticket_id,tm1_0.created_at,tm1_0.event_id,tm1_0.price,tm1_0.qr_code,tm1_0.row,tm1_0.seat,tm1_0.sector,tm1_0.status,tm1_0.type,tm1_0.updated_at from tickets tm1_0 where 1=0 for no key update of tm1_0
+Hibernate: insert into users (active,birthday,cpf,created_at,email,first_name,last_name,password_hash,phone,role,updated_at,user_id) values (?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into venues (capacity,city,country,description,is_active,latitude,longitude,name,state,street,type,zip_code,venue_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into events (age_rate,artist,created_at,created_by,date,description,end_date,image_url,name,sales_end_at,sales_start_at,status,type,venue_id,event_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into events (age_rate,artist,created_at,created_by,date,description,end_date,image_url,name,sales_end_at,sales_start_at,status,type,venue_id,event_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into tickets (created_at,event_id,price,qr_code,row,seat,sector,status,type,updated_at,ticket_id) values (?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into tickets (created_at,event_id,price,qr_code,row,seat,sector,status,type,updated_at,ticket_id) values (?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into tickets (created_at,event_id,price,qr_code,row,seat,sector,status,type,updated_at,ticket_id) values (?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: select tm1_0.ticket_id,tm1_0.created_at,tm1_0.event_id,tm1_0.price,tm1_0.qr_code,tm1_0.row,tm1_0.seat,tm1_0.sector,tm1_0.status,tm1_0.type,tm1_0.updated_at from tickets tm1_0 where tm1_0.ticket_id in (?,?) for no key update of tm1_0
+Hibernate: insert into users (active,birthday,cpf,created_at,email,first_name,last_name,password_hash,phone,role,updated_at,user_id) values (?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into venues (capacity,city,country,description,is_active,latitude,longitude,name,state,street,type,zip_code,venue_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into events (age_rate,artist,created_at,created_by,date,description,end_date,image_url,name,sales_end_at,sales_start_at,status,type,venue_id,event_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into events (age_rate,artist,created_at,created_by,date,description,end_date,image_url,name,sales_end_at,sales_start_at,status,type,venue_id,event_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into tickets (created_at,event_id,price,qr_code,row,seat,sector,status,type,updated_at,ticket_id) values (?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into tickets (created_at,event_id,price,qr_code,row,seat,sector,status,type,updated_at,ticket_id) values (?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into tickets (created_at,event_id,price,qr_code,row,seat,sector,status,type,updated_at,ticket_id) values (?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into users (active,birthday,cpf,created_at,email,first_name,last_name,password_hash,phone,role,updated_at,user_id) values (?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into venues (capacity,city,country,description,is_active,latitude,longitude,name,state,street,type,zip_code,venue_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into events (age_rate,artist,created_at,created_by,date,description,end_date,image_url,name,sales_end_at,sales_start_at,status,type,venue_id,event_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into events (age_rate,artist,created_at,created_by,date,description,end_date,image_url,name,sales_end_at,sales_start_at,status,type,venue_id,event_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into tickets (created_at,event_id,price,qr_code,row,seat,sector,status,type,updated_at,ticket_id) values (?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into tickets (created_at,event_id,price,qr_code,row,seat,sector,status,type,updated_at,ticket_id) values (?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into tickets (created_at,event_id,price,qr_code,row,seat,sector,status,type,updated_at,ticket_id) values (?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into users (active,birthday,cpf,created_at,email,first_name,last_name,password_hash,phone,role,updated_at,user_id) values (?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into venues (capacity,city,country,description,is_active,latitude,longitude,name,state,street,type,zip_code,venue_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into events (age_rate,artist,created_at,created_by,date,description,end_date,image_url,name,sales_end_at,sales_start_at,status,type,venue_id,event_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into events (age_rate,artist,created_at,created_by,date,description,end_date,image_url,name,sales_end_at,sales_start_at,status,type,venue_id,event_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into tickets (created_at,event_id,price,qr_code,row,seat,sector,status,type,updated_at,ticket_id) values (?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into tickets (created_at,event_id,price,qr_code,row,seat,sector,status,type,updated_at,ticket_id) values (?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into tickets (created_at,event_id,price,qr_code,row,seat,sector,status,type,updated_at,ticket_id) values (?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: select tm1_0.ticket_id,tm1_0.created_at,tm1_0.event_id,tm1_0.price,tm1_0.qr_code,tm1_0.row,tm1_0.seat,tm1_0.sector,tm1_0.status,tm1_0.type,tm1_0.updated_at from tickets tm1_0 where tm1_0.ticket_id in (?,?) for no key update of tm1_0
+Hibernate: insert into users (active,birthday,cpf,created_at,email,first_name,last_name,password_hash,phone,role,updated_at,user_id) values (?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into venues (capacity,city,country,description,is_active,latitude,longitude,name,state,street,type,zip_code,venue_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into events (age_rate,artist,created_at,created_by,date,description,end_date,image_url,name,sales_end_at,sales_start_at,status,type,venue_id,event_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into events (age_rate,artist,created_at,created_by,date,description,end_date,image_url,name,sales_end_at,sales_start_at,status,type,venue_id,event_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into tickets (created_at,event_id,price,qr_code,row,seat,sector,status,type,updated_at,ticket_id) values (?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into tickets (created_at,event_id,price,qr_code,row,seat,sector,status,type,updated_at,ticket_id) values (?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into tickets (created_at,event_id,price,qr_code,row,seat,sector,status,type,updated_at,ticket_id) values (?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: select tm1_0.ticket_id,tm1_0.created_at,tm1_0.event_id,tm1_0.price,tm1_0.qr_code,tm1_0.row,tm1_0.seat,tm1_0.sector,tm1_0.status,tm1_0.type,tm1_0.updated_at from tickets tm1_0 where tm1_0.event_id=?
+Hibernate: insert into users (active,birthday,cpf,created_at,email,first_name,last_name,password_hash,phone,role,updated_at,user_id) values (?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into venues (capacity,city,country,description,is_active,latitude,longitude,name,state,street,type,zip_code,venue_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into events (age_rate,artist,created_at,created_by,date,description,end_date,image_url,name,sales_end_at,sales_start_at,status,type,venue_id,event_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into events (age_rate,artist,created_at,created_by,date,description,end_date,image_url,name,sales_end_at,sales_start_at,status,type,venue_id,event_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into tickets (created_at,event_id,price,qr_code,row,seat,sector,status,type,updated_at,ticket_id) values (?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into tickets (created_at,event_id,price,qr_code,row,seat,sector,status,type,updated_at,ticket_id) values (?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into tickets (created_at,event_id,price,qr_code,row,seat,sector,status,type,updated_at,ticket_id) values (?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: select tm1_0.ticket_id,tm1_0.created_at,tm1_0.event_id,tm1_0.price,tm1_0.qr_code,tm1_0.row,tm1_0.seat,tm1_0.sector,tm1_0.status,tm1_0.type,tm1_0.updated_at from tickets tm1_0 where tm1_0.event_id=?
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.358 s -- in com.yankdev.brtickets.ticket.repository.TicketRepositoryTest
+[INFO] Running com.yankdev.brtickets.ticket.service.TicketServiceTest
+[INFO] Running updateTicket
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in updateTicket
+[INFO] Running deactivateTicket
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in deactivateTicket
+[INFO] Running createTicket
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.010 s -- in createTicket
+[INFO] Running findTicketById / findAllTicketsByEvent
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.010 s -- in findTicketById / findAllTicketsByEvent
+[INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.036 s -- in com.yankdev.brtickets.ticket.service.TicketServiceTest
+[INFO] Running com.yankdev.brtickets.user.controller.UserControllerTest
+2026-10-10T15:09:27.481-03:00  INFO 21988 --- [brtickets] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.yankdev.brtickets.user.controller.UserControllerTest]: UserControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-10T15:09:27.514-03:00  INFO 21988 --- [brtickets] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.yankdev.brtickets.BrticketsApplication for test class com.yankdev.brtickets.user.controller.UserControllerTest
+2026-10-10T15:09:27.515-03:00  INFO 21988 --- [brtickets] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.yankdev.brtickets.user.controller.UserControllerTest]: UserControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-10T15:09:27.521-03:00  INFO 21988 --- [brtickets] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.yankdev.brtickets.BrticketsApplication for test class com.yankdev.brtickets.user.controller.UserControllerTest
+2026-10-10T15:09:27.526-03:00  INFO 21988 --- [brtickets] [           main] o.s.b.d.r.RestartApplicationListener     : Restart disabled due to context in which it is running
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.1.0)
+
+2026-10-10T15:09:27.548-03:00  INFO 21988 --- [brtickets] [           main] c.y.b.u.controller.UserControllerTest    : Starting UserControllerTest using Java 17.0.19 with PID 21988 (started by Cliente in C:\Users\Cliente\Desktop\monolith-brtickets\brtickets)
+2026-10-10T15:09:27.548-03:00  INFO 21988 --- [brtickets] [           main] c.y.b.u.controller.UserControllerTest    : No active profile set, falling back to 1 default profile: "default"
+2026-10-10T15:09:27.862-03:00  INFO 21988 --- [brtickets] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-10-10T15:09:27.995-03:00  INFO 21988 --- [brtickets] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-10T15:09:27.995-03:00  INFO 21988 --- [brtickets] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-10T15:09:27.997-03:00  INFO 21988 --- [brtickets] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2026-10-10T15:09:28.007-03:00  INFO 21988 --- [brtickets] [           main] c.y.b.u.controller.UserControllerTest    : Started UserControllerTest in 0.482 seconds (process running for 44.801)
+[INFO] Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.820 s -- in com.yankdev.brtickets.user.controller.UserControllerTest
+[INFO] Running com.yankdev.brtickets.user.repository.UserRepositoryTest
+2026-10-10T15:09:28.305-03:00  INFO 21988 --- [brtickets] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.yankdev.brtickets.user.repository.UserRepositoryTest]: UserRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-10T15:09:28.358-03:00  INFO 21988 --- [brtickets] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.yankdev.brtickets.BrticketsApplication for test class com.yankdev.brtickets.user.repository.UserRepositoryTest
+2026-10-10T15:09:28.360-03:00  INFO 21988 --- [brtickets] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.yankdev.brtickets.user.repository.UserRepositoryTest]: UserRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-10T15:09:28.380-03:00  INFO 21988 --- [brtickets] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.yankdev.brtickets.BrticketsApplication for test class com.yankdev.brtickets.user.repository.UserRepositoryTest
+Hibernate: insert into users (active,birthday,cpf,created_at,email,first_name,last_name,password_hash,phone,role,updated_at,user_id) values (?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into users (active,birthday,cpf,created_at,email,first_name,last_name,password_hash,phone,role,updated_at,user_id) values (?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into users (active,birthday,cpf,created_at,email,first_name,last_name,password_hash,phone,role,updated_at,user_id) values (?,?,?,?,?,?,?,?,?,?,?,?)
+2026-10-10T15:09:28.422-03:00  WARN 21988 --- [brtickets] [           main] org.hibernate.orm.jdbc.error             : HHH000247: ErrorCode: 0, SQLState: 23505
+2026-10-10T15:09:28.422-03:00  WARN 21988 --- [brtickets] [           main] org.hibernate.orm.jdbc.error             : ERROR: duplicate key value violates unique constraint "uk7kqluf7wl0oxs7n90fpya03ss"
+  Detail: Key (cpf)=(12345678901) already exists.
+Hibernate: insert into users (active,birthday,cpf,created_at,email,first_name,last_name,password_hash,phone,role,updated_at,user_id) values (?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into users (active,birthday,cpf,created_at,email,first_name,last_name,password_hash,phone,role,updated_at,user_id) values (?,?,?,?,?,?,?,?,?,?,?,?)
+2026-10-10T15:09:28.446-03:00  WARN 21988 --- [brtickets] [           main] org.hibernate.orm.jdbc.error             : HHH000247: ErrorCode: 0, SQLState: 23505
+2026-10-10T15:09:28.447-03:00  WARN 21988 --- [brtickets] [           main] org.hibernate.orm.jdbc.error             : ERROR: duplicate key value violates unique constraint "uk6dotkott2kjsp8vw4d0m25fb7"
+  Detail: Key (email)=(yan@brtickets.com) already exists.
+Hibernate: insert into users (active,birthday,cpf,created_at,email,first_name,last_name,password_hash,phone,role,updated_at,user_id) values (?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: select um1_0.user_id from users um1_0 where um1_0.cpf=? fetch first ? rows only
+Hibernate: insert into users (active,birthday,cpf,created_at,email,first_name,last_name,password_hash,phone,role,updated_at,user_id) values (?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: select um1_0.user_id from users um1_0 where um1_0.email=? fetch first ? rows only
+Hibernate: insert into users (active,birthday,cpf,created_at,email,first_name,last_name,password_hash,phone,role,updated_at,user_id) values (?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: select um1_0.user_id,um1_0.active,um1_0.birthday,um1_0.cpf,um1_0.created_at,um1_0.email,um1_0.first_name,um1_0.last_name,um1_0.password_hash,um1_0.phone,um1_0.role,um1_0.updated_at from users um1_0 where um1_0.email=?
+Hibernate: insert into users (active,birthday,cpf,created_at,email,first_name,last_name,password_hash,phone,role,updated_at,user_id) values (?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: select um1_0.user_id from users um1_0 where um1_0.email=? fetch first ? rows only
+Hibernate: insert into users (active,birthday,cpf,created_at,email,first_name,last_name,password_hash,phone,role,updated_at,user_id) values (?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: select um1_0.user_id,um1_0.active,um1_0.birthday,um1_0.cpf,um1_0.created_at,um1_0.email,um1_0.first_name,um1_0.last_name,um1_0.password_hash,um1_0.phone,um1_0.role,um1_0.updated_at from users um1_0 where um1_0.email=?
+Hibernate: insert into users (active,birthday,cpf,created_at,email,first_name,last_name,password_hash,phone,role,updated_at,user_id) values (?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: select um1_0.user_id,um1_0.active,um1_0.birthday,um1_0.cpf,um1_0.created_at,um1_0.email,um1_0.first_name,um1_0.last_name,um1_0.password_hash,um1_0.phone,um1_0.role,um1_0.updated_at from users um1_0 where um1_0.user_id=?
+Hibernate: insert into users (active,birthday,cpf,created_at,email,first_name,last_name,password_hash,phone,role,updated_at,user_id) values (?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: select um1_0.user_id from users um1_0 where um1_0.cpf=? fetch first ? rows only
+Hibernate: insert into users (active,birthday,cpf,created_at,email,first_name,last_name,password_hash,phone,role,updated_at,user_id) values (?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: select um1_0.user_id from users um1_0 where um1_0.email=? fetch first ? rows only
+[INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.371 s -- in com.yankdev.brtickets.user.repository.UserRepositoryTest
+[INFO] Running com.yankdev.brtickets.user.service.UserServiceTest
+[INFO] Running updateUser
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.094 s -- in updateUser
+[INFO] Running findUser / findAllUsers
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s -- in findUser / findAllUsers
+[INFO] Running updatePwd
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in updatePwd
+[INFO] Running deactivateUser
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 s -- in deactivateUser
+[INFO] Running login
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s -- in login
+[INFO] Running register
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 s -- in register
+[INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.156 s -- in com.yankdev.brtickets.user.service.UserServiceTest
+[INFO] Running com.yankdev.brtickets.venue.controller.VenueControllerTest
+2026-10-10T15:09:28.833-03:00  INFO 21988 --- [brtickets] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.yankdev.brtickets.venue.controller.VenueControllerTest]: VenueControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-10T15:09:28.868-03:00  INFO 21988 --- [brtickets] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.yankdev.brtickets.BrticketsApplication for test class com.yankdev.brtickets.venue.controller.VenueControllerTest
+2026-10-10T15:09:28.869-03:00  INFO 21988 --- [brtickets] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.yankdev.brtickets.venue.controller.VenueControllerTest]: VenueControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-10T15:09:28.874-03:00  INFO 21988 --- [brtickets] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.yankdev.brtickets.BrticketsApplication for test class com.yankdev.brtickets.venue.controller.VenueControllerTest
+2026-10-10T15:09:28.879-03:00  INFO 21988 --- [brtickets] [           main] o.s.b.d.r.RestartApplicationListener     : Restart disabled due to context in which it is running
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.1.0)
+
+2026-10-10T15:09:28.899-03:00  INFO 21988 --- [brtickets] [           main] c.y.b.v.controller.VenueControllerTest   : Starting VenueControllerTest using Java 17.0.19 with PID 21988 (started by Cliente in C:\Users\Cliente\Desktop\monolith-brtickets\brtickets)
+2026-10-10T15:09:28.899-03:00  INFO 21988 --- [brtickets] [           main] c.y.b.v.controller.VenueControllerTest   : No active profile set, falling back to 1 default profile: "default"
+2026-10-10T15:09:29.186-03:00  INFO 21988 --- [brtickets] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-10-10T15:09:29.260-03:00  INFO 21988 --- [brtickets] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-10T15:09:29.262-03:00  INFO 21988 --- [brtickets] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-10T15:09:29.262-03:00  INFO 21988 --- [brtickets] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-10-10T15:09:29.271-03:00  INFO 21988 --- [brtickets] [           main] c.y.b.v.controller.VenueControllerTest   : Started VenueControllerTest in 0.392 seconds (process running for 46.064)
+2026-10-10T15:09:29.366-03:00  WARN 21988 --- [brtickets] [           main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'city' for method parameter type String is not present]
+[INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.608 s -- in com.yankdev.brtickets.venue.controller.VenueControllerTest
+[INFO] Running com.yankdev.brtickets.venue.repository.VenueRepositoryTest
+2026-10-10T15:09:29.442-03:00  INFO 21988 --- [brtickets] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.yankdev.brtickets.venue.repository.VenueRepositoryTest]: VenueRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-10T15:09:29.475-03:00  INFO 21988 --- [brtickets] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.yankdev.brtickets.BrticketsApplication for test class com.yankdev.brtickets.venue.repository.VenueRepositoryTest
+2026-10-10T15:09:29.476-03:00  INFO 21988 --- [brtickets] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.yankdev.brtickets.venue.repository.VenueRepositoryTest]: VenueRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-10T15:09:29.489-03:00  INFO 21988 --- [brtickets] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.yankdev.brtickets.BrticketsApplication for test class com.yankdev.brtickets.venue.repository.VenueRepositoryTest
+Hibernate: insert into venues (capacity,city,country,description,is_active,latitude,longitude,name,state,street,type,zip_code,venue_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into venues (capacity,city,country,description,is_active,latitude,longitude,name,state,street,type,zip_code,venue_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into venues (capacity,city,country,description,is_active,latitude,longitude,name,state,street,type,zip_code,venue_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into venues (capacity,city,country,description,is_active,latitude,longitude,name,state,street,type,zip_code,venue_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: select vm1_0.venue_id,vm1_0.capacity,vm1_0.city,vm1_0.country,vm1_0.description,vm1_0.is_active,vm1_0.latitude,vm1_0.longitude,vm1_0.name,vm1_0.state,vm1_0.street,vm1_0.type,vm1_0.zip_code from venues vm1_0 where upper(vm1_0.city)=upper(?) and vm1_0.is_active=true
+Hibernate: select vm1_0.venue_id,vm1_0.capacity,vm1_0.city,vm1_0.country,vm1_0.description,vm1_0.is_active,vm1_0.latitude,vm1_0.longitude,vm1_0.name,vm1_0.state,vm1_0.street,vm1_0.type,vm1_0.zip_code from venues vm1_0 where upper(vm1_0.city)=upper(?) and vm1_0.is_active=true
+Hibernate: insert into venues (capacity,city,country,description,is_active,latitude,longitude,name,state,street,type,zip_code,venue_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into venues (capacity,city,country,description,is_active,latitude,longitude,name,state,street,type,zip_code,venue_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into venues (capacity,city,country,description,is_active,latitude,longitude,name,state,street,type,zip_code,venue_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into venues (capacity,city,country,description,is_active,latitude,longitude,name,state,street,type,zip_code,venue_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: select vm1_0.venue_id,vm1_0.capacity,vm1_0.city,vm1_0.country,vm1_0.description,vm1_0.is_active,vm1_0.latitude,vm1_0.longitude,vm1_0.name,vm1_0.state,vm1_0.street,vm1_0.type,vm1_0.zip_code from venues vm1_0 where upper(vm1_0.city)=upper(?) and vm1_0.is_active=true
+Hibernate: insert into venues (capacity,city,country,description,is_active,latitude,longitude,name,state,street,type,zip_code,venue_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into venues (capacity,city,country,description,is_active,latitude,longitude,name,state,street,type,zip_code,venue_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into venues (capacity,city,country,description,is_active,latitude,longitude,name,state,street,type,zip_code,venue_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into venues (capacity,city,country,description,is_active,latitude,longitude,name,state,street,type,zip_code,venue_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: select vm1_0.venue_id,vm1_0.capacity,vm1_0.city,vm1_0.country,vm1_0.description,vm1_0.is_active,vm1_0.latitude,vm1_0.longitude,vm1_0.name,vm1_0.state,vm1_0.street,vm1_0.type,vm1_0.zip_code from venues vm1_0 where upper(vm1_0.city)=upper(?) and vm1_0.is_active=true
+Hibernate: select type from venues where name = 'Maracana'
+Hibernate: insert into venues (capacity,city,country,description,is_active,latitude,longitude,name,state,street,type,zip_code,venue_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into venues (capacity,city,country,description,is_active,latitude,longitude,name,state,street,type,zip_code,venue_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into venues (capacity,city,country,description,is_active,latitude,longitude,name,state,street,type,zip_code,venue_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into venues (capacity,city,country,description,is_active,latitude,longitude,name,state,street,type,zip_code,venue_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: select vm1_0.venue_id,vm1_0.capacity,vm1_0.city,vm1_0.country,vm1_0.description,vm1_0.is_active,vm1_0.latitude,vm1_0.longitude,vm1_0.name,vm1_0.state,vm1_0.street,vm1_0.type,vm1_0.zip_code from venues vm1_0 where upper(vm1_0.city)=upper(?) and vm1_0.is_active=true
+Hibernate: insert into venues (capacity,city,country,description,is_active,latitude,longitude,name,state,street,type,zip_code,venue_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into venues (capacity,city,country,description,is_active,latitude,longitude,name,state,street,type,zip_code,venue_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into venues (capacity,city,country,description,is_active,latitude,longitude,name,state,street,type,zip_code,venue_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into venues (capacity,city,country,description,is_active,latitude,longitude,name,state,street,type,zip_code,venue_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: select vm1_0.venue_id,vm1_0.capacity,vm1_0.city,vm1_0.country,vm1_0.description,vm1_0.is_active,vm1_0.latitude,vm1_0.longitude,vm1_0.name,vm1_0.state,vm1_0.street,vm1_0.type,vm1_0.zip_code from venues vm1_0 where upper(vm1_0.city)=upper(?) and vm1_0.is_active=true
+Hibernate: insert into venues (capacity,city,country,description,is_active,latitude,longitude,name,state,street,type,zip_code,venue_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into venues (capacity,city,country,description,is_active,latitude,longitude,name,state,street,type,zip_code,venue_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into venues (capacity,city,country,description,is_active,latitude,longitude,name,state,street,type,zip_code,venue_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into venues (capacity,city,country,description,is_active,latitude,longitude,name,state,street,type,zip_code,venue_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: select vm1_0.venue_id,vm1_0.capacity,vm1_0.city,vm1_0.country,vm1_0.description,vm1_0.is_active,vm1_0.latitude,vm1_0.longitude,vm1_0.name,vm1_0.state,vm1_0.street,vm1_0.type,vm1_0.zip_code from venues vm1_0 where upper(vm1_0.city)=upper(?) and vm1_0.is_active=true
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.355 s -- in com.yankdev.brtickets.venue.repository.VenueRepositoryTest
+[INFO] Running com.yankdev.brtickets.venue.service.VenueServiceTest
+[INFO] Running findVenueById / findAllActiveVenues
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s -- in findVenueById / findAllActiveVenues
+[INFO] Running updateVenue
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s -- in updateVenue
+[INFO] Running createVenue
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s -- in createVenue
+[INFO] Running deactivateVenue
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in deactivateVenue
+[INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.041 s -- in com.yankdev.brtickets.venue.service.VenueServiceTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 257, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jacoco:0.8.15:report (report) @ brtickets ---
+[INFO] Loading execution data file C:\Users\Cliente\Desktop\monolith-brtickets\brtickets\target\jacoco.exec
+[INFO] Analyzed bundle 'brtickets' with 37 classes
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  51.808 s
+[INFO] Finished at: 2026-10-10T15:09:32-03:00
+[INFO] ------------------------------------------------------------------------
